@@ -1,4 +1,4 @@
-[[Package]]
+[package]
 name      = "htop"
 description = "Improved top (interactive process viewer)"
 homepage   = "https://htop.dev/"
