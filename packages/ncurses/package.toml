@@ -1,5 +1,5 @@
 [package]
 name      = "ncurses"
-description = "makes scrollable interfaces "
+description = "Text-based UI library"
 homepage   = "https://invisible-island.net/ncurses/"
 latest_version   = "6.5"

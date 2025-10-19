@@ -16,3 +16,4 @@ installer_type = "unpack"
 [[targets.aarch64-apple-darwin]]
 url       = "https://invisible-mirror.net/archives/ncurses/ncurses-6.5.tar.gz"
 installer_type = "unpack"
+
