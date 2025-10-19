@@ -1,6 +1,6 @@
 [package]
-version    = "5.8"
-dependencies = ["ncurses"]
+version    = "6.5"
+dependencies = []
  
 # Linux aarch64 (ARM64)
 [[targets.aarch64-unknown-linux-gnu]]
