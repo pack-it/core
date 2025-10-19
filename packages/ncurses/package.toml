@@ -1,0 +1,5 @@
+[[Package]]
+name      = "ncurses"
+description = "Makes "
+homepage   = "https://invisible-island.net/ncurses/"
+latest_version   = "5.8"
