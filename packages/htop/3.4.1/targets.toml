@@ -1,17 +1,16 @@
 version    = "3.4.1"
-dependencies = ["ncurses"]
+dependencies = ["ncurses"] # TODO: should be ncurses@>=6.0
+build_dependencies = []
+#build_dependencies = ["autoconf", "automake", "libtool"]
 
 # Linux aarch64 (ARM64)
 [targets.aarch64-unknown-linux-gnu]
 url       = "https://github.com/htop-dev/htop/archive/refs/tags/3.4.1.tar.gz"
-installer_type = "unpack"
 
 # macOS Intel
 [targets.x86_64-apple-darwin]
 url       = "https://github.com/htop-dev/htop/archive/refs/tags/3.4.1.tar.gz"
-installer_type = "unpack"
 
 # macOS ARM (Apple Silicon)
 [targets.aarch64-apple-darwin]
 url       = "https://github.com/htop-dev/htop/archive/refs/tags/3.4.1.tar.gz"
-installer_type = "unpack"

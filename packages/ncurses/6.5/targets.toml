@@ -1,5 +1,6 @@
 version    = "6.5"
 dependencies = []
+build_dependencies = []
 
 # Linux aarch64 (ARM64)
 [targets.aarch64-unknown-linux-gnu]
