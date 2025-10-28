@@ -1,0 +1,9 @@
+name      = "autoconf"
+description = "Tool for generating configure scripts for software builds"
+homepage   = "https://www.gnu.org/software/autoconf/"
+versions = ["2.72"]
+
+[latest_versions]
+aarch64-unknown-linux-gnu = "2.72"
+x86_64-apple-darwin = "2.72"
+aarch64-apple-darwin = "2.72"

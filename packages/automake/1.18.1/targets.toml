@@ -1,0 +1,15 @@
+version    = "1.18.1"
+dependencies = ["autoconf"]
+build_dependencies = []
+
+# Linux aarch64 (ARM64)
+[targets.aarch64-unknown-linux-gnu]
+url       = "https://ftp.gnu.org/gnu/automake/automake-1.18.1.tar.xz"
+
+# macOS Intel
+[targets.x86_64-apple-darwin]
+url       = "https://ftp.gnu.org/gnu/automake/automake-1.18.1.tar.xz"
+
+# macOS ARM (Apple Silicon)
+[targets.aarch64-apple-darwin]
+url       = "https://ftp.gnu.org/gnu/automake/automake-1.18.1.tar.xz"

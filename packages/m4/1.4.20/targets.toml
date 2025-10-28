@@ -1,0 +1,15 @@
+version    = "1.4.20"
+dependencies = []
+build_dependencies = []
+
+# Linux aarch64 (ARM64)
+[targets.aarch64-unknown-linux-gnu]
+url       = "https://ftp.gnu.org/gnu/m4/m4-1.4.20.tar.xz"
+
+# macOS Intel
+[targets.x86_64-apple-darwin]
+url       = "https://ftp.gnu.org/gnu/m4/m4-1.4.20.tar.xz"
+
+# macOS ARM (Apple Silicon)
+[targets.aarch64-apple-darwin]
+url       = "https://ftp.gnu.org/gnu/m4/m4-1.4.20.tar.xz"

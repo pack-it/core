@@ -1,0 +1,9 @@
+name      = "automake"
+description = "Tool for automatically generating Makefile.in files"
+homepage   = "https://www.gnu.org/software/automake/"
+versions = ["1.18.1"]
+
+[latest_versions]
+aarch64-unknown-linux-gnu = "1.18.1"
+x86_64-apple-darwin = "1.18.1"
+aarch64-apple-darwin = "1.18.1"

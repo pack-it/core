@@ -1,7 +1,6 @@
 version    = "3.4.1"
 dependencies = ["ncurses"] # TODO: should be ncurses@>=6.0
-build_dependencies = []
-#build_dependencies = ["autoconf", "automake", "libtool"]
+build_dependencies = ["autoconf", "automake"] # TODO: maybe also needs libtool as build dependency
 
 # Linux aarch64 (ARM64)
 [targets.aarch64-unknown-linux-gnu]

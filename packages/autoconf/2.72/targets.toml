@@ -1,0 +1,18 @@
+version    = "2.72"
+dependencies = []
+build_dependencies = []
+
+# Linux aarch64 (ARM64)
+[targets.aarch64-unknown-linux-gnu]
+url       = "http://ftp.gnu.org/gnu/autoconf/autoconf-2.72.tar.xz"
+dependencies = ["m4"]
+
+# macOS Intel
+[targets.x86_64-apple-darwin]
+url       = "http://ftp.gnu.org/gnu/autoconf/autoconf-2.72.tar.xz"
+# m4 is provided by macos
+
+# macOS ARM (Apple Silicon)
+[targets.aarch64-apple-darwin]
+url       = "http://ftp.gnu.org/gnu/autoconf/autoconf-2.72.tar.xz"
+# m4 is provided by macos

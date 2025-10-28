@@ -1,0 +1,9 @@
+name      = "m4"
+description = "Macro processor for generating and transforming text"
+homepage   = "https://www.gnu.org/software/m4/"
+versions = ["1.4.20"]
+
+[latest_versions]
+aarch64-unknown-linux-gnu = "1.4.20"
+x86_64-apple-darwin = "1.4.20"
+aarch64-apple-darwin = "1.4.20"
