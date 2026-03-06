@@ -61,6 +61,18 @@ Targets are specified as `[targets.<bounds>], where bounds specify the support t
 
 The target bounds consist of a name, an addition and version bounds, the name is split up in three different categories.
 
+When selecting the target to use, there is a certain priority, from lowest priority to highest priority:
+- OS group
+- OS name
+- Target architecture
+- OS name with version bounds
+- Target architecture with version bounds
+- OS name with addition and version bounds
+- Target architecture with addition and version bounds
+
+The syntax of defining a target bound is as follows, where target names are required and additions and version bounds are optional: <br>
+`<name>:<addition>@<version-bounds>`
+
 ##### Target names 
 
 | Name                | Supported values            |
@@ -78,6 +90,8 @@ Currently additions are only supported for the `linux` target name and for the t
 Version bounds specify the version of the target which is required for the target bounds to be satisfied. Version bounds are not allowed on OS group target names.
 
 The version bounds specify the OS version on macOS and Windows. On Linux it specifies the kernel version when no addition is given, or the distro version when an addition is given.
+
+Within the same target name, overlapping version bounds are not allowed and will result in invalid package metadata.
 
 See [Version bounds](#version-bounds) for the version bounds syntax.
 
