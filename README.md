@@ -1,14 +1,16 @@
 # Packit Core
 
-The Packit core repository which contains build, install and test instructions for system-packages. 
+The Packit core repository which contains build, install and test instructions for system-packages.
 
 ## Repository Structure
 
 #### `repository.toml`
-This file should be present in every Packit repository, it quickly describes what the repository is for. 
+This file should be present in every Packit repository, it quickly describes what the repository is for.
+
 
 #### `packages`
-The packages directory contains all packages which are supported by this repository. 
+The packages directory contains the metadata of all packages which are supported by this repository.
+
 
 #### `package.toml`
 Each package contains this file, it describes the package as whole. It shows the following general package information:
@@ -16,20 +18,96 @@ Each package contains this file, it describes the package as whole. It shows the
 - Short description
 - Package homepage url
 - Available versions
-- Latest versions (for each target)
+- Latest versions (for each target, see [Target bounds](#target-bounds))
+
 
 #### `targets.toml`
-Each package version directory contains a `targets.toml` file. This file describes version specific information. This information can be the same for all targets (global) or target specific. This approach is used, because it reduces repitition while maintaining flexibility. In some cases the target specific information will overwrite the global information in other cases it's additive, so global and target specific will be used together. Here is an overview of all the fields and their workings.
-| Field                 | Explanation                         |
-| --------              | -------                             |
-| `version`             | The version field is only global.   |
-| `dependencies`        | The dependencies field can be defined globally and for a specific target, it's additive. |
-| `build_dependencies`  | The build dependencies field can be defined globally and for a specific target, it's additive. |
-| `script_args`         | The script arguments fiels is additive and is meant to pass arguments to a script. This field doesn't have to be present if there are no arguments. |
-| `use_version_specific_<script>`         | Every script can either be defined for an entire package or for a specific version. This field specifies this and is defined only globally, but can be overwritten by the target specific `<script-type>_script`. By default a script is not version specific.          |
-| `<script-type>_script`   | This field is target specific and can overwrite the global `use_version_specific_<script>`. It can also specify a different script then the default.  |
-| `skip_symlinking`   | This field specifies if a package should be symlinked. The field can be global or target specific, if both are given the target specific field will be used. This field is false by default. |
+Each package version directory contains a `targets.toml` file. This file describes version specific information. This information can be the same for all targets (global) or target specific. In some cases the target specific information will overwrite the global information in other cases it's additive, so global and target specific will be used together.
+
+##### Global fields
+| Field                           | Explanation                                                                          |
+| ------------------------------- | ------------------------------------------------------------------------------------ |
+| `version`                       | Defines the version of the package.                                                  |
+| `dependencies`                  | Defines all the dependencies of the package, that are shared by all targets.         |
+| `build_dependencies`            | Defines all build dependencies of the package, that are shared by all targets.       |
+| `use_version_specific_<script>` | When set to yes, the script is read from the package version directory, instead of the package directory. |
+| `skip_symlinking`               | When set to yes, the package is not symlinked after installation, preventing the package to be detectable through the PATH. |
+| `revisions`                     | A list of strings containing a description of what changed in each metadat revision. |
+| `script_args`                   | A table of key-value pairs containing arguments passed to scripts.                   |
+
+##### Sources
+The targets.toml file can contain one or multiple sources, specified in the following format. When multiple sources are defined, they need to be named.
+
+| Field      | Explanation                                                                                                  |
+| ---------- | ------------------------------------------------------------------------------------------------------------ |
+| `url`      | Defines the url of the archive containing the sourcecode of the package.                                     |
+| `checksum` | Defines the sha256 checksum of the source archive.                                                           |
+| `mirrors`  | Defines a list of mirrors which could be used to download the sourcecode if the original url is unavailable. |
+
+##### Target fields
+
+Targets are specified as `[targets.<bounds>], where bounds specify the support target as described in [Target bounds](#target-bounds).
+
+| Field                           | Explanation                                                                          |
+| ------------------------------- | ------------------------------------------------------------------------------------ |
+| `dependencies`                  | Defines all the dependencies of the package for the target, additional to the dependencies specified in the global field. |
+| `build_dependencies`            | Defines all build dependencies of the package for the target, additional to the build dependencies specified in the global field. |
+| `skip_symlinking`               | When set to yes, the package is not symlinked after installation, preventing the package to be detectable through the PATH. Overrides the value defined in the global field. |
+| `<script-type>_script`          | Defines the name of the script to use instead of the default script name.            |
+| `script_args`                   | A table of key-value pairs containing arguments passed to scripts, additional to the args defined in the global field. |
+| `source`                        | Defines which source to use, required when multiple sources are defined              |
+
+#### Target bounds
+
+The target bounds consist of a name, an addition and version bounds, the name is split up in three different categories.
+
+##### Target names 
+
+| Name                | Supported values            |
+| ------------------- | --------------------------- |
+| OS group            | `unix`                      |
+| OS name             | `macos`, `linux`, `windows` |
+| Target architecture | `x86_64-apple-darwin`, `aarch64-apple-darwin`, `aarch64-unknown-linux-gnu`, `x86_64-unknown-linux-gnu`, `x86_64-unknown-linux-musl`, `x86_64-pc-windows-msvc`, `aarch64-pc-windows-msvc` |
+
+##### Target additions
+
+Currently additions are only supported for the `linux` target name and for the target architectures which reference a linux OS. The addition specifies a Linux distro, for example `debian` or `arch`.
+
+##### Target version bounds
+
+Version bounds specify the version of the target which is required for the target bounds to be satisfied. Version bounds are not allowed on OS group target names.
+
+The version bounds specify the OS version on macOS and Windows. On Linux it specifies the kernel version when no addition is given, or the distro version when an addition is given.
+
+See [Version bounds](#version-bounds) for the version bounds syntax.
 
 
-#### `preinstall.sh`, `build.sh`, `postinstall.sh` and `test.sh`
-These are the default script files. If not otherwise specified they are located in `packages/<package-name>/`. The `target.toml` can also specify a different script to be used instead of a default script.
+#### Version bounds
+
+Version bounds are used by target bounds and by dependencies to specify which version satisfy a target or dependency.
+
+The following operators are available:
+| Operator    | Explanation                                                                         |
+| ----------- | ----------------------------------------------------------------------------------- |
+| No operator | Specifies a specific version.                                                       |
+| `-`         | Specifies a version range, for example `1-2`.                                       |
+| `<=`        | Specifies a version upper bound including the specified version, for example `<=2`. |
+| `<`         | Specifies a version upper bound excluding the specified version, for example `<2`.  |
+| `>=`        | Specifies a version lower bound including the specified version, for example `>=1`. |
+| `>`         | Specifies a version lower bound excluding the specified version, for example `>1`.  |
+| `|`         | Can be used to chain multiple bounds, works as an or operator.                      |
+
+
+#### Scripts
+
+The scripts define the specific behaviour to install, uninstall or test a specific package. They can be defined globally for a package, per version or per target. On unix systems the script are written in `sh` and have the `.sh` extension. On Windows the scripts are written in `batch` and have the `.bat` extension.
+
+The available scripts are:
+
+| Script name          | Explanation                                                                                     |
+| -------------------- | ----------------------------------------------------------------------------------------------- |
+| `preinstall`         | The preinstall script is run before installing a package.                                       |
+| `build`              | The build script is run to build a package.                                                     |
+| `postinstall`        | The postinstall script is run after the package is installed.                                   |
+| `test`               | The test script is called after the package is installed to test if the install was successful. |
+| `uninstall`          | The uninstall script is run after uninstallation to cleanup all package data.                   |
