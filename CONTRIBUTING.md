@@ -37,6 +37,7 @@ After you added your changes, you first need to create a commit and push your ch
 Please follow the commit naming conventions:
 - Adding a new package: `Add package: <package-name>`
 - Adding a package version: `Add version: <package-name> <version>`
+- Adding support for a new target: `Add target: <package-name> <target>`
 - Fixing a broken package: `Fix package: <package-name> <version>`
 - Another change? Please ensure your commit message describes the changes correctly
 <br><br>

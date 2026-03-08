@@ -7,6 +7,14 @@ The Packit core repository which contains build, install and test instructions f
 #### `repository.toml`
 This file should be present in every Packit repository, it quickly describes what the repository is for.
 
+| Field                | Explanation                                                         |
+| -------------------- | ------------------------------------------------------------------- |
+| `name`               | The name of the repository. (required)                              |
+| `description`        | A small description of the repository. (required)                   |
+| `maintainers`        | A list of maintainers of the repository. (required)                 |
+| `prebuilds_url`      | Defines the url of the prebuilds repository for this repository.    |
+| `prebuilds_provider` | Defines the provider of the prebuilds repository, defaults to `fs`. |
+
 
 #### `packages`
 The packages directory contains the metadata of all packages which are supported by this repository.
