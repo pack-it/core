@@ -18,7 +18,7 @@ Each package contains this file, it describes the package as whole. It shows the
 - Short description
 - Package homepage url
 - Available versions
-- Latest versions (for each target, see [Target bounds](#target-bounds))
+- Supported versions (for each target, see [Target bounds](#target-bounds))
 
 
 #### `targets.toml`
@@ -98,7 +98,9 @@ See [Version bounds](#version-bounds) for the version bounds syntax.
 
 #### Version bounds
 
-Version bounds are used by target bounds and by dependencies to specify which version satisfy a target or dependency.
+Version bounds are used by target bounds, by dependencies and by the supported versions to specify which version satisfy a target or dependency.
+
+Please note version bounds are required to be in order of versions.
 
 The following operators are available:
 | Operator    | Explanation                                                                         |
