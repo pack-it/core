@@ -10,10 +10,12 @@ The steps below guide you through the process of forking the repository, commiti
 Click the `Fork` button on the top-right corner of the repository page. This creates your own copy of the core repository, where you can make your changes.
 
 2. **Clone your fork locally** <br>
-To start working, you need the repository on your local machine. To do this, you need to fork it.
-<br>
+To start working, you need the repository on your local machine. To do this, you need to clone it.
+<br><br>
+Run the commands below to clone your fork locally, replace `<your-username>` with your GitHub username.
+<br><br>
 ```
-git clone https://github.com/YOUR_USERNAME/core.git
+git clone https://github.com/<your-username>/core.git
 cd core
 ```
 
@@ -36,6 +38,7 @@ Please follow the commit naming conventions:
 - Adding a new package: `Add package: <package-name>`
 - Adding a package version: `Add version: <package-name> <version>`
 - Fixing a broken package: `Fix package: <package-name> <version>`
+- Another change? Please ensure your commit message describes the changes correctly
 <br><br>
 You can add, commit and push by running the command below:
 ```
@@ -55,12 +58,41 @@ After you done all steps above, click on the `Create pull request` button. Your 
 
 ## Adding a new package
 
-TODO
+Before adding a new package, please first look through the open pull requests to prevent adding something that is already in progress.
+
+To add a package, you first need to create the directory with the name of the package in the `packages` folder. Inside this folder you need to create several files:
+- `package.toml`: Contains global information about the package
+- `build.sh` or `build.bat` (or both): Script which builds the package. You can also define version specific or even target specific scripts, see the README for more information.
+
+You also need to add a new directory inside this directory, which has the version of the package as name. Inside you need to add a `targets.toml` file, this file contains the information about the specific package version and the behaviour for each target.
+
+A simple example of these files can be found in the [`htop`](https://github.com/pack-it/core/tree/main/packages/htop) package.
+See the README for an explanation of all possible fields in these files.
+
+After you added the package, push it to your fork and create a pull request, see [Getting started](#getting-started).
 
 ## Adding a new version to a package
 
-TODO
+Before adding a new version to a package, please first look through the open pull requests to prevent adding something that is already in progress.
+
+To add a new version to an existing package, first go to the directory of the package. Inside create a new directory which has the version you're adding as name. Inside this directory you need to create a `targets.toml` file, this file contains the information about the specific package version and the behaviour for each target.
+
+Most of the times, you can copy the `targets.toml` file from another version and only change the source. Please make sure the other metadata did not change between versions.
+<br>
+If the package uses version specific scripts, you also need a new script for the new version, otherwise check thoroughly the already existing global build script is still valid for the new version.
+
+You then also need to update the `package.toml` file to correctly register the new version of the package and update the latest available version for the targets.
+
+After you added the version, push it to your fork and create a pull request, see [Getting started](#getting-started).
 
 ## Adding support for a new target to a package
 
-TODO
+Before adding support for a new target to a package, please first look through the open pull requests to prevent adding something that is already in progress.
+
+To add a new target to an existing package, you need to adjust the `targets.toml` file for the version you're adding the target to, and change the `package.toml` file to correctly register that the package supports the target for the package version. 
+
+Most of the times, the source is the same for all targets, but sometimes you need to add a new source. The currently existing source then needs to be named, and you will need to define which source to use for each target, see the README for more information on this.
+
+Also make sure the scripts are compatible between the different targets, if this is not the case, you can define to use a different script for a specific target. Please see the README for more information, or take a look at [`libtool`](https://github.com/pack-it/core/tree/main/packages/libtool) for an example.
+
+After you added the target, push it to your fork and create a pull request, see [Getting started](#getting-started).
