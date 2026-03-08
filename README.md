@@ -109,7 +109,7 @@ The following operators are available:
 | `<`         | Specifies a version upper bound excluding the specified version, for example `<2`.  |
 | `>=`        | Specifies a version lower bound including the specified version, for example `>=1`. |
 | `>`         | Specifies a version lower bound excluding the specified version, for example `>1`.  |
-| `|`         | Can be used to chain multiple bounds, works as an or operator.                      |
+| `\|`        | Can be used to chain multiple bounds, works as an or operator.                      |
 
 
 #### Scripts
