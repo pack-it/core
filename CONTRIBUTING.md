@@ -13,7 +13,6 @@ Click the `Fork` button on the top-right corner of the repository page. This cre
 To start working, you need the repository on your local machine. To do this, you need to clone it.
 <br><br>
 Run the commands below to clone your fork locally, replace `<your-username>` with your GitHub username.
-<br><br>
 ```
 git clone https://github.com/<your-username>/core.git
 cd core
@@ -23,7 +22,6 @@ cd core
 Now you have a local copy of the repository, you need to create a new branch where you can make your changes.
 <br><br>
 Please use a name which describes your changes for the branch.
-<br><br>
 ```
 git checkout -b <branch-name>
 ```
@@ -34,6 +32,7 @@ On the new branch, you can now add your own changes. Please see the sections bel
 5. **Pushing your changes** <br>
 After you added your changes, you first need to create a commit and push your changes.
 <br><br>
+<a id="commit-naming" name="commit-naming"></a>
 Please follow the commit naming conventions:
 - Adding a new package: `Add package: <package-name>`
 - Adding a package version: `Add version: <package-name> <version>`
@@ -53,9 +52,9 @@ Now all your changes are on your own fork of the core repository, you can open a
 <br><br>
 To create a pull request you need to go to the official repository (https://github.com/pack-it/core), at the top a yellow banner is shown with the button `Compare & pull request`. Click on this button and ensure the `base` branch is set to `main` and the `compare` branch is set to the branch you created.
 <br><br>
-Ensure the titles describes clearly what changes you made, ideally this matches with the commit naming conventions. Add a good description, including all details of your changes.
+Ensure the titles describes clearly what changes you made, ideally this matches with the [commit naming conventions](#commit-naming). Add a good description, including all details of your changes.
 <br><br>
-After you done all steps above, click on the `Create pull request` button. Your pull request is now created and one of the Packit maintainers will review it as soon as possible.
+After you have done all steps above, click on the `Create pull request` button. Your pull request is now created and one of the Packit maintainers will review it as soon as possible.
 
 ## Adding a new package
 
@@ -80,9 +79,9 @@ To add a new version to an existing package, first go to the directory of the pa
 
 Most of the times, you can copy the `targets.toml` file from another version and only change the source. Please make sure the other metadata did not change between versions.
 <br>
-If the package uses version specific scripts, you also need a new script for the new version, otherwise check thoroughly the already existing global build script is still valid for the new version.
+If the package uses version specific scripts, you also need a new script for the new version, otherwise check thoroughly if the already existing global build script is still valid for the new version.
 
-You then also need to update the `package.toml` file to correctly register the new version of the package and update the latest available version for the targets.
+You then also need to update the `package.toml` file to correctly register the new version of the package and update the supported versions for the targets.
 
 After you added the version, push it to your fork and create a pull request, see [Getting started](#getting-started).
 

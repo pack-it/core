@@ -30,18 +30,19 @@ Each package contains this file, it describes the package as whole. It shows the
 
 
 #### `targets.toml`
-Each package version directory contains a `targets.toml` file. This file describes version specific information. This information can be the same for all targets (global) or target specific. In some cases the target specific information will overwrite the global information in other cases it's additive, so global and target specific will be used together.
+Each package version directory contains a `targets.toml` file. This file describes version specific information. This information can be the same for all targets (global) or target specific. In some cases the target specific information will override the global information in other cases it's additive, so global and target specific will be used together.
+See the tables below for all different fields, see [Target fields](#target-fields) to get more information about additive and overrides.
 
 ##### Global fields
-| Field                           | Explanation                                                                          |
-| ------------------------------- | ------------------------------------------------------------------------------------ |
-| `version`                       | Defines the version of the package.                                                  |
-| `dependencies`                  | Defines all the dependencies of the package, that are shared by all targets.         |
-| `build_dependencies`            | Defines all build dependencies of the package, that are shared by all targets.       |
-| `use_version_specific_<script>` | When set to yes, the script is read from the package version directory, instead of the package directory. |
+| Field                           | Explanation                                                                    |
+| ------------------------------- | ------------------------------------------------------------------------------ |
+| `version`                       | Defines the version of the package.                                            |
+| `dependencies`                  | Defines all the dependencies of the package, that are shared by all targets.   |
+| `build_dependencies`            | Defines all build dependencies of the package, that are shared by all targets. |
+| `use_version_specific_<script>` | When set to yes, the specified script is read from the package version directory, instead of the package directory. |
 | `skip_symlinking`               | When set to yes, the package is not symlinked after installation, preventing the package to be detectable through the PATH. |
-| `revisions`                     | A list of strings containing a description of what changed in each metadat revision. |
-| `script_args`                   | A table of key-value pairs containing arguments passed to scripts.                   |
+| `revisions`                     | A list of strings containing a description of what changed in each metadata or script revision. |
+| `script_args`                   | A table of key-value pairs containing arguments passed to scripts.             |
 
 ##### Sources
 The targets.toml file can contain one or multiple sources, specified in the following format. When multiple sources are defined, they need to be named.
@@ -54,7 +55,7 @@ The targets.toml file can contain one or multiple sources, specified in the foll
 
 ##### Target fields
 
-Targets are specified as `[targets.<bounds>], where bounds specify the support target as described in [Target bounds](#target-bounds).
+Targets are specified as `[targets.<bounds>]`, where bounds specify the support target as described in [Target bounds](#target-bounds).
 
 | Field                           | Explanation                                                                          |
 | ------------------------------- | ------------------------------------------------------------------------------------ |
@@ -63,7 +64,7 @@ Targets are specified as `[targets.<bounds>], where bounds specify the support t
 | `skip_symlinking`               | When set to yes, the package is not symlinked after installation, preventing the package to be detectable through the PATH. Overrides the value defined in the global field. |
 | `<script-type>_script`          | Defines the name of the script to use instead of the default script name.            |
 | `script_args`                   | A table of key-value pairs containing arguments passed to scripts, additional to the args defined in the global field. |
-| `source`                        | Defines which source to use, required when multiple sources are defined              |
+| `source`                        | Defines which source to use, required when multiple sources are defined.             |
 
 #### Target bounds
 
@@ -79,7 +80,7 @@ When selecting the target to use, there is a certain priority, from lowest prior
 - Target architecture with addition and version bounds
 
 The syntax of defining a target bound is as follows, where target names are required and additions and version bounds are optional: <br>
-`<name>:<addition>@<version-bounds>`
+`<name>[:<addition>][@<version-bounds>]`
 
 ##### Target names 
 
@@ -111,15 +112,15 @@ Version bounds are used by target bounds, by dependencies and by the supported v
 Please note version bounds are required to be in order of versions.
 
 The following operators are available:
-| Operator    | Explanation                                                                         |
-| ----------- | ----------------------------------------------------------------------------------- |
-| No operator | Specifies a specific version.                                                       |
-| `-`         | Specifies a version range, for example `1-2`.                                       |
-| `<=`        | Specifies a version upper bound including the specified version, for example `<=2`. |
-| `<`         | Specifies a version upper bound excluding the specified version, for example `<2`.  |
-| `>=`        | Specifies a version lower bound including the specified version, for example `>=1`. |
-| `>`         | Specifies a version lower bound excluding the specified version, for example `>1`.  |
-| `\|`        | Can be used to chain multiple bounds, works as an or operator.                      |
+| Operator    | Explanation                                                                          |
+| ----------- | ------------------------------------------------------------------------------------ |
+| No operator | Specifies a specific version.                                                        |
+| `-`         | Specifies a version range, for example `1-2`.                                        |
+| `<=`        | Specifies a version upper bound including the specified version, for example `<=2`.  |
+| `<`         | Specifies a version upper bound excluding the specified version, for example `<2`.   |
+| `>=`        | Specifies a version lower bound including the specified version, for example `>=1`.  |
+| `>`         | Specifies a version lower bound excluding the specified version, for example `>1`.   |
+| `\|`        | Can be used to chain multiple bounds, works as an or operator, for example `3\|5-7`. |
 
 
 #### Scripts
@@ -134,7 +135,7 @@ The available scripts are:
 | `build`              | The build script is run to build a package.                                                     |
 | `postinstall`        | The postinstall script is run after the package is installed.                                   |
 | `test`               | The test script is called after the package is installed to test if the install was successful. |
-| `uninstall`          | The uninstall script is run after uninstallation to cleanup all package data.                   |
+| `uninstall`          | The uninstall script is run after an uninstall to cleanup all package data.                     |
 
 ##### Script environment
 
@@ -144,7 +145,7 @@ Scripts get certain environment variables from Packit:
 | ------------------------ | ------------------------------------------------------------------------------------------ |
 | `PACKIT_PREFIX_PATH`     | The Packit prefix path, as set in the configuration.                                       |
 | `PACKIT_TARGET`          | The current target architecture, one of the values of the target architecture target name. |
-| `PACKIT_PACKAGE_PATH`    | The path where the package the script belongs to is installed to.                          |
+| `PACKIT_PACKAGE_PATH`    | The path where the package to which the script belongs is installed to.                    |
 | `PACKIT_PACKAGE_VERSION` | The version of the package the script belongs to.                                          |
 
 The script arguments that are defined in the metadata are passed to the script as environment variable as `PACKIT_ARGS_<argument-name>`.
