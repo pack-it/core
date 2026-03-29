@@ -1,0 +1,8 @@
+name = "make"
+description = "Tool for building multiple code files"
+homepage = "https://www.gnu.org/software/make/"
+versions = ["4.4"]
+
+[supported_versions]
+unix = "4.4"
+windows = "4.4"
