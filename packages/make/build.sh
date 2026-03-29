@@ -10,3 +10,7 @@ if [[ $PACKIT_TARGET =~ "apple" ]]; then
 fi
 
 sh build.sh
+
+./make 
+
+./make install

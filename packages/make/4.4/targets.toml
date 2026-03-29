@@ -8,7 +8,7 @@ url = "https://ftpmirror.gnu.org/gnu/make/make-4.4.tar.gz"
 mirrors = [
   "https://ftp.gnu.org/gnu/make/make-4.4.tar.gz"
 ]
-checksum = "8814ba072182b605d156d7589c19a43b89fc58ea479b9355146160946f8cf6e9"
+checksum = "581f4d4e872da74b3941c874215898a7d35802f03732bdccee1d4a7979105d18"
 
 [targets.unix]
 
