@@ -1,0 +1,11 @@
+version = "2.5.1"
+license = "ISC"
+dependencies = []
+build_dependencies = []
+
+[source]
+url = "https://distfiles.ariadne.space/pkgconf/pkgconf-2.5.1.tar.gz"
+mirrors = []
+checksum = "ab89d59810d9cad5dfcd508f25efab8ea0b1c8e7bad91c2b6351f13e6a5940d8"
+
+[targets.unix]

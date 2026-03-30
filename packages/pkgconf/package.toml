@@ -1,0 +1,7 @@
+name = "pkgconf"
+description = "A tool which helps to configure compiler and linker flags for development libraries"
+homepage = "https://github.com/pkgconf/pkgconf"
+versions = ["2.5.1"]
+
+[supported_versions]
+unix = "2.5.1"
