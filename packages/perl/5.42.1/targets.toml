@@ -1,0 +1,10 @@
+version = "5.42.1"
+license = "Artistic-1.0-Perl or GPL-1.0+"
+dependencies = []
+build_dependencies = []
+
+[source]
+url = "https://www.cpan.org/src/5.0/perl-5.42.2.tar.gz"
+checksum = "098c7f76e7a28443f6403610c7e339777905360c5225798fd142b8d33b05c6b4"
+
+[targets.unix]

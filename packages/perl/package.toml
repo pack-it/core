@@ -1,0 +1,7 @@
+name = "perl"
+description = "General-purpose programming language"
+homepage = "https://www.perl.org/"
+versions = ["5.42.1"]
+
+[supported_versions]
+unix = "5.42.1"
