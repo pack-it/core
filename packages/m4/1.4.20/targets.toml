@@ -6,7 +6,7 @@ build_dependencies = []
 [source]
 url = "https://ftpmirror.gnu.org/gnu/m4/m4-1.4.20.tar.gz"
 mirrors = [
-  "https://ftpmirror.gnu.org/m4/m4-1.4.20.tar.gz",
+  "https://ftp.gnu.org/gnu/m4/m4-1.4.20.tar.gz",
   "https://mirrors.kernel.org/gnu/m4/m4-1.4.20.tar.gz",
   "https://mirror.csclub.uwaterloo.ca/gnu/m4/m4-1.4.20.tar.gz"
 ]

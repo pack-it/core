@@ -4,9 +4,9 @@ dependencies = ["m4"]
 build_dependencies = []
 
 [source]
-url = "https://ftpmirror.gnu.org/libtool/libtool-2.5.4.tar.gz"
+url = "https://ftpmirror.gnu.org/gnu/libtool/libtool-2.5.4.tar.gz"
 mirrors = [
-  "https://ftpmirror.gnu.org/libtool/libtool-2.5.4.tar.gz",
+  "https://ftp.gnu.org/gnu/libtool/libtool-2.5.4.tar.gz",
   "https://mirrors.kernel.org/gnu/libtool/libtool-2.5.4.tar.gz",
   "https://mirror.csclub.uwaterloo.ca/gnu/libtool/libtool-2.5.4.tar.gz"
 ]
