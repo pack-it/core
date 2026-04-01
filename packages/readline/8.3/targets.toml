@@ -1,0 +1,15 @@
+version = "8.3"
+license = "GPLv3+"
+dependencies = []
+build_dependencies = []
+
+[source]
+url = "https://ftp.gnu.org/gnu/readline/readline-8.3.tar.gz" 
+mirrors = [
+    "https://ftpmirror.gnu.org/gnu/readline/readline-8.3.tar.gz",
+    "https://mirror.csclub.uwaterloo.ca/gnu/readline/readline-8.3.tar.gz"
+]
+checksum = "fe5383204467828cd495ee8d1d3c037a7eba1389c22bc6a041f627976f9061cc"
+
+[targets.unix]
+skip_symlinking = true
