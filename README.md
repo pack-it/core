@@ -152,8 +152,10 @@ Scripts get certain environment variables from Packit:
 | ------------------------ | ------------------------------------------------------------------------------------------ |
 | `PACKIT_PREFIX_PATH`     | The Packit prefix path, as set in the configuration.                                       |
 | `PACKIT_TARGET`          | The current target architecture, one of the values of the target architecture target name. |
+| `PACKIT_OS`              | The current operating system, `mac`, `linux` or `windows`.                                 |
 | `PACKIT_PACKAGE_PATH`    | The path where the package to which the script belongs is installed to.                    |
 | `PACKIT_PACKAGE_VERSION` | The version of the package the script belongs to.                                          |
+| `PACKIT_VERBOSE`         | True if verbose output is enabled, false otherwise.                                        |
 
 The script arguments that are defined in the metadata are passed to the script as environment variable as `PACKIT_ARGS_<argument-name>`.
 
