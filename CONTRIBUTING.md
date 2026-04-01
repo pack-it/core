@@ -96,3 +96,11 @@ Most of the times, the source is the same for all targets, but sometimes you nee
 Also make sure the scripts are compatible between the different targets, if this is not the case, you can define to use a different script for a specific target. Please see the README for more information, or take a look at [`libtool`](https://github.com/pack-it/core/tree/main/packages/libtool) for an example.
 
 After you added the target, push it to your fork and create a pull request, see [Getting started](#getting-started).
+
+## Mirrors
+> This is a list of archives and mirrors used in the core repository. If a package is in the gnu packages, then the main url used should be https://ftpmirror.gnu.org/, as it dispatches to other gnu mirrors (which is the requested behaviour by gnu). A couple other mirrors should be used, for the case the gnu mirror is not working (this can be mirrors from the gnu mirror list).
+
+A list of archive and mirrors services (excluding the gnu mirror list):
+- https://invisible-island.net/archives/
+- https://invisible-mirror.net/archives
+
