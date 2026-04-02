@@ -1,0 +1,7 @@
+name = "tree"
+description = "Displays directories in a tree format"
+homepage = "https://oldmanprogrammer.net/source.php?dir=projects/tree"
+versions = ["2.3.2"]
+
+[supported_versions]
+unix = "2.3.2"
