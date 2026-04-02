@@ -2,6 +2,10 @@
 
 The Packit core repository which contains build, install and test instructions for system-packages.
 
+## License
+The Packit core repository is licensed under the Apache License 2.0. See [LICENSE](LICENSE) for the full license.
+
+
 ## Repository Structure
 
 #### `repository.toml`
@@ -11,6 +15,7 @@ This file should be present in every Packit repository, it quickly describes wha
 | -------------------- | ------------------------------------------------------------------- |
 | `name`               | The name of the repository. (required)                              |
 | `description`        | A small description of the repository. (required)                   |
+| `license`            | The license of the repository.                                      |
 | `maintainers`        | A list of maintainers of the repository. (required)                 |
 | `prebuilds_url`      | Defines the url of the prebuilds repository for this repository.    |
 | `prebuilds_provider` | Defines the provider of the prebuilds repository, defaults to `fs`. |

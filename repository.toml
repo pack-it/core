@@ -1,3 +1,4 @@
 name = "packit-core"
 description = "The core system-package repository of Packit."
-maintainers = ["The Packit-team"]
+license = "Apache-2.0"
+maintainers = ["The Packit Team"]
