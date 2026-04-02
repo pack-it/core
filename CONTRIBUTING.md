@@ -56,6 +56,16 @@ Ensure the titles describes clearly what changes you made, ideally this matches 
 <br><br>
 After you have done all steps above, click on the `Create pull request` button. Your pull request is now created and one of the Packit maintainers will review it as soon as possible.
 
+
+## License
+
+This project is licensed under the Apache License 2.0. See [LICENSE](LICENSE) for the full license.
+
+By contributing to this project, you agree that your contributions will be licensed under the same license.
+
+You must ensure that your contributions are your own original work or that you have the right to submit them under the project's license.
+
+
 ## Adding a new package
 
 Before adding a new package, please first look through the open pull requests to prevent adding something that is already in progress.
