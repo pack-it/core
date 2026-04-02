@@ -3,6 +3,14 @@ cd readline-$PACKIT_PACKAGE_VERSION
 
 ./configure --prefix=$PACKIT_PACKAGE_PATH --with-curses
 
-make SHLIB_LIBS="$PACKIT_PREFIX_PATH/dependencies/readline@$PACKIT_PACKAGE_VERSION/ncurses/lib/libcurses.so"
+if [ "$PACKIT_OS" = "mac" ]; then
+    path="$PACKIT_PREFIX_PATH/dependencies/readline@$PACKIT_PACKAGE_VERSION/ncurses/lib/libcurses.dylib"
+fi
+
+if [ "$PACKIT_OS" = "linux" ]; then
+    path="$PACKIT_PREFIX_PATH/dependencies/readline@$PACKIT_PACKAGE_VERSION/ncurses/lib/libcurses.so"
+fi
+
+make SHLIB_LIBS=$path
 
 make install
