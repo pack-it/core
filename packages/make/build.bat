@@ -1,5 +1,7 @@
-@echo off
+cd make-%PACKIT_PACKAGE_VERSION%
 
-set INSTALL_DIR=%PACKIT_PACKAGE_PATH%
+call build_w32.bat --without-guile
 
-call build_w32.bat
+mkdir "%PACKIT_PACKAGE_PATH%\bin\"
+
+copy WinRel\gnumake.exe "%PACKIT_PACKAGE_PATH%\bin\make.exe"
