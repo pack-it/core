@@ -1,8 +1,7 @@
 #!/bin/sh
-cd zlib-ng-compat-$PACKIT_PACKAGE_VERSION
+cd zlib-ng-$PACKIT_PACKAGE_VERSION
 
-./configure --prefix=$PACKIT_PACKAGE_PATH --zlib-compat="ON"
-
+./configure --prefix=$PACKIT_PACKAGE_PATH --zlib-compat
 make
 
 make install
