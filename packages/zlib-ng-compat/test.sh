@@ -214,7 +214,7 @@ test_text="Hello World! Duck, Mouse, Bird, Dog, Horse, idk, that's all the anima
 echo "$test_text" > test.txt
 
 # Compile test.c
-gcc -L "$PACKIT_PREFIX_PATH/lib" -I "$PACKIT_PREFIX_PATH/include" test.c -o test -lz
+gcc -L "$PACKIT_PACKAGE_PATH/lib" -I "$PACKIT_PACKAGE_PATH/include" test.c -o test -lz
 
 # Compress the test.txt file
 ./test < test.txt > compressed
