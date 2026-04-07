@@ -1,6 +1,6 @@
 version = "2.16.1.2"
 license = "LGPLv2.1+"
-dependencies = ["readline@>=8"]
+dependencies = ["readline"]
 build_dependencies = []
 
 [source]
