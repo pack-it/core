@@ -7,7 +7,4 @@ build_dependencies = []
 url = "https://github.com/lcn2/calc/archive/refs/tags/v2.16.1.2.tar.gz"
 checksum = "cb5b0576c3d206ed55b6929cc3a1ebc5afedbfdc70d528274cbac8e650c56d77"
 
-[targets.mac]
-
-[targets.linux]
-dependencies = ["util-linux"]
+[targets.unix]
