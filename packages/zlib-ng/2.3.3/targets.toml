@@ -1,0 +1,10 @@
+version = "2.3.3"
+license = "zlib"
+dependencies = []
+build_dependencies = []
+
+[source]
+url = "https://github.com/zlib-ng/zlib-ng/archive/refs/tags/2.3.3.tar.gz"
+checksum = "f9c65aa9c852eb8255b636fd9f07ce1c406f061ec19a2e7d508b318ca0c907d1"
+
+[targets.unix]
