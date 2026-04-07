@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # Create the test.c file (provided by https://zlib.net/zpipe.c)
+# Modified slightly to use zlib-ng without zlib compatibility.
 cat << EOF > test.c
 /* zpipe.c: example of proper use of zlib's inflate() and deflate()
    Not copyrighted -- provided to the public domain
@@ -20,7 +21,7 @@ cat << EOF > test.c
 #include <stdio.h>
 #include <string.h>
 #include <assert.h>
-#include "zlib.h"
+#include "zlib-ng.h"
 
 #if defined(MSDOS) || defined(OS2) || defined(WIN32) || defined(__CYGWIN__)
 #  include <fcntl.h>
@@ -42,15 +43,15 @@ int def(FILE *source, FILE *dest, int level)
 {
     int ret, flush;
     unsigned have;
-    z_stream strm;
+    zng_stream strm;
     unsigned char in[CHUNK];
     unsigned char out[CHUNK];
 
-    /* allocate deflate state */
+    /* allocate zng_deflate state */
     strm.zalloc = Z_NULL;
     strm.zfree = Z_NULL;
     strm.opaque = Z_NULL;
-    ret = deflateInit(&strm, level);
+    ret = zng_deflateInit(&strm, level);
     if (ret != Z_OK)
         return ret;
 
@@ -58,7 +59,7 @@ int def(FILE *source, FILE *dest, int level)
     do {
         strm.avail_in = fread(in, 1, CHUNK, source);
         if (ferror(source)) {
-            (void)deflateEnd(&strm);
+            (void)zng_deflateEnd(&strm);
             return Z_ERRNO;
         }
         flush = feof(source) ? Z_FINISH : Z_NO_FLUSH;
@@ -69,11 +70,11 @@ int def(FILE *source, FILE *dest, int level)
         do {
             strm.avail_out = CHUNK;
             strm.next_out = out;
-            ret = deflate(&strm, flush);    /* no bad return value */
+            ret = zng_deflate(&strm, flush);    /* no bad return value */
             assert(ret != Z_STREAM_ERROR);  /* state not clobbered */
             have = CHUNK - strm.avail_out;
             if (fwrite(out, 1, have, dest) != have || ferror(dest)) {
-                (void)deflateEnd(&strm);
+                (void)zng_deflateEnd(&strm);
                 return Z_ERRNO;
             }
         } while (strm.avail_out == 0);
@@ -84,7 +85,7 @@ int def(FILE *source, FILE *dest, int level)
     assert(ret == Z_STREAM_END);        /* stream will be complete */
 
     /* clean up and return */
-    (void)deflateEnd(&strm);
+    (void)zng_deflateEnd(&strm);
     return Z_OK;
 }
 
@@ -98,7 +99,7 @@ int inf(FILE *source, FILE *dest)
 {
     int ret;
     unsigned have;
-    z_stream strm;
+    zng_stream strm;
     unsigned char in[CHUNK];
     unsigned char out[CHUNK];
 
@@ -108,7 +109,7 @@ int inf(FILE *source, FILE *dest)
     strm.opaque = Z_NULL;
     strm.avail_in = 0;
     strm.next_in = Z_NULL;
-    ret = inflateInit(&strm);
+    ret = zng_inflateInit(&strm);
     if (ret != Z_OK)
         return ret;
 
@@ -116,7 +117,7 @@ int inf(FILE *source, FILE *dest)
     do {
         strm.avail_in = fread(in, 1, CHUNK, source);
         if (ferror(source)) {
-            (void)inflateEnd(&strm);
+            (void)zng_inflateEnd(&strm);
             return Z_ERRNO;
         }
         if (strm.avail_in == 0)
@@ -127,19 +128,19 @@ int inf(FILE *source, FILE *dest)
         do {
             strm.avail_out = CHUNK;
             strm.next_out = out;
-            ret = inflate(&strm, Z_NO_FLUSH);
+            ret = zng_inflate(&strm, Z_NO_FLUSH);
             assert(ret != Z_STREAM_ERROR);  /* state not clobbered */
             switch (ret) {
             case Z_NEED_DICT:
                 ret = Z_DATA_ERROR;     /* and fall through */
             case Z_DATA_ERROR:
             case Z_MEM_ERROR:
-                (void)inflateEnd(&strm);
+                (void)zng_inflateEnd(&strm);
                 return ret;
             }
             have = CHUNK - strm.avail_out;
             if (fwrite(out, 1, have, dest) != have || ferror(dest)) {
-                (void)inflateEnd(&strm);
+                (void)zng_inflateEnd(&strm);
                 return Z_ERRNO;
             }
         } while (strm.avail_out == 0);
@@ -148,7 +149,7 @@ int inf(FILE *source, FILE *dest)
     } while (ret != Z_STREAM_END);
 
     /* clean up and return */
-    (void)inflateEnd(&strm);
+    (void)zng_inflateEnd(&strm);
     return ret == Z_STREAM_END ? Z_OK : Z_DATA_ERROR;
 }
 
@@ -167,7 +168,7 @@ void zerr(int ret)
         fputs("invalid compression level\n", stderr);
         break;
     case Z_DATA_ERROR:
-        fputs("invalid or incomplete deflate data\n", stderr);
+        fputs("invalid or incomplete zng_deflate data\n", stderr);
         break;
     case Z_MEM_ERROR:
         fputs("out of memory\n", stderr);
@@ -214,7 +215,7 @@ test_text="Hello World! Duck, Mouse, Bird, Dog, Horse, idk, that's all the anima
 echo "$test_text" > test.txt
 
 # Compile test.c
-gcc -L "$PACKIT_PREFIX_PATH/lib" -I "$PACKIT_PREFIX_PATH/include" test.c -o test -lz
+gcc -L "$PACKIT_PREFIX_PATH/lib" -I "$PACKIT_PREFIX_PATH/include" test.c -o test -lz-ng
 
 # Compress the test.txt file
 ./test < test.txt > compressed
