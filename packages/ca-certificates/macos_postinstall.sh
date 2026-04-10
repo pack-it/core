@@ -34,8 +34,8 @@ policy="skip"
             fi
 
             # Check SSL purpose
-            purpose=$(echo "$cert" | /usr/bin/openssl x509 -inform pem -purpose -noout)
-            if ! echo "$purpose" | grep -q "SSL server CA : Yes"; then
+            purpose=$(echo "$cert" | /usr/bin/openssl x509 -text -noout)
+            if ! echo "$purpose" | grep -q "CA:TRUE"; then
                 cert=""
                 inside=0
                 continue
@@ -69,6 +69,7 @@ policy="skip"
     esac
 
     if [ "$inside" = "1" ]; then
-        cert="$cert$line\n"
+        cert="$cert$line
+"
     fi
 done
