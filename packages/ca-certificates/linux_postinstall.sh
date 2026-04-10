@@ -27,7 +27,7 @@ openssl_path=$(command -v openssl)
             # Only do checks with openssl if openssl is installed
             if [ -n "$openssl_path" ]; then
                 # Check if certificate is not expired
-                if ! echo "$cert" | "$openssl_path" x509 -inform pem -checkend 0 -noout; then
+                if ! echo "$cert" | "$openssl_path" x509 -inform pem -checkend 0 -noout > /dev/null; then
                     cert=""
                     inside=0
                     continue
