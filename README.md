@@ -52,11 +52,12 @@ See the tables below for all different fields, see [Target fields](#target-field
 ##### Sources
 The targets.toml file can contain one or multiple sources, specified in the following format. When multiple sources are defined, they need to be named.
 
-| Field      | Explanation                                                                                                  |
-| ---------- | ------------------------------------------------------------------------------------------------------------ |
-| `url`      | Defines the url of the archive containing the sourcecode of the package.                                     |
-| `checksum` | Defines the sha256 checksum of the source archive.                                                           |
-| `mirrors`  | Defines a list of mirrors which could be used to download the sourcecode if the original url is unavailable. |
+| Field         | Explanation                                                                                                  |
+| ------------- | ------------------------------------------------------------------------------------------------------------ |
+| `url`         | Defines the url of the archive containing the sourcecode of the package.                                     |
+| `checksum`    | Defines the sha256 checksum of the source archive.                                                           |
+| `mirrors`     | Defines a list of mirrors which could be used to download the sourcecode if the original url is unavailable. |
+| `skip_unpack` | True to skip the unpack step and just download the source file, false to use the build in unpack.            |
 
 ##### Target fields
 
