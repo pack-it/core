@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo "Creating certificate bundle using system certificates in keychain"
+
 seen=""
 cert=""
 inside=0
