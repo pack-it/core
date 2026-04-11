@@ -5,3 +5,4 @@ versions = ["5.42.2"]
 
 [supported_versions]
 unix = "5.42.2"
+windows = "5.42.2"
