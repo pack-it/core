@@ -1,6 +1,6 @@
 version = "3.6.2"
 license = "Apache-2.0"
-dependencies = []
+dependencies = ["ca-certificates"]
 build_dependencies = []
 
 [source]
@@ -8,6 +8,6 @@ url = "https://github.com/openssl/openssl/releases/download/openssl-3.6.2/openss
 checksum = "aaf51a1fe064384f811daeaeb4ec4dce7340ec8bd893027eee676af31e83a04f"
 
 [targets.linux]
-dependencies = ["perl"]
+build_dependencies = ["perl"]
 
 [targets.mac]
