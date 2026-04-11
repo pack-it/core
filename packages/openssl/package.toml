@@ -1,0 +1,7 @@
+name = "openssl"
+description = "Open Source Toolkit for the TLS, DTLS, and QUIC protocols"
+homepage = "https://www.openssl.org/"
+versions = ["3.6.2"]
+
+[supported_versions]
+unix = "3.6.2"
