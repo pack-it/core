@@ -41,7 +41,7 @@ IF "%PACKIT_TARGET%"=="x86_64-pc-windows-msvc" (
     exit /b 1
 )
 
-REM Call vcvarsall.bat to set MSVC build environmnt
+REM Call vcvarsall.bat to set MSVC build environment
 call "%VCVARSALL%" %ARCH%
 
 REM Patch Makefile to include quotes in install path
