@@ -16,3 +16,5 @@ postinstall_script = "linux_postinstall"
 
 [targets.mac]
 postinstall_script = "macos_postinstall"
+
+[targets.windows]
