@@ -32,7 +32,8 @@ if "%PACKIT_TARGET%"=="x86_64-pc-windows-msvc" (
 REM Call vcvarsall.bat to set MSVC build environment
 call "%VCVARSALL%" %ARCH%
 
-perl configure %CONFIGURETARGET% enable-static-vcruntime no-asm "--prefix=%PACKIT_PACKAGE_PATH%" "--openssldir=%PACKIT_PREFIX_PATH%/etc/openssl@%PACKIT_PACKAGE_VERSION%"
+REM TODO: enable asm when nasm is available as package
+perl configure %CONFIGURETARGET% no-asm "--prefix=%PACKIT_PACKAGE_PATH%" "--openssldir=%PACKIT_PREFIX_PATH%/etc/openssl@%PACKIT_PACKAGE_VERSION%"
 
 nmake
 if ERRORLEVEL 1 (
