@@ -42,6 +42,7 @@ See the tables below for all different fields, see [Target fields](#target-field
 | Field                           | Explanation                                                                    |
 | ------------------------------- | ------------------------------------------------------------------------------ |
 | `version`                       | Defines the version of the package.                                            |
+| `license`                       | The license of this version of the package.                                    |
 | `dependencies`                  | Defines all the dependencies of the package, that are shared by all targets.   |
 | `build_dependencies`            | Defines all build dependencies of the package, that are shared by all targets. |
 | `use_version_specific_<script>` | When set to yes, the specified script is read from the package version directory, instead of the package directory. |
@@ -148,14 +149,17 @@ The available scripts are:
 
 Scripts get certain environment variables from Packit:
 
-| Variable name            | Explanation                                                                                |
-| ------------------------ | ------------------------------------------------------------------------------------------ |
-| `PACKIT_PREFIX_PATH`     | The Packit prefix path, as set in the configuration.                                       |
-| `PACKIT_TARGET`          | The current target architecture, one of the values of the target architecture target name. |
-| `PACKIT_OS`              | The current operating system, `mac`, `linux` or `windows`.                                 |
-| `PACKIT_PACKAGE_PATH`    | The path where the package to which the script belongs is installed to.                    |
-| `PACKIT_PACKAGE_VERSION` | The version of the package the script belongs to.                                          |
-| `PACKIT_VERBOSE`         | True if verbose output is enabled, false otherwise.                                        |
+| Variable name                      | Explanation                                                                                |
+| ---------------------------------- | ------------------------------------------------------------------------------------------ |
+| `PACKIT_PREFIX_PATH`               | The Packit prefix path, as set in the configuration.                                       |
+| `PACKIT_TARGET`                    | The current target architecture, one of the values of the target architecture target name. |
+| `PACKIT_OS`                        | The current operating system, `mac`, `linux` or `windows`.                                 |
+| `PACKIT_PACKAGE_PATH`              | The path where the package to which the script belongs is installed to.                    |
+| `PACKIT_PACKAGE_VERSION`           | The version of the package the script belongs to.                                          |
+| `PACKIT_PACKAGE_DEPENDENCIES_PATH` | The path containing symlinks to all dependencies of the package.                           |
+| `PACKIT_VERBOSE`                   | True (1) if verbose output is enabled, false (0) otherwise.                                |
+
+Please note that the build script output is only shown to the user when the verbose mode is turned on. All other scripts always show their output, the output of these scripts should thus be clean. Optional verbose output can be printed when the `PACKIT_VERBOSE` is `1`.
 
 The script arguments that are defined in the metadata are passed to the script as environment variable as `PACKIT_ARGS_<argument-name>`.
 
