@@ -1,5 +1,5 @@
 version = "1.4.20"
-license = "GPLv3"
+license = "GPL-3.0-only"
 dependencies = []
 build_dependencies = []
 
@@ -15,4 +15,3 @@ checksum = "6ac4fc31ce440debe63987c2ebbf9d7b6634e67a7c3279257dc7361de8bdb3ef"
 [targets.linux]
 
 [targets.mac]
-#TODO: prefix/active is implemented: skip_symlinking = true

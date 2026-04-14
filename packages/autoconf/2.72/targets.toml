@@ -1,5 +1,5 @@
 version = "2.72"
-license = "GPLv3+"
+license = "GPL-3.0-or-later"
 dependencies = ["m4"]
 build_dependencies = []
 
@@ -13,8 +13,7 @@ mirrors = [
 checksum = "afb181a76e1ee72832f6581c0eddf8df032b83e2e0239ef79ebedc4467d92d6e"
 
 [targets.linux]
-# TODO: Re-add perl as a dependency
-#dependencies = ["perl"]
+dependencies = ["perl"]
 
 [targets.mac]
 # perl is provided by macos

@@ -1,5 +1,5 @@
 version = "2.5.4"
-license = "LGPLv2+"
+license = "LGPL-2.0-or-later"
 dependencies = ["m4"]
 build_dependencies = []
 

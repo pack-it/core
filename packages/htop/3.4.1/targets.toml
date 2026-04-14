@@ -1,5 +1,5 @@
 version = "3.4.1"
-license = "GPLv2+"
+license = "GPL-2.0-or-later"
 dependencies = ["ncurses@>6.0"]
 build_dependencies = ["autoconf", "automake", "libtool"]
 

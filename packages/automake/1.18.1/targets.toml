@@ -1,5 +1,5 @@
 version = "1.18.1"
-license = "GPLv2+"
+license = "GPL-2.0-or-later"
 dependencies = ["autoconf@>=2.65"]
 build_dependencies = []
 

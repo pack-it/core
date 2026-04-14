@@ -32,11 +32,11 @@ set "MSVCNAME=MSVC%MSVCMAJOR%%MSVCMINOR%"
 echo Found MSCV name %MSVCNAME%
 
 REM Retrieve architecture from target
-IF "%PACKIT_TARGET%"=="x86_64-pc-windows-msvc" (
+if "%PACKIT_TARGET%"=="x86_64-pc-windows-msvc" (
     set ARCH=x64
-) ELSE IF "%PACKIT_TARGET%"=="aarch64-pc-windows-msvc" (
+) else if "%PACKIT_TARGET%"=="aarch64-pc-windows-msvc" (
     set ARCH=arm64
-) ELSE (
+) else (
     echo Target %PACKIT_TARGET% is not supported for this package
     exit /b 1
 )
