@@ -1,3 +1,10 @@
+REM Test relies on GCC, so first check if gcc is installed
+where gcc
+if ERRORLEVEL 1 (
+    echo GCC not installed, skipping test
+    exit /b 1
+)
+
 REM Create the test.c file (provided by https://zlib.net/zpipe.c^)
 (
     echo /* zpipe.c: example of proper use of zlib's inflate^(^) and deflate^(^)

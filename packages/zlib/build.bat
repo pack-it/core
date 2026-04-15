@@ -32,20 +32,25 @@ call "%VCVARSALL%" %ARCH%
 
 nmake -f win32/Makefile.msc
 
+if ERRORLEVEL 1 (
+    echo Building libpng failed
+    exit /b 1
+)
+
 if not exist zlib.h (
-    exit \b 1
+    exit /b 1
 )
 
 if not exist zconf.h (
-    exit \b 1
+    exit /b 1
 )
 
 if not exist zlib.lib (
-    exit \b 1
+    exit /b 1
 )
 
 if not exist zdll.lib (
-    exit \b 1
+    exit /b 1
 )
 
 mkdir "%PACKIT_PACKAGE_PATH%\include\"
