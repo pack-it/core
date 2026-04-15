@@ -2,7 +2,7 @@ REM Test relies on GCC, so first check if gcc is installed
 where gcc
 if ERRORLEVEL 1 (
     echo GCC not installed, skipping test
-    exit /b 1
+    exit /b 0
 )
 
 REM Create the test.c file (provided by https://zlib.net/zpipe.c^)
@@ -205,7 +205,7 @@ test.exe < test.txt > compressed
 REM Decompress the compressed file
 test.exe -d < compressed > decompressed.txt
 
-set /p RESULT = <decompressed.txt
+set /p RESULT = < decompressed.txt
 
 if "%RESULT%" == "%TEST_TEXT%" (
     exit /b 0

@@ -31,7 +31,6 @@ REM Call vcvarsall.bat to set MSVC build environment
 call "%VCVARSALL%" %ARCH%
 
 nmake -f win32/Makefile.msc
-
 if ERRORLEVEL 1 (
     echo Building libpng failed
     exit /b 1
@@ -54,7 +53,7 @@ if not exist zdll.lib (
 )
 
 mkdir "%PACKIT_PACKAGE_PATH%\include\"
-mkdir "%PACKIT_PACKAGE_PATH%\lib\pkgconfig\"
+mkdir "%PACKIT_PACKAGE_PATH%\lib\"
 mkdir "%PACKIT_PACKAGE_PATH%\bin\"
 
 move "zlib1.dll" "%PACKIT_PACKAGE_PATH%\bin\"
