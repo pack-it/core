@@ -8,7 +8,7 @@ if [ "$PACKIT_OS" = "mac" ]; then
 fi
 
 if [ "$PACKIT_OS" = "linux" ]; then
-    path="$PACKIT_PREFIX_PATH/dependencies/readline@$PACKIT_PACKAGE_VERSION/ncurses/lib/libcurses.so"
+    path="$PACKIT_PACKAGE_DEPENDENCIES_PATH/ncurses/lib/libcurses.so"
 fi
 
 make SHLIB_LIBS=$path
