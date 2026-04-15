@@ -12,6 +12,4 @@ mirrors = [
 ]
 checksum = "6ac4fc31ce440debe63987c2ebbf9d7b6634e67a7c3279257dc7361de8bdb3ef"
 
-[targets.linux]
-
-[targets.mac]
+[targets.unix]
