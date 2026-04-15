@@ -1,0 +1,10 @@
+version = "1.6.57"
+license = "libpng-2.0"
+dependencies = ["zlib@<=1.0.4"]
+build_dependencies = []
+
+[source]
+url = "https://github.com/pnggroup/libpng/archive/refs/tags/v1.6.57.tar.gz"
+checksum = "4cbb7b0746edc1683c9581b373365e955133b7f1243f171b7d1535b4415dfedb"
+
+[targets.windows]
