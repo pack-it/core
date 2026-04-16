@@ -1,0 +1,8 @@
+name = "bzip2"
+description = "A program and library for lossless, block-sorting data compression"
+homepage = "https://sourceware.org/pub/bzip2/"
+versions = ["1.0.8"]
+
+[supported_versions]
+unix = "1.0.8"
+windows = "1.0.8"
