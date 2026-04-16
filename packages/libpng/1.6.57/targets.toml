@@ -1,6 +1,6 @@
 version = "1.6.57"
 license = "libpng-2.0"
-dependencies = ["zlib@<=1.0.4"]
+dependencies = ["zlib@>=1.0.4"]
 build_dependencies = []
 
 [source]
