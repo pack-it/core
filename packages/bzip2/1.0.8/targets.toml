@@ -1,0 +1,12 @@
+version = "1.0.8"
+license = "libbzip2 version 1.10 of september 2010"
+dependencies = []
+build_dependencies = ["make"]
+
+[source]
+url = "https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz"
+checksum = "a8f1c14a9d2ea3ef2cdf72c12b2390fc50905c1cff4bcbaef9371eaf42d9033as"
+
+[targets.unix]
+
+[targets.windows]

@@ -1,0 +1,5 @@
+#!/bin/sh
+cd bzip2-$PACKIT_PACKAGE_VERSION
+
+make
+make PREFIX= "$PACKIT_PACKAGE_PATH"
