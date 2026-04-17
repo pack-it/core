@@ -1,0 +1,8 @@
+name = "libuv"
+description = "A asynchronous I/O multi-platform support library"
+homepage = "https://libuv.org"
+versions = ["1.51.0"]
+
+[supported_versions]
+unix = "1.51.0"
+windows = "1.51.0"
