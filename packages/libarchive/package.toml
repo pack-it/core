@@ -1,0 +1,8 @@
+name = "libarchive"
+description = "A portable, efficient library that can read and write streaming archives"
+homepage = "https://www.libarchive.org"
+versions = ["3.8.7"]
+
+[supported_versions]
+unix = "3.8.7"
+windows = "3.8.7"
