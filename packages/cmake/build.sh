@@ -9,5 +9,6 @@ cd "cmake-$PACKIT_PACKAGE_VERSION"
     --system-bzip2 \
     --system-curl
 
-make 
+make
+
 make install
