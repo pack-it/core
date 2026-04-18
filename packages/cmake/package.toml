@@ -1,5 +1,5 @@
 name = "cmake"
-description = "A crossplatform, open-source build systen generator"
+description = "A crossplatform, open-source build system generator"
 homepage = "https://cmake.org"
 versions = ["4.3.1"]
 
