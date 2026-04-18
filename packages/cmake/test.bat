@@ -32,4 +32,3 @@ cd build
 if ERRORLEVEL 1 exit /b 1
 
 echo CMake test passed
-exit /b 0
