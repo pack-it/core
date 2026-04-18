@@ -1,5 +1,5 @@
 version = "1.0.8"
-license = "libbzip2 version 1.10 of september 2010"
+license = "bzip2-1.0.6"
 dependencies = []
 build_dependencies = ["make"]
 
