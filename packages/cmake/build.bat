@@ -1,64 +1,66 @@
 cd cmake-%PACKIT_PACKAGE_VERSION%
 
-REM Try to find Visual Studio vswhere.exe default installed read this in vcpackage install script 
 set "VSWHERE=%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe"
 
 if not exist "%VSWHERE%" (
-    echo.
     echo ERROR: Visual Studio Build Tools not found.
-    echo.
-    echo Please install one of the following:
-    echo   - Visual Studio Build Tools:
-    echo     https://aka.ms/vs/17/release/vs_BuildTools.exe
-    echo   - Full Visual Studio:
-    echo     https://visualstudio.microsoft.com/
-    echo.
-    echo After installation, re-run this build.
+    echo Install one of the following:
+    echo   https://aka.ms/vs/17/release/vs_BuildTools.exe
+    echo   https://visualstudio.microsoft.com/
     exit /b 1
 )
 
-REM Get latest VS installation path
-for /f "usebackq tokens=*" %%i in (`"%VSWHERE%" -latest -property installationPath`) do (
+for /f "tokens=* usebackq" %%i in (`"%VSWHERE%" -latest -property installationPath`) do (
     set "VSPATH=%%i"
 )
 
 if not exist "%VSPATH%" (
-    echo ERROR: No valid Visual Studio installation found.
+    echo ERROR: Visual Studio cannot be loaded from %VSPATH%
     exit /b 1
 )
 
-REM Load MSVC environment
-set "VCVARS=%VSPATH%\VC\Auxiliary\Build\vcvarsall.bat"
+set "VCVARSALL=%VSPATH%\VC\Auxiliary\Build\vcvarsall.bat"
 
-if not exist "%VCVARS%" (
-    echo ERROR: vcvarsall.bat not found.
-    echo Make sure C++ build tools are installed.
+if not exist "%VCVARSALL%" (
+    echo ERROR: vcvarsall.bat cannot be loaded from %VCVARSALL%
     exit /b 1
 )
 
-call "%VCVARS%" amd64
+echo Found vcvarsall.bat at %VCVARSALL%
 
-REM Check if compiler exists
+if "%PACKIT_TARGET%"=="x86_64-pc-windows-msvc" (
+    set "ARCH=amd64"
+) else if "%PACKIT_TARGET%"=="i686-pc-windows-msvc" (
+    set "ARCH=x86"
+) else if "%PACKIT_TARGET%"=="aarch64-pc-windows-msvc" (
+    set "ARCH=arm64"
+) else (
+    echo ERROR: Target %PACKIT_TARGET% is not supported for this package
+    exit /b 1
+)
+
+call "%VCVARSALL%" %ARCH%
+
 where cl >nul 2>nul
 if ERRORLEVEL 1 (
-    echo ERROR: MSVC compiler (cl.exe) not found after environment setup.
+    echo ERROR: cl.exe not found after loading MSVC environment.
     exit /b 1
 )
 
-echo MSVC environment loaded.
-
-REM Build CMake using bootstrap
-bootstrap ^
-  --prefix="%PACKIT_PACKAGE_PATH%" ^
-  --no-system-libs ^
-  --no-debugger
-
-if ERRORLEVEL 1 exit /b 1
+bootstrap --prefix="%PACKIT_PACKAGE_PATH%" --no-system-libs --no-debugger
+if ERRORLEVEL 1 (
+    echo ERROR: bootstrap failed
+    exit /b %ERRORLEVEL%
+)
 
 nmake
-if ERRORLEVEL 1 exit /b 1
+if ERRORLEVEL 1 (
+    echo ERROR: build failed
+    exit /b %ERRORLEVEL%
+)
 
 nmake install
-if ERRORLEVEL 1 exit /b 1
-
-echo CMake build completed successfully.
+if ERRORLEVEL 1 (
+    echo ERROR: install failed
+    exit /b %ERRORLEVEL%
+)
