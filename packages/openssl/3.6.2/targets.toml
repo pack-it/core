@@ -13,4 +13,4 @@ build_dependencies = ["perl"]
 [targets.mac]
 
 [targets.windows]
-build_dependencies = ["perl"]
+build_dependencies = ["perl", "nasm"]
