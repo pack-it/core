@@ -10,6 +10,10 @@ real_version = "3.01"
 url = "https://www.nasm.us/pub/nasm/releasebuilds/3.01/nasm-3.01.tar.xz"
 checksum = "b7324cbe86e767b65f26f467ed8b12ad80e124e3ccb89076855c98e43a9eddd4"
 
-[targets.unix]
+[targets.linux]
+postinstall_script = "linux_test"
+
+[targets.mac]
+postinstall_script = "macos_test"
 
 [targets.windows]

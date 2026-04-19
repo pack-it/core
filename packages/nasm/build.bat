@@ -31,3 +31,7 @@ REM Call vcvarsall.bat to set MSVC build environment
 call "%VCVARSALL%" %ARCH%
 
 nmake /f Mkfiles/msvc.mak prefix="%PACKIT_PACKAGE_PATH%"
+
+mkdir "%PACKIT_PACKAGE_PATH%\bin\"
+
+move ".\nasm.exe" "%PACKIT_PACKAGE_PATH%\bin\"

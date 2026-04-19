@@ -32,7 +32,11 @@ if "%PACKIT_TARGET%"=="x86_64-pc-windows-msvc" (
 REM Call vcvarsall.bat to set MSVC build environment
 call "%VCVARSALL%" %ARCH%
 
-perl configure %CONFIGURETARGET% "--prefix=%PACKIT_PACKAGE_PATH%" "--openssldir=%PACKIT_PREFIX_PATH%/etc/openssl@%PACKIT_PACKAGE_VERSION%"
+if "%PACKIT_TARGET%"=="x86_64-pc-windows-msvc" (
+    perl configure %CONFIGURETARGET% "--prefix=%PACKIT_PACKAGE_PATH%" "--openssldir=%PACKIT_PREFIX_PATH%/etc/openssl@%PACKIT_PACKAGE_VERSION%"
+) else (
+    perl configure %CONFIGURETARGET% no-asm "--prefix=%PACKIT_PACKAGE_PATH%" "--openssldir=%PACKIT_PREFIX_PATH%/etc/openssl@%PACKIT_PACKAGE_VERSION%"
+)
 
 nmake
 if ERRORLEVEL 1 (

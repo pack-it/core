@@ -13,4 +13,7 @@ build_dependencies = ["perl"]
 [targets.mac]
 
 [targets.windows]
+build_dependencies = ["perl"]
+
+[targets.x86_64-pc-windows-msvc]
 build_dependencies = ["perl", "nasm"]
