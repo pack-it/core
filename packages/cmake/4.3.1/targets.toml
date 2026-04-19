@@ -1,7 +1,7 @@
 version = "4.3.1"
 license = "BSD-3-Clause"
 dependencies = []
-build_dependencies = ["make"]
+build_dependencies = []
 
 [source]
 url = "https://cmake.org/files/v4.3/cmake-4.3.1.tar.gz"
@@ -10,4 +10,3 @@ checksum = "0798f4be7a1a406a419ac32db90c2956936fecbf50db3057d7af47d69a2d7edb"
 [targets.unix]
 
 [targets.windows]
-notes = "Requires an existing CMake installation and a Windows C++ toolchain"
