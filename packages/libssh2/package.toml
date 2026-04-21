@@ -1,0 +1,7 @@
+name = "libssh2"
+description = "A library implementing the SSH2 protocol"
+homepage = "https://libssh2.org/"
+versions = ["1.11.1"]
+
+[supported_versions]
+unix = "1.11.1"
