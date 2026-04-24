@@ -1,6 +1,6 @@
 name = "packit"
-description = ""
-homepage = ""
+description = "The universal package manager."
+homepage = "https://github.com/pack-it/packit"
 versions = ["0.0.1"]
 
 [supported_versions]
