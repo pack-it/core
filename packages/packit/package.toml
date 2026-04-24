@@ -1,0 +1,10 @@
+name = "packit"
+description = ""
+homepage = ""
+versions = ["0.0.1"]
+
+[supported_versions]
+x86_64-apple-darwin = "0.0.1"
+aarch64-apple-darwin = "0.0.1"
+x86_64-unknown-linux-gnu = "0.0.1"
+x86_64-pc-windows-msvc = "0.0.1"
