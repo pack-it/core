@@ -1,0 +1,7 @@
+name = "xz"
+description = "A general-purpose data-compression library plus command-line tools"
+homepage = "https://tukaani.org/xz/"
+versions = ["5.8.3"]
+
+[supported_versions]
+unix = "5.8.3"
