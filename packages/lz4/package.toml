@@ -1,0 +1,7 @@
+name = "lz4"
+description = "A lossless compression algorithm"
+homepage = "https://lz4.org/"
+versions = ["1.10.0"]
+
+[supported_versions]
+unix = "1.10.0"
