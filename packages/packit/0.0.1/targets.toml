@@ -2,6 +2,7 @@ version = "0.0.1"
 license = "GPL-3.0-only"
 dependencies = []
 build_dependencies = []
+use_version_specific_build = true
 
 [source.x86_64-apple-darwin]
 url = "https://github.com/pack-it/packit/releases/download/0.0.1/packit@0.0.1-0-x86_64-apple-darwin"
