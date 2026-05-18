@@ -1,0 +1,8 @@
+name = "cmake"
+description = "A crossplatform, open-source build system generator"
+homepage = "https://cmake.org"
+versions = ["4.3.1"]
+
+[supported_versions]
+unix = "4.3.1"
+windows = "4.3.1"
