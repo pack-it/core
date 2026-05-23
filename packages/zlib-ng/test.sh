@@ -1,5 +1,4 @@
 #!/bin/sh
-=
 
 test_text="Hello World! Duck, Mouse, Bird, Dog, Horse, idk, that's all the animals I know. I hope it's enough for this test code :)"
 echo "$test_text" > test.txt

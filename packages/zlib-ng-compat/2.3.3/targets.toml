@@ -2,6 +2,7 @@ version = "2.3.3"
 license = "Zlib"
 dependencies = []
 build_dependencies = []
+external_test_files = ["test.c"]
 
 [source]
 url = "https://github.com/zlib-ng/zlib-ng/archive/refs/tags/2.3.3.tar.gz"
