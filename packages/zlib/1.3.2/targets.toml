@@ -2,6 +2,7 @@ version = "1.3.2"
 license = "Zlib"
 dependencies = []
 build_dependencies = []
+external_test_files = ["test.c"]
 
 [source]
 url = "https://zlib.net/zlib-1.3.2.tar.gz"
