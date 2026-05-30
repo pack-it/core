@@ -1,0 +1,27 @@
+version = "4.3.3"
+license = "BSD-3-Clause"
+dependencies = []
+build_dependencies = []
+
+[source.unix]
+url = "https://cmake.org/files/v4.3/cmake-4.3.3.tar.gz"
+checksum = "cba4bb7a44edf2877bb6f059932896383babe435b3a8c3b5df48b4aa41c9bb85"
+
+[source.windows]
+url = "https://cmake.org/files/v4.3/cmake-4.3.3.tar.gz"
+checksum = "cba4bb7a44edf2877bb6f059932896383babe435b3a8c3b5df48b4aa41c9bb85"
+apply_patches_in = "cmake-4.3.3"
+patches.0 = {
+    url = "https://github.com/pack-it/cmake-bootstrap/releases/download/0.0.1/cmake.patch",
+    checksum = "78297d75748708730441c9196fea6b32722924870c05178bd2182b9b4c40f1cd"
+}
+patches.1 = {
+    url = "https://github.com/pack-it/cmake-bootstrap/releases/download/0.0.1/bootstrap.patch",
+    checksum = "ed93ec1cdff8333ca69fd536c86bcbc6d0ef36c463fa7b43c2ced102c7cabeb9"
+}
+
+[targets.unix]
+source = "unix"
+
+[targets.windows]
+source = "windows"

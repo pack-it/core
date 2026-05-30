@@ -1,53 +1,49 @@
 cd cmake-%PACKIT_PACKAGE_VERSION%
 
-set "VSWHERE=%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe"
-
-if not exist "%VSWHERE%" (
-    echo ERROR: Visual Studio Build Tools not found.
-    echo Install one of the following:
-    echo   https://aka.ms/vs/17/release/vs_BuildTools.exe
-    echo   https://visualstudio.microsoft.com/
-    exit /b 1
-)
-
-for /f "tokens=* usebackq" %%i in (`"%VSWHERE%" -latest -property installationPath`) do (
-    set "VSPATH=%%i"
+REM Read Visual Studio install path
+for /f "tokens=* usebackq" %%i in (`"C:\Program Files (x86)\Microsoft Visual Studio\Installer\vswhere" -latest -property installationPath`) do (
+    set VSPATH=%%i
 )
 
 if not exist "%VSPATH%" (
-    echo ERROR: Visual Studio cannot be loaded from %VSPATH%
+    echo Visual Studio cannot be loaded from %VSPATH%
     exit /b 1
 )
 
+REM Check if vcvarsall.bat exists
 set "VCVARSALL=%VSPATH%\VC\Auxiliary\Build\vcvarsall.bat"
-
 if not exist "%VCVARSALL%" (
-    echo ERROR: vcvarsall.bat cannot be loaded from %VCVARSALL%
+    echo vcvarsall.bat cannot be loaded from %VCVARSALL%
     exit /b 1
 )
-
 echo Found vcvarsall.bat at %VCVARSALL%
 
+REM Read MSVC version
+for /f "usebackq" %%v in ("%VSPATH%\VC\Auxiliary\Build\Microsoft.VCToolsVersion.default.txt") do (
+    set "MSVCVERSION=%%v"
+)
+echo Found MSVC version %MSVCVERSION%
+
+REM Convert MSVC version for make variable
+set "MSVCMAJOR=%MSVCVERSION:~0,2%"
+set "MSVCMINOR=%MSVCVERSION:~3,1%"
+set "MSVCNAME=MSVC%MSVCMAJOR%%MSVCMINOR%"
+echo Found MSCV name %MSVCNAME%
+
+REM Retrieve architecture from target
 if "%PACKIT_TARGET%"=="x86_64-pc-windows-msvc" (
-    set "ARCH=amd64"
-) else if "%PACKIT_TARGET%"=="i686-pc-windows-msvc" (
-    set "ARCH=x86"
+    set ARCH=x64
 ) else if "%PACKIT_TARGET%"=="aarch64-pc-windows-msvc" (
-    set "ARCH=arm64"
+    set ARCH=arm64
 ) else (
-    echo ERROR: Target %PACKIT_TARGET% is not supported for this package
+    echo Target %PACKIT_TARGET% is not supported for this package
     exit /b 1
 )
 
+REM Call vcvarsall.bat to set MSVC build environment
 call "%VCVARSALL%" %ARCH%
 
-where cl >nul 2>nul
-if ERRORLEVEL 1 (
-    echo ERROR: cl.exe not found after loading MSVC environment.
-    exit /b 1
-)
-
-bootstrap --prefix="%PACKIT_PACKAGE_PATH%" --no-system-libs --no-debugger
+powershell .\bootstrap.ps1 -prefix "%PACKIT_PACKAGE_PATH%" -no-system-libs -no-debugger
 if ERRORLEVEL 1 (
     echo ERROR: bootstrap failed
     exit /b %ERRORLEVEL%
