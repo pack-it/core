@@ -1,0 +1,19 @@
+version = "1.0.8"
+license = "bzip2-1.0.6"
+dependencies = []
+build_dependencies = []
+
+[script_args]
+major_version = "1"
+major_minor_version = "1.0"
+
+[source]
+url = "https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz"
+mirrors = [
+    "https://mirror.hs-esslingen.de/Mirrors/sourceware.org/bzip2/bzip2-1.0.8.tar.gz",
+]
+checksum = "ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269"
+
+[targets.unix]
+
+[targets.windows]

@@ -1,6 +1,7 @@
 supported_packages = [
     "autoconf",
     "automake",
+    "bzip2",
     "ca-certificates",
     "calc",
     "cmake",
