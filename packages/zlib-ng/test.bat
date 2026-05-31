@@ -35,10 +35,10 @@ REM Compile test.c
 cl /I "%PACKIT_PACKAGE_PATH%\include" test.c /Fe:test.exe /link /LIBPATH:"%PACKIT_PACKAGE_PATH%\lib" zlib-ng.lib
 
 REM Compress the test.txt file
-./test.exe < test.txt > compressed
+.\test.exe < test.txt > compressed
 
 REM Decompress the compressed file
-./test.exe -d < compressed > decompressed.txt
+.\test.exe -d < compressed > decompressed.txt
 
 set /p RESULT = < decompressed.txt
 
