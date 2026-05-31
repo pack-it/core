@@ -3,6 +3,10 @@ license = "bzip2-1.0.6"
 dependencies = []
 build_dependencies = []
 
+[script_args]
+major_version = "1"
+major_minor_version = "1.0"
+
 [source]
 url = "https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz"
 mirrors = [
