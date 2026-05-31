@@ -1,4 +1,4 @@
-test_text="It's Sunday 10 of May 2026 and it's a beautiful summer day!"
+set test_text = "It's Sunday 10 of May 2026 and it's a beautiful summer day!"
 echo "%test_text%" > test.txt
 
 REM Compress and decompress to see if information stays the same

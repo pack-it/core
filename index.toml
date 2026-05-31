@@ -6,6 +6,7 @@ supported_packages = [
     "cmake",
     "htop",
     "libtool",
+    "lz4",
     "m4",
     "make",
     "nasm",

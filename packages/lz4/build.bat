@@ -1,5 +1,7 @@
-cd lz4-$PACKIT_PACKAGE_VERSION
+cd lz4-%PACKIT_PACKAGE_VERSION%
 
-make
+cmake -S "build/cmake" -B build
 
-make install PREFIX=%PACKIT_PACKAGE_PATH%
+cmake --build build --config Release
+
+cmake --install build --prefix "%PACKIT_PACKAGE_PATH%"
