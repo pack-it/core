@@ -46,6 +46,4 @@ if %ERRORLEVEL% GEQ 8 exit /b %ERRORLEVEL%
 robocopy . "%PACKIT_PACKAGE_PATH%\include" bzlib.h
 if %ERRORLEVEL% GEQ 8 exit /b %ERRORLEVEL%
 
-dir
-
 exit /b 0
