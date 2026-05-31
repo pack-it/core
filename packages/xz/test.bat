@@ -3,7 +3,9 @@ echo "%TEST_TEXT%" > test.txt
 
 REM Compress and decompress to see if information stays the same
 "%PACKIT_PACKAGE_PATH%\bin\xz" -c test.txt > compressed.xz
+if ERRORLEVEL 1 exit /b %ERRORLEVEL%
 "%PACKIT_PACKAGE_PATH%\bin\xz" -dc compressed.xz > decompressed.txt
+if ERRORLEVEL 1 exit /b %ERRORLEVEL%
 
 set /p RESULT = < decompressed.txt
 

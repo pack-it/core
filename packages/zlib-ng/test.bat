@@ -33,12 +33,15 @@ echo "%TEST_TEXT%" > test.txt
 
 REM Compile test.c
 cl /I "%PACKIT_PACKAGE_PATH%\include" test.c /Fe:test.exe /link /LIBPATH:"%PACKIT_PACKAGE_PATH%\lib" zlib-ng.lib
+if ERRORLEVEL 1 exit /b %ERRORLEVEL%
 
 REM Compress the test.txt file
 .\test.exe < test.txt > compressed
+if ERRORLEVEL 1 exit /b %ERRORLEVEL%
 
 REM Decompress the compressed file
 .\test.exe -d < compressed > decompressed.txt
+if ERRORLEVEL 1 exit /b %ERRORLEVEL%
 
 set /p RESULT = < decompressed.txt
 

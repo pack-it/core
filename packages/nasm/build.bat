@@ -31,6 +31,10 @@ REM Call vcvarsall.bat to set MSVC build environment
 call "%VCVARSALL%" %ARCH%
 
 nmake /f Mkfiles/msvc.mak prefix="%PACKIT_PACKAGE_PATH%"
+if ERRORLEVEL 1 (
+    echo NASM build failed
+    exit /b %ERRORLEVEL%
+)
 
 mkdir "%PACKIT_PACKAGE_PATH%\bin\"
 
