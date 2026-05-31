@@ -1,8 +1,8 @@
 name = "nasm"
 description = "A cross-platform x86 assembler with an Intel-like syntax"
 homepage = "https://www.nasm.us/"
-versions = ["3.1"]
+versions = ["3.01"]
 
 [supported_versions]
-unix = "3.1"
-windows = "3.1"
+unix = "3.01"
+windows = "3.01"
