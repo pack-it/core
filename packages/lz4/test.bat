@@ -1,5 +1,5 @@
-set test_text = "It's Sunday 10 of May 2026 and it's a beautiful summer day!"
-echo "%test_text%" > test.txt
+set TEST_TEXT = "It's Sunday 10 of May 2026 and it's a beautiful summer day!"
+echo "%TEST_TEXT%" > test.txt
 
 REM Compress and decompress to see if information stays the same
 lz4 test.txt compressed.lz4
