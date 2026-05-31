@@ -115,3 +115,8 @@ A list of other archive and mirrors services (excluding the GNU mirror list):
 - https://invisible-mirror.net/archives
 - https://sourceware.org/pub/
 - https://mirror.hs-esslingen.de/Mirrors/
+- SourceForge (https://sourceforge.net/)
+
+A list of Perl CPAN mirrors:
+- https://cpan.metacpan.org/src/
+- https://mirror.netcologne.de/cpan/src/
