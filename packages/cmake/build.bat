@@ -31,20 +31,22 @@ if "%PACKIT_TARGET%"=="x86_64-pc-windows-msvc" (
 REM Call vcvarsall.bat to set MSVC build environment
 call "%VCVARSALL%" %ARCH%
 
+REM Bootstrap cmake
 powershell -File .\bootstrap.ps1 -prefix "%PACKIT_PACKAGE_PATH%" -no-system-libs -no-debugger
 if ERRORLEVEL 1 (
-    echo ERROR: bootstrap failed
+    echo CMake bootstrap failed
     exit /b %ERRORLEVEL%
 )
 
+REM Build cmake
 nmake
 if ERRORLEVEL 1 (
-    echo ERROR: build failed
+    echo CMake build failed
     exit /b %ERRORLEVEL%
 )
 
 nmake install
 if ERRORLEVEL 1 (
-    echo ERROR: install failed
+    echo CMake install failed
     exit /b %ERRORLEVEL%
 )
