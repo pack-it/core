@@ -16,6 +16,7 @@ supported_packages = [
     "pkgconf",
     "readline",
     "tree",
+    "xz",
     "zlib",
     "zlib-ng",
     "zlib-ng-compat",
