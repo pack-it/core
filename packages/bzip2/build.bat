@@ -1,13 +1,64 @@
 cd bzip2-%PACKIT_PACKAGE_VERSION%
 
-make -f makefile.msc 
+REM Read Visual Studio install path
+for /f "tokens=* usebackq" %%i in (`"C:\Program Files (x86)\Microsoft Visual Studio\Installer\vswhere" -latest -property installationPath`) do (
+    set VSPATH=%%i
+)
 
-mkdir -p "%PACKIT_PACKAGE_PATH%\bin" 2 > nul 
-mkdir -p "%PACKIT_PACKAGE_PATH%\lib" 2 > nul
-mkdir -p "%PACKIT_PACKAGE_PATH%\include" 2> nul
+if not exist "%VSPATH%" (
+    echo Visual Studio cannot be loaded from %VSPATH%
+    exit /b 1
+)
 
+REM Check if vcvarsall.bat exists
+set "VCVARSALL=%VSPATH%\VC\Auxiliary\Build\vcvarsall.bat"
+if not exist "%VCVARSALL%" (
+    echo vcvarsall.bat cannot be loaded from %VCVARSALL%
+    exit /b 1
+)
+echo Found vcvarsall.bat at %VCVARSALL%
 
-copy /Y bzip2.exe "%PACKIT_PACKAGE_PATH%\bin\bzip2.exe"
-copy /Y bzip2recover.exe "%PACKIT_PACKAGE_PATH%\bin\bzip2recover.exe"
-copy /Y libbz2.lib "%PACKIT_PACKAGE_PATH%\lib\libbz2.lib"
-copy /Y bzlib.h "%PACKIT_PACKAGE_PATH%\include\bzlib.h"
+REM Retrieve architecture from target
+if "%PACKIT_TARGET%"=="x86_64-pc-windows-msvc" (
+    set ARCH=x64
+) else if "%PACKIT_TARGET%"=="aarch64-pc-windows-msvc" (
+    set ARCH=arm64
+) else (
+    echo Target %PACKIT_TARGET% is not supported for this package
+    exit /b 1
+)
+
+REM Call vcvarsall.bat to set MSVC build environment
+call "%VCVARSALL%" %ARCH%
+
+nmake -f makefile.msc 
+if ERRORLEVEL 1 (
+    echo Make install failed
+    exit /b %ERRORLEVEL%
+)
+
+robocopy . "%PACKIT_PACKAGE_PATH%\bin" bzip2.exe
+if %ERRORLEVEL% GEQ 8 (
+    echo File bzip2.exe could not be coppied.
+    exit /b 1
+)
+
+robocopy . "%PACKIT_PACKAGE_PATH%\bin" bzip2recover.exe
+if %ERRORLEVEL% GEQ 8 (
+    echo File bzip2recover.exe could not be coppied.
+    exit /b 1
+)
+
+robocopy . "%PACKIT_PACKAGE_PATH%\lib" libbz2.lib
+if %ERRORLEVEL% GEQ 8 (
+    echo File libbz2.lib could not be coppied.
+    exit /b 1
+)
+
+robocopy . "%PACKIT_PACKAGE_PATH%\include" bzlib.h
+if %ERRORLEVEL% GEQ 8 (
+    echo File bzlib.h could not be coppied.
+    exit /b 1
+)
+
+exit /b 0

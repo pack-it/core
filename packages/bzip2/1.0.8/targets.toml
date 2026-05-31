@@ -1,7 +1,7 @@
 version = "1.0.8"
 license = "bzip2-1.0.6"
 dependencies = []
-build_dependencies = ["cmake"]
+build_dependencies = []
 
 [source]
 url = "https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz"
@@ -10,3 +10,4 @@ checksum = "ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269"
 [targets.unix]
 
 [targets.windows]
+build_dependencies = ["cmake"]
