@@ -18,18 +18,6 @@ if not exist "%VCVARSALL%" (
 )
 echo Found vcvarsall.bat at %VCVARSALL%
 
-REM Read MSVC version
-for /f "usebackq" %%v in ("%VSPATH%\VC\Auxiliary\Build\Microsoft.VCToolsVersion.default.txt") do (
-    set "MSVCVERSION=%%v"
-)
-echo Found MSVC version %MSVCVERSION%
-
-REM Convert MSVC version for make variable
-set "MSVCMAJOR=%MSVCVERSION:~0,2%"
-set "MSVCMINOR=%MSVCVERSION:~3,1%"
-set "MSVCNAME=MSVC%MSVCMAJOR%%MSVCMINOR%"
-echo Found MSCV name %MSVCNAME%
-
 REM Retrieve architecture from target
 if "%PACKIT_TARGET%"=="x86_64-pc-windows-msvc" (
     set ARCH=x64
@@ -43,7 +31,7 @@ if "%PACKIT_TARGET%"=="x86_64-pc-windows-msvc" (
 REM Call vcvarsall.bat to set MSVC build environment
 call "%VCVARSALL%" %ARCH%
 
-powershell .\bootstrap.ps1 -prefix "%PACKIT_PACKAGE_PATH%" -no-system-libs -no-debugger
+powershell -File .\bootstrap.ps1 -prefix "%PACKIT_PACKAGE_PATH%" -no-system-libs -no-debugger
 if ERRORLEVEL 1 (
     echo ERROR: bootstrap failed
     exit /b %ERRORLEVEL%
