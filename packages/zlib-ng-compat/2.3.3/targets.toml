@@ -13,3 +13,7 @@ external_test_files = ["test.c"]
 [targets.mac]
 skip_symlinking = true
 external_test_files = ["test.c"]
+
+[targets.windows]
+build_dependencies = ["cmake"]
+external_test_files = ["test.c"]
