@@ -3,6 +3,7 @@ supported_packages = [
     "automake",
     "ca-certificates",
     "calc",
+    "cmake",
     "htop",
     "libtool",
     "m4",
