@@ -4,3 +4,6 @@ cd bzip2-$PACKIT_PACKAGE_VERSION
 make 
 
 make install PREFIX="$PACKIT_PACKAGE_PATH"
+
+mkdir $PACKIT_PACKAGE_PATH/share
+mv $PACKIT_PACKAGE_PATH/man $PACKIT_PACKAGE_PATH/share/man
