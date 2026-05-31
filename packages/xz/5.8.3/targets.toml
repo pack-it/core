@@ -1,0 +1,18 @@
+version = "5.8.3"
+license = { all = [
+    "0BSD",
+    "GPL-2.0-only",
+    "GPL-3.0-only",
+    "LGPL-2.1-or-later",
+] }
+dependencies = []
+build_dependencies = []
+
+[source]
+url = "https://github.com/tukaani-project/xz/releases/download/v5.8.3/xz-5.8.3.tar.gz"
+checksum = "3d3a1b973af218114f4f889bbaa2f4c037deaae0c8e815eec381c3d546b974a0"
+
+[targets.unix]
+
+[targets.windows]
+build_dependencies = ["cmake"]
