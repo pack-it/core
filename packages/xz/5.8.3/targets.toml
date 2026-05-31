@@ -1,5 +1,10 @@
 version = "5.8.3"
-license = { all = ["0BSD", "GPL-2.0-only", "GPL-3.0-only", "LGPL-2.1"] }
+license = { all = [
+    "0BSD",
+    "GPL-2.0-only",
+    "GPL-3.0-only",
+    "LGPL-2.1-or-later",
+] }
 dependencies = []
 build_dependencies = []
 
