@@ -33,32 +33,19 @@ call "%VCVARSALL%" %ARCH%
 
 nmake -f makefile.msc 
 if ERRORLEVEL 1 (
-    echo Make install failed
+    echo Bzip2 build failed
     exit /b %ERRORLEVEL%
 )
 
 robocopy . "%PACKIT_PACKAGE_PATH%\bin" bzip2.exe
-if %ERRORLEVEL% GEQ 8 (
-    echo File bzip2.exe could not be coppied.
-    exit /b 1
-)
-
+if %ERRORLEVEL% GEQ 8 exit /b %ERRORLEVEL%
 robocopy . "%PACKIT_PACKAGE_PATH%\bin" bzip2recover.exe
-if %ERRORLEVEL% GEQ 8 (
-    echo File bzip2recover.exe could not be coppied.
-    exit /b 1
-)
-
+if %ERRORLEVEL% GEQ 8 exit /b %ERRORLEVEL%
 robocopy . "%PACKIT_PACKAGE_PATH%\lib" libbz2.lib
-if %ERRORLEVEL% GEQ 8 (
-    echo File libbz2.lib could not be coppied.
-    exit /b 1
-)
-
+if %ERRORLEVEL% GEQ 8 exit /b %ERRORLEVEL%
 robocopy . "%PACKIT_PACKAGE_PATH%\include" bzlib.h
-if %ERRORLEVEL% GEQ 8 (
-    echo File bzlib.h could not be coppied.
-    exit /b 1
-)
+if %ERRORLEVEL% GEQ 8 exit /b %ERRORLEVEL%
+
+dir
 
 exit /b 0
