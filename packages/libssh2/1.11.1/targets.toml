@@ -1,7 +1,7 @@
 version = "1.11.1"
 license = "BSD-3-Clause"
 dependencies = ["openssl"]
-build_dependencies = ["autoconf", "automake", "libtool"]
+build_dependencies = []
 external_test_files = ["test.c"]
 
 [source]
