@@ -2,6 +2,7 @@ version = "1.11.1"
 license = "BSD-3-Clause"
 dependencies = ["openssl"]
 build_dependencies = ["autoconf", "automake", "libtool"]
+external_test_files = ["test.c"]
 
 [source]
 url = "https://libssh2.org/download/libssh2-1.11.1.tar.gz"
