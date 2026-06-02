@@ -23,4 +23,5 @@ supported_packages = [
     "zlib",
     "zlib-ng",
     "zlib-ng-compat",
+    "zstd"
 ]
