@@ -4,4 +4,5 @@ homepage = "https://libpng.org/"
 versions = ["1.6.57"]
 
 [supported_versions]
+unix = "1.6.57"
 windows = "1.6.57"
