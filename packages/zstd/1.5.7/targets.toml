@@ -10,3 +10,4 @@ checksum = "37d7284556b20954e56e1ca85b80226768902e2edabd3b649e9e72c0c9012ee3"
 [targets.unix]
 
 [targets.windows]
+build_dependencies = ["cmake"]
