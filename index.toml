@@ -8,6 +8,7 @@ supported_packages = [
     "htop",
     "libssh2",
     "libtool",
+    "llhttp",
     "lz4",
     "m4",
     "make",
