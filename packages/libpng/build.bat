@@ -1,4 +1,4 @@
-cd make-%PACKIT_PACKAGE_VERSION%
+cd libpng-%PACKIT_PACKAGE_VERSION%
 
 if %PACKIT_TARGET% "x86_64-pc-windows-msvc" (
     nmake -f scripts\makefile.vcwin32

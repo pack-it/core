@@ -6,6 +6,7 @@ supported_packages = [
     "calc",
     "cmake",
     "htop",
+    "libpng",
     "libtool",
     "lz4",
     "m4",
