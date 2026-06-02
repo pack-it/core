@@ -1,0 +1,8 @@
+name = "llhttp"
+description = "Port of http_parser to llparse"
+homepage = "https://llhttp.org/"
+versions = ["9.4.1"]
+
+[supported_versions]
+unix = "9.4.1"
+windows = "9.4.1"
