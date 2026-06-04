@@ -1,5 +1,5 @@
 name = "libuv"
-description = "A asynchronous I/O multi-platform support library"
+description = "An asynchronous I/O multi-platform support library"
 homepage = "https://libuv.org"
 versions = ["1.51.0"]
 
