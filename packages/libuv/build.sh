@@ -1,4 +1,4 @@
-#! /usr/bin/env sh 
+#!/bin/sh 
 
 cd "libuv-$PACKIT_PACKAGE_VERSION"
 
