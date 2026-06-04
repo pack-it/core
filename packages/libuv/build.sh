@@ -6,4 +6,5 @@ cmake -B build -S . \
     -DCMAKE_INSTALL_PREFIX="$PACKIT_PACKAGE_PATH"
 
 cmake --build build
+
 cmake --install build
