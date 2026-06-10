@@ -1,4 +1,4 @@
-cd sqlite-%PACKIT_PACKAGE_VERSION%
+cd sqlite-autoconf-%PACKIT_ARGS_ARCHIVE_VERSION%
 
 REM Read Visual Studio install path
 for /f "tokens=* usebackq" %%i in (`"C:\Program Files (x86)\Microsoft Visual Studio\Installer\vswhere" -latest -property installationPath`) do (

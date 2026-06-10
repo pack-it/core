@@ -6,7 +6,7 @@ set "db_path=test.db"
     echo 3|Linus|20
 ) > expected_output.txt
 
-sqlite3 %db_path% < test.sql > output.txt
+"%PACKIT_PACKAGE_PATH%\bin\sqlite3.exe" %db_path% < test.sql > output.txt
 if ERRORLEVEL 1 (
     echo Test failed: sqlite3 command exited with code %ERRORLEVEL%
     exit /b 1
