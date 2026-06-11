@@ -1,0 +1,8 @@
+name = "sqlite"
+description = "Small, fast, self-contained, high-reliability, full-featured, SQL database engine"
+homepage = "https://sqlite.org/"
+versions = ["3.53.2"]
+
+[supported_versions]
+unix = "3.53.2"
+windows = "3.53.2"
