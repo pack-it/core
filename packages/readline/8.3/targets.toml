@@ -11,6 +11,7 @@ mirrors = [
     "https://mirror.netcologne.de/gnu/readline/readline-8.3.tar.gz"
 ]
 checksum = "fe5383204467828cd495ee8d1d3c037a7eba1389c22bc6a041f627976f9061cc"
+#TODO: Use patches
 
 [targets.mac]
 
