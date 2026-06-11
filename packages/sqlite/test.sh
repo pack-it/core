@@ -1,10 +1,10 @@
 #!/bin/sh
 
 db_path="test.db"
-expected_output="4|Bob|25
+expected_output="3|Bob|20
 2|Bob|10
 1|Eve|17
-3|Linus|20"
+4|Mr. Pirate|25"
 
 output=$("$PACKIT_PACKAGE_PATH/bin/sqlite3" $db_path < test.sql)
 

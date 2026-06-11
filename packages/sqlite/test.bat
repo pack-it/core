@@ -1,9 +1,9 @@
 set "db_path=test.db"
 (
-    echo 4|Bob|25
-    echo 2|Bob|10
-    echo 1|Eve|17
-    echo 3|Linus|20
+    echo 3^|Bob^|20
+    echo 2^|Bob^|10
+    echo 1^|Eve^|17
+    echo 4^|Mr. Pirate^|25
 ) > expected_output.txt
 
 "%PACKIT_PACKAGE_PATH%\bin\sqlite3.exe" %db_path% < test.sql > output.txt

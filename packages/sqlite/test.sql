@@ -8,8 +8,8 @@ CREATE TABLE people (
 INSERT INTO people (name, age, location) VALUES
 ('Eve', 17, 'Rust, Germany'),
 ('Bob', 10, 'Charlotte, North Carolina'),
-('Linus', 20, 'Shellingford, UK'),
-('Bob', 25, 'Dublin, Ireland (Somewhere in a pub)');
+('Bob', 20, 'Shellingford, UK'),
+('Mr. Pirate', 25, 'Dublin, Ireland (Somewhere in a pub)');
 
 SELECT id, name, age
 FROM people
