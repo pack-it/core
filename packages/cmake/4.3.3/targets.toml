@@ -26,13 +26,8 @@ patches.1 = {
     checksum = "ed93ec1cdff8333ca69fd536c86bcbc6d0ef36c463fa7b43c2ced102c7cabeb9"
 }
 
-[targets.mac]
+[targets.unix]
 source = "unix"
-build_script = "build_macos"
-
-[targets.linux]
-source = "unix"
-build_script = "build_linux"
 
 [targets.windows]
 source = "windows"
