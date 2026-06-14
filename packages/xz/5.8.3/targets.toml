@@ -10,6 +10,10 @@ build_dependencies = []
 
 [source]
 url = "https://github.com/tukaani-project/xz/releases/download/v5.8.3/xz-5.8.3.tar.gz"
+mirrors = [
+    "https://codeberg.org/tukaani/xz/releases/download/v5.8.3/xz-5.8.3.tar.gz",
+    "https://downloads.sourceforge.net/project/lzmautils/xz-5.8.3.tar.gz"
+]
 checksum = "3d3a1b973af218114f4f889bbaa2f4c037deaae0c8e815eec381c3d546b974a0"
 
 [targets.unix]

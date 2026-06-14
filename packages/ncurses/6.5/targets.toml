@@ -2,6 +2,7 @@ version = "6.5"
 license = "MIT-open-group"
 dependencies = []
 build_dependencies = []
+external_test_files = ["test.c"]
 
 [source]
 url = "https://ftpmirror.gnu.org/gnu/ncurses/ncurses-6.5.tar.gz" 

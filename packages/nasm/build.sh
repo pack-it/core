@@ -1,5 +1,5 @@
 #!/bin/sh
-cd nasm-$PACKIT_ARGS_REAL_VERSION
+cd nasm-$PACKIT_PACKAGE_VERSION
 
 ./configure --prefix=$PACKIT_PACKAGE_PATH
 

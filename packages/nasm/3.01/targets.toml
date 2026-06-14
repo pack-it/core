@@ -1,10 +1,7 @@
-version = "3.1"
+version = "3.01"
 license = "BSD-2-Clause"
 dependencies = []
 build_dependencies = []
-
-[script_args]
-real_version = "3.01"
 
 [source]
 url = "https://www.nasm.us/pub/nasm/releasebuilds/3.01/nasm-3.01.tar.xz"

@@ -4,8 +4,8 @@ test_text="It's Sunday 10 of May 2026 and it's a beautiful summer day!"
 echo "$test_text" > test.txt
 
 # Compress and decompress to see if information stays the same
-xz -c test.txt > compressed.xz
-xz -dc compressed.xz > decompressed.txt
+"$PACKIT_PACKAGE_PATH/bin/xz" -c test.txt > compressed.xz
+"$PACKIT_PACKAGE_PATH/bin/xz" -dc compressed.xz > decompressed.txt
 
 result=$(cat decompressed.txt)
 
