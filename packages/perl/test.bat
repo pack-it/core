@@ -6,7 +6,7 @@ if ERRORLEVEL 1 (
     exit /b 1
 )
 
-if "%output%" != "%test_text%" (
+if not "%output%" == "%test_text%" (
     echo Test failed: perl print test did not print the expected text
     exit /b 1
 )

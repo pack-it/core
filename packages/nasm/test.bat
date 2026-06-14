@@ -42,7 +42,7 @@ REM Hello example from https://cs.lmu.edu/~ray/notes/nasmtutorial/
     echo         db      'Hello', 0
 ) > test.asm
 
-"$PACKIT_PACKAGE_PATH\bin\nasm.exe" -f win32 test.asm
+"%PACKIT_PACKAGE_PATH%\bin\nasm.exe" -f win32 test.asm
 link /subsystem:console /entry:main /out:test.exe test.obj
 
 for /f "delims=" %%A in ("test.exe") do set "output=%%A"
