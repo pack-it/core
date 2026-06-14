@@ -18,8 +18,12 @@ make
 
 make install
 
-# Change working directory to package path to create symlinks
+# Change working directory to package path to create symlinks and patch ncursesw6-config
 cd $PACKIT_PACKAGE_PATH
+
+# Replace prefix inside ncursesw6-config script
+sed "s|$PACKIT_PACKAGE_PATH|$PACKIT_PREFIX_PATH/active/ncurses|g" bin/ncursesw6-config > bin/ncursesw6-config.patched
+mv bin/ncursesw6-config.patched bin/ncursesw6-config
 
 ln -s libformw.a lib/libform.a
 ln -s libformw_g.a lib/libform_g.a
