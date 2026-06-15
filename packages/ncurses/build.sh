@@ -8,7 +8,6 @@ cd ncurses-$PACKIT_PACKAGE_VERSION
     --enable-symlinks \
     --enable-widec \
     --with-shared \
-    --disable-cxx \
     --with-cxx-shared \
     --without-ada \
     --disable-root-access \
