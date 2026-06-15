@@ -1,0 +1,17 @@
+version = "4.4.1"
+license = "GPL-3.0-or-later"
+dependencies = []
+build_dependencies = []
+
+[source]
+url = "https://ftpmirror.gnu.org/gnu/make/make-4.4.1.tar.gz"
+mirrors = [
+  "https://ftp.gnu.org/gnu/make/make-4.4.1.tar.gz",
+  "https://mirrors.kernel.org/gnu/make/make-4.4.1.tar.gz",
+  "https://mirror.csclub.uwaterloo.ca/gnu/make/make-4.4.1.tar.gz"
+]
+checksum = "dd16fb1d67bfab79a72f5e8390735c49e3e8e70b4945a15ab1f81ddb78658fb3"
+
+[targets.unix]
+
+[targets.windows]
