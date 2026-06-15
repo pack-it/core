@@ -1,0 +1,20 @@
+version = "4.0.0"
+license = "Apache-2.0"
+dependencies = ["ca-certificates"]
+build_dependencies = []
+external_test_files = ["test.pem"]
+
+[source]
+url = "https://github.com/openssl/openssl/releases/download/openssl-4.0.0/openssl-4.0.0.tar.gz"
+checksum = "c32cf49a959c4f345f9606982dd36e7d28f7c58b19c2e25d75624d2b3d2f79ac"
+
+[targets.linux]
+build_dependencies = ["perl"]
+
+[targets.mac]
+
+[targets.windows]
+build_dependencies = ["perl"]
+
+[targets.x86_64-pc-windows-msvc]
+build_dependencies = ["perl", "nasm"]
