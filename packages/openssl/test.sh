@@ -11,7 +11,7 @@ if [ "$output" != "$expected_output" ]; then
     exit 1
 fi
 
-output=$("$PACKIT_PACKAGE_PATH/bin/openssl" verify test.pem 2>&1)
+output=$("$PACKIT_PACKAGE_PATH/bin/openssl" verify test.pem 2>&1 || true)
 
 if ! echo "$output" | grep -q "verification failed"; then
     echo "Test failed: verifying an invalid certificate did not result in a failed verification"
