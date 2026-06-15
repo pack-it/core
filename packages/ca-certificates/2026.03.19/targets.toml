@@ -1,4 +1,4 @@
-version = "2026.3.19"
+version = "2026.03.19"
 license = "MPL-2.0"
 dependencies = []
 build_dependencies = []

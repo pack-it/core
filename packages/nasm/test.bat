@@ -1,4 +1,3 @@
-REM Read Visual Studio install path
 for /f "tokens=* usebackq" %%i in (`"C:\Program Files (x86)\Microsoft Visual Studio\Installer\vswhere" -latest -property installationPath`) do (
     set VSPATH=%%i
 )
@@ -28,24 +27,31 @@ if "%PACKIT_TARGET%"=="x86_64-pc-windows-msvc" (
 REM Call vcvarsall.bat to set MSVC build environment
 call "%VCVARSALL%" %ARCH%
 
-set TEST_TEXT = "Hello World! Duck, Mouse, Bird, Dog, Horse, idk, that's all the animals I know. I hope it's enough for this test code :)"
-echo "%TEST_TEXT%" > test.txt
+REM Hello example from https://cs.lmu.edu/~ray/notes/nasmtutorial/
+(
+    echo         global  main
+    echo         extern  puts
+    echo         section .text
+    echo main:
+    echo         sub     rsp, 28h
+    echo         mov     rcx, message
+    echo         call    puts
+    echo         add     rsp, 28h
+    echo         ret
+    echo message:
+    echo         db      'Hello', 0
+) > test.asm
 
-REM Compile test.c
-cl /I "%PACKIT_PACKAGE_PATH%\include" test.c /Fe:test.exe /link /LIBPATH:"%PACKIT_PACKAGE_PATH%\lib" zlib-ng.lib
-if ERRORLEVEL 1 exit /b %ERRORLEVEL%
+"%PACKIT_PACKAGE_PATH%\bin\nasm.exe" -f win64 test.asm
+link /subsystem:console /out:test.exe test.obj msvcrt.lib
 
-REM Compress the test.txt file
-.\test.exe < test.txt > compressed
-if ERRORLEVEL 1 exit /b %ERRORLEVEL%
+for /f "usebackq delims=" %%A in (`test.exe`) do set "output=%%A"
+if ERRORLEVEL 1 (
+    echo Test failed: test assembly executable exited with code %ERRORLEVEL%
+    exit /b 1
+)
 
-REM Decompress the compressed file
-.\test.exe -d < compressed > decompressed.txt
-if ERRORLEVEL 1 exit /b %ERRORLEVEL%
-
-set /p RESULT = < decompressed.txt
-
-if "%RESULT%" == "%TEST_TEXT%" (
+if "%output%" == "Hello" (
     exit /b 0
 )
 

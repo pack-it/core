@@ -1,4 +1,4 @@
-cd nasm-%PACKIT_ARGS_REAL_VERSION%
+cd nasm-%PACKIT_PACKAGE_VERSION%
 
 REM Read Visual Studio install path
 for /f "tokens=* usebackq" %%i in (`"C:\Program Files (x86)\Microsoft Visual Studio\Installer\vswhere" -latest -property installationPath`) do (
@@ -31,6 +31,10 @@ REM Call vcvarsall.bat to set MSVC build environment
 call "%VCVARSALL%" %ARCH%
 
 nmake /f Mkfiles/msvc.mak prefix="%PACKIT_PACKAGE_PATH%"
+if ERRORLEVEL 1 (
+    echo NASM build failed
+    exit /b %ERRORLEVEL%
+)
 
 mkdir "%PACKIT_PACKAGE_PATH%\bin\"
 

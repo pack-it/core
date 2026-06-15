@@ -1,6 +1,7 @@
 version = "6.6"
 dependencies = []
 build_dependencies = []
+external_test_files = ["test.c"]
 
 [source]
 url = "https://ftpmirror.gnu.org/gnu/ncurses/ncurses-6.6.tar.gz" 

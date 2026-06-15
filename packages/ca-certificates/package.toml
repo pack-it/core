@@ -1,8 +1,8 @@
 name = "ca-certificates"
 description = "The Mozilla CA certificate store in PEM format"
 homepage = "https://curl.se/docs/caextract.html"
-versions = ["2026.3.19"]
+versions = ["2026.03.19"]
 
 [supported_versions]
-unix = "2026.3.19"
-windows = "2026.3.19"
+unix = "2026.03.19"
+windows = "2026.03.19"
