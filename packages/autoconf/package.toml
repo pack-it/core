@@ -1,7 +1,7 @@
 name = "autoconf"
 description = "Tool for generating configure scripts for software builds"
 homepage = "https://www.gnu.org/software/autoconf/"
-versions = ["2.72"]
+versions = ["2.72", "2.73"]
 
 [supported_versions]
-unix = "2.72"
+unix = "2.72-=2.73"
