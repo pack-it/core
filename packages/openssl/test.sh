@@ -2,7 +2,8 @@
 
 test_input="I hashed the previous version of this script, unfortunately the hash was my only backup. Whoops!"
 
-expected_output="SHA2-256(stdin)= a6a6ac959ebea1f5ec010438e2ccec6fbc73f1cc53797a02ae6cbf3cd9477e9a"
+# This hash does not match the hash on Windows, due to line ending differences
+expected_output="SHA2-256(stdin)= 38517b49c926cb5178a28c388075b9caeca07cc52c398d4419c2fa6f98947c7b"
 output=$(echo "$test_input" | "$PACKIT_PACKAGE_PATH/bin/openssl" sha256 -hex)
 
 if [ "$output" != "$expected_output" ]; then

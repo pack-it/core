@@ -1,5 +1,6 @@
 echo I hashed the previous version of this script, unfortunately the hash was my only backup. Whoops! > test.txt
 
+REM This hash does not match the hash on Unix, due to line ending differences
 set "expected_output=SHA2-256(stdin)= a6a6ac959ebea1f5ec010438e2ccec6fbc73f1cc53797a02ae6cbf3cd9477e9a"
 
 for /f "usebackq delims=" %%A in (`"%PACKIT_PACKAGE_PATH%\bin\openssl.exe" sha256 -hex ^< test.txt`) do set "output=%%A"

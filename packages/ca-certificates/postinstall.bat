@@ -22,7 +22,7 @@ setlocal enabledelayedexpansion
 
 for %%j in (*.pem) do (
 	openssl x509 -inform pem -checkend 0 -noout < "%%j" >nul ^
-	&& openssl x509 -text -noout -noout < "%%j" > output.txt ^
+	&& openssl x509 -text -noout < "%%j" > output.txt ^
 	&& findstr /C:"CA:TRUE" output.txt >nul ^
 	&& (
 		for /f "delims=" %%A in ('openssl x509 -inform pem -fingerprint -sha256 -noout -in "%%j"') do set "fingerprint=%%A"

@@ -1,4 +1,4 @@
-set "test_output=Let's make make work"
+set "test_output=Let us make make work"
 
 (
     echo all:
