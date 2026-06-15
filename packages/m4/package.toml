@@ -1,7 +1,7 @@
 name = "m4"
 description = "Macro processor for generating and transforming text"
 homepage = "https://www.gnu.org/software/m4/"
-versions = ["1.4.20"]
+versions = ["1.4.20", "1.4.21"]
 
 [supported_versions]
-unix = "1.4.20"
+unix = "1.4.20-=1.4.21"
