@@ -1,0 +1,20 @@
+version = "3.6.3"
+license = "Apache-2.0"
+dependencies = ["ca-certificates"]
+build_dependencies = []
+external_test_files = ["test.pem"]
+
+[source]
+url = "https://github.com/openssl/openssl/releases/download/openssl-3.6.3/openssl-3.6.3.tar.gz"
+checksum = "243a86649cf6f23eeb6a2ff2456e09e5d77dd9018a54d3d96b0c6bdd6ba6c7f1"
+
+[targets.linux]
+build_dependencies = ["perl"]
+
+[targets.mac]
+
+[targets.windows]
+build_dependencies = ["perl"]
+
+[targets.x86_64-pc-windows-msvc]
+build_dependencies = ["perl", "nasm"]
