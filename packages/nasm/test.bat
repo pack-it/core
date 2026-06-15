@@ -42,10 +42,10 @@ REM Hello example from https://cs.lmu.edu/~ray/notes/nasmtutorial/
     echo         db      'Hello', 0
 ) > test.asm
 
-"%PACKIT_PACKAGE_PATH%\bin\nasm.exe" -f win32 test.asm
-link /subsystem:console /entry:main /out:test.exe test.obj
+"%PACKIT_PACKAGE_PATH%\bin\nasm.exe" -f win64 test.asm
+link /subsystem:console /out:test.exe test.obj msvcrt.lib
 
-for /f "delims=" %%A in ("test.exe") do set "output=%%A"
+for /f "usebackq delims=" %%A in (`test.exe`) do set "output=%%A"
 if ERRORLEVEL 1 (
     echo Test failed: test assembly executable exited with code %ERRORLEVEL%
     exit /b 1

@@ -5,7 +5,7 @@ set "test_output=Let's make make work"
     echo 	@echo %test_output%
 ) > Makefile
 
-for /f "delims=" %%A in ("%PACKIT_PACKAGE_PATH%\bin\make.exe") do set "output=%%A"
+for /f "usebackq delims=" %%A in (`"%PACKIT_PACKAGE_PATH%\bin\make.exe"`) do set "output=%%A"
 if ERRORLEVEL 1 (
     echo Test failed: make command exited with code %ERRORLEVEL%
     exit /b 1
