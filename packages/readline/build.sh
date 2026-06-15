@@ -1,5 +1,5 @@
 #!/bin/sh
-cd readline-$PACKIT_PACKAGE_VERSION
+cd readline-$PACKIT_ARGS_MAJOR_MINOR_VERSION
 
 ./configure --prefix=$PACKIT_PACKAGE_PATH --with-curses
 
