@@ -1,0 +1,10 @@
+version = "2.17.0.0"
+license = "LGPL-2.1-or-later"
+dependencies = ["readline"]
+build_dependencies = []
+
+[source]
+url = "https://github.com/lcn2/calc/archive/refs/tags/v2.17.0.0.tar.gz"
+checksum = "aeea09ed7c5b5a7c1913e4eff5bc49cd4bad0b987da8b259792293416b986525"
+
+[targets.unix]
