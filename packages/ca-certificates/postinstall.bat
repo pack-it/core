@@ -4,7 +4,7 @@ if ERRORLEVEL 1 (
     mklink "cert.pem" "cacert.pem" >nul
     exit /b 0
 )
-echo "Found openssl, creating certificates bundle using system certificates"
+echo Found openssl, creating certificates bundle using system certificates
 
 set "tempdir=%TEMP%\packit-ca-certificates-%RANDOM%-%RANDOM%"
 mkdir %tempdir%
@@ -36,4 +36,5 @@ for %%j in (*.pem) do (
 )
 endlocal
 
+cd "%PACKIT_PACKAGE_PATH%"
 rmdir /s /q "%tempdir%"
