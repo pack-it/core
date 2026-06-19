@@ -12,6 +12,7 @@ supported_packages = [
     "libpng",
     "libssh2",
     "libtool",
+    "libuv",
     "llhttp",
     "lz4",
     "m4",
