@@ -1,5 +1,5 @@
 version = "1.51.0"
-license = { all = "MIT", "BSD-3-Clause", "ISC" }
+license = { all = ["MIT", "BSD-2-Clause", "ISC"] }
 dependencies = []
 build_dependencies = ["cmake"]
 
