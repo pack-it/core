@@ -8,3 +8,5 @@ if %PACKIT_TARGET% "x86_64-pc-windows-msvc" (
     echo Insupported target, exiting
     exit /b 1
 )
+
+if ERRORLEVEL 1 exit /b %ERRORLEVEL%
