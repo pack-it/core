@@ -5,7 +5,7 @@ build_dependencies = ["cmake"]
 
 [source]
 url = "https://dist.libuv.org/dist/v1.51.0/libuv-v1.51.0.tar.gz"
-checksum = "7be14604eadc348db9e58db58ba7576624b9dc5cab93946211c9c6bb3f8fc39e"
+checksum = "5f0557b90b1106de71951a3c3931de5e0430d78da1d9a10287ebc7a3f78ef8eb"
 
 [targets.unix]
 
