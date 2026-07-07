@@ -1,7 +1,7 @@
 version = "3.5.1"
 license = "GPL-2.0-or-later"
 dependencies = ["ncurses@>6.0"]
-build_dependencies = ["autoconf", "automake", "libtool"]
+build_dependencies = ["autoconf", "automake", "libtool", "pkgconf"]
 
 [source]
 url = "https://github.com/htop-dev/htop/archive/refs/tags/3.5.1.tar.gz"
