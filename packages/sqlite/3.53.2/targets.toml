@@ -10,6 +10,7 @@ archive_version = "3530200"
 [source]
 url = "https://sqlite.org/2026/sqlite-autoconf-3530200.tar.gz"
 checksum = "588ad51949419a56ebe81fe56193d510c559eb94c9a57748387860b5d3069316"
+size = 3279926
 
 [targets.linux]
 dependencies = ["readline"]

@@ -7,6 +7,7 @@ external_test_files = ["test.c"]
 [source]
 url = "https://github.com/nodejs/llhttp/archive/refs/tags/release/v9.4.1.tar.gz"
 checksum = "86a8c16759fdcc7aa2c9841fbe8ba2e77ea98be7d5d45615f2604776d0ff78c7"
+size = 40396
 
 [targets.unix]
 

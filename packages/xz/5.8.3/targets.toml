@@ -15,6 +15,7 @@ mirrors = [
     "https://downloads.sourceforge.net/project/lzmautils/xz-5.8.3.tar.gz"
 ]
 checksum = "3d3a1b973af218114f4f889bbaa2f4c037deaae0c8e815eec381c3d546b974a0"
+size = 2771455
 
 [targets.unix]
 

@@ -11,6 +11,7 @@ mirrors = [
   "https://mirror.csclub.uwaterloo.ca/gnu/autoconf/autoconf-2.73.tar.gz"
 ]
 checksum = "259ddfa3bddc799cfb81489cc0f17dfdf1bd6d1505dda53c0f45ff60d6a4f9a7"
+size = 2183815
 
 [targets.linux]
 dependencies = ["perl"]
