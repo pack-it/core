@@ -13,6 +13,7 @@ mirrors = [
     "https://mirror.netcologne.de/cpan/src/5.0/perl-5.42.2.tar.gz"
 ]
 checksum = "9384e8deb75b7b1695e5637971b752281aaecd025a3d5d4734d33c1d0adfee47"
+size = 20609653
 
 [targets.unix]
 

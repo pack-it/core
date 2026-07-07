@@ -6,18 +6,22 @@ build_dependencies = []
 [source.x86_64-apple-darwin]
 url = "https://github.com/pack-it/packit/releases/download/0.0.2/packit@0.0.2-0-x86_64-apple-darwin.tar.gz"
 checksum = "a47d0071e4635b4a55a6ce3580d7661b80a69d2b9a407fadf2d03ddb5cc0b5a0"
+size = 6279628
 
 [source.aarch64-apple-darwin]
 url = "https://github.com/pack-it/packit/releases/download/0.0.2/packit@0.0.2-0-aarch64-apple-darwin.tar.gz"
 checksum = "7a64367857648e8b9fbb09d0fa7ec3b36bc76afa91a79fa28261151c335c2782"
+size = 5872877
 
 [source.x86_64-unknown-linux-gnu]
 url = "https://github.com/pack-it/packit/releases/download/0.0.2/packit@0.0.2-0-x86_64-unknown-linux-gnu.tar.gz"
 checksum = "301628e5cb2f9a46719504a4bbc48e8ab48ca12ee8fdb0e3b994104f8ebb52b9"
+size = 6581700
 
 [source.x86_64-pc-windows-msvc]
 url = "https://github.com/pack-it/packit/releases/download/0.0.2/packit@0.0.2-0-x86_64-pc-windows-msvc.tar.gz"
 checksum = "30565e389e9884a3316fdbc21c24633b2fc791378cd5ef01e094138d25931e23"
+size = 5352887
 
 [targets.x86_64-apple-darwin]
 source = "x86_64-apple-darwin"

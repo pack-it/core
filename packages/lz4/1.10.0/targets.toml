@@ -6,6 +6,7 @@ build_dependencies = []
 [source]
 url = "https://github.com/lz4/lz4/archive/refs/tags/v1.10.0.tar.gz"
 checksum = "537512904744b35e232912055ccf8ec66d768639ff3abe5788d90d792ec5f48b"
+size = 387114
 
 [targets.unix]
 

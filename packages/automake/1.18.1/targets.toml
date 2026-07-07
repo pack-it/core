@@ -11,5 +11,6 @@ mirrors = [
   "https://mirror.csclub.uwaterloo.ca/gnu/automake/automake-1.18.1.tar.gz"
 ]
 checksum = "63e585246d0fc8772dffdee0724f2f988146d1a3f1c756a3dc5cfbefa3c01915"
+size = 2376062
 
 [targets.unix]

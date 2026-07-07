@@ -9,6 +9,7 @@ mirrors = [
     "https://github.com/Kitware/CMake/releases/download/v4.3.3/cmake-4.3.3.tar.gz"
 ]
 checksum = "cba4bb7a44edf2877bb6f059932896383babe435b3a8c3b5df48b4aa41c9bb85"
+size = 12971567
 
 [source.windows]
 url = "https://cmake.org/files/v4.3/cmake-4.3.3.tar.gz"
@@ -16,6 +17,7 @@ mirrors = [
     "https://github.com/Kitware/CMake/releases/download/v4.3.3/cmake-4.3.3.tar.gz"
 ]
 checksum = "cba4bb7a44edf2877bb6f059932896383babe435b3a8c3b5df48b4aa41c9bb85"
+size = 12971567
 apply_patches_in = "cmake-4.3.3"
 patches.0 = {
     url = "https://github.com/pack-it/cmake-bootstrap/releases/download/0.0.1/cmake.patch",

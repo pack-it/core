@@ -6,5 +6,6 @@ build_dependencies = ["autoconf", "automake", "libtool"]
 [source]
 url = "https://github.com/htop-dev/htop/archive/refs/tags/3.5.1.tar.gz"
 checksum = "dfc4a09845e9bc86f466a722e62b8f87d59028ff39689077ff2257a6a605061d"
+size = 469546
 
 [targets.unix]

@@ -10,6 +10,7 @@ file_version = "2026-05-14"
 url = "https://curl.se/ca/cacert-2026-05-14.pem"
 checksum = "86a1f3366afac7c6f8ae9f3c779ac221129328c43f0ab2b8817eb2f362a5025c"
 skip_unpack = true
+size = 189462
 
 [targets.linux]
 postinstall_script = "linux_postinstall"
