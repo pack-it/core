@@ -2,3 +2,4 @@ name = "packit-core"
 description = "The core system-package repository of Packit."
 license = "Apache-2.0"
 maintainers = ["The Packit Team"]
+required_packit_version = "0.0.2" # Does already contain metadata fields from v0.0.3, but backwards compatible.

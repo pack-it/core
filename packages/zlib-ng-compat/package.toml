@@ -2,6 +2,7 @@ name = "zlib-ng-compat"
 description = "zlib data compression library for the next generation systems"
 homepage = "https://github.com/zlib-ng/zlib-ng"
 versions = ["2.3.3"]
+conflicts_with = ["zlib"]
 
 [supported_versions]
 unix = "2.3.3"
