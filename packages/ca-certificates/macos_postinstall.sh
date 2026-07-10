@@ -45,7 +45,7 @@ policy="skip"
 
             # Check if the certificate is trusted
             if [ "$policy" != "skip" ]; then
-                if ! echo "$cert" | /usr/bin/security verify-cert -c /dev/stdin -l -L -R offline -p "$policy" > /dev/null; then
+                if ! echo "$cert" | /usr/bin/security verify-cert -c /dev/stdin -l -L -R offline -p "$policy" >&3; then
                     cert=""
                     inside=0
                     continue

@@ -39,11 +39,7 @@ EOF
 "$PACKIT_PACKAGE_PATH/bin/autoheader"
 "$PACKIT_PACKAGE_PATH/bin/autoconf"
 
-if [ "$PACKIT_VERBOSE" = "1" ]; then
-    ./configure
-else
-    ./configure >/dev/null
-fi
+./configure >&3
 
 if [ ! -e "config.status" ]; then
     echo "Test failed: config.status not found"
@@ -68,11 +64,7 @@ if grep "@CC@" Makefile; then
     exit 1
 fi
 
-if [ "$PACKIT_VERBOSE" = "1" ]; then
-    make
-else
-    make >/dev/null
-fi
+make >&3
 
 expected_output="Autoconf works, wooo!"
 output=$("./main")

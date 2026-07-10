@@ -24,26 +24,11 @@ main_SOURCES = main.c
 EOF
 
 "$PACKIT_PACKAGE_PATH/bin/aclocal"
-
-if [ "$PACKIT_VERBOSE" = "1" ]; then
-    "$PACKIT_PACKAGE_PATH/bin/automake" --add-missing --foreign
-else
-    "$PACKIT_PACKAGE_PATH/bin/automake" --add-missing --foreign >/dev/null 2>/dev/null
-fi
-
+"$PACKIT_PACKAGE_PATH/bin/automake" --add-missing --foreign >&3 2>&3
 "$PACKIT_PACKAGE_DEPENDENCIES_PATH/autoconf/bin/autoconf"
 
-if [ "$PACKIT_VERBOSE" = "1" ]; then
-    ./configure
-else
-    ./configure >/dev/null
-fi
-
-if [ "$PACKIT_VERBOSE" = "1" ]; then
-    make
-else
-    make >/dev/null
-fi
+./configure >&3
+make >&3
 
 expected_output="Automake works, wooo!"
 output=$("./main")
