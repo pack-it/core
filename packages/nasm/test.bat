@@ -12,7 +12,7 @@ if not exist "%VCVARSALL%" (
     echo vcvarsall.bat cannot be loaded from %VCVARSALL%
     exit /b 1
 )
-echo Found vcvarsall.bat at %VCVARSALL%
+echo Found vcvarsall.bat at %VCVARSALL% %PACKIT_OUTPUTS% >&3
 
 REM Retrieve architecture from target
 if "%PACKIT_TARGET%"=="x86_64-pc-windows-msvc" (
@@ -25,7 +25,7 @@ if "%PACKIT_TARGET%"=="x86_64-pc-windows-msvc" (
 )
 
 REM Call vcvarsall.bat to set MSVC build environment
-call "%VCVARSALL%" %ARCH%
+call "%VCVARSALL%" %ARCH% %PACKIT_OUTPUTS% >&3
 
 REM Hello example from https://cs.lmu.edu/~ray/notes/nasmtutorial/
 (
@@ -43,7 +43,7 @@ REM Hello example from https://cs.lmu.edu/~ray/notes/nasmtutorial/
 ) > test.asm
 
 "%PACKIT_PACKAGE_PATH%\bin\nasm.exe" -f win64 test.asm
-link /subsystem:console /out:test.exe test.obj msvcrt.lib
+link /subsystem:console /out:test.exe test.obj msvcrt.lib %PACKIT_OUTPUTS% >&3
 
 for /f "usebackq delims=" %%A in (`test.exe`) do set "output=%%A"
 if ERRORLEVEL 1 (

@@ -23,11 +23,11 @@ if [ "$PACKIT_OS" = "mac" ]; then
     libtool="$PACKIT_PACKAGE_PATH/bin/glibtool"
 fi
 
-"$libtool" --mode=compile gcc -c test.c -o test.lo >/dev/null
-"$libtool" --mode=link gcc -shared -o libtest.la test.lo >/dev/null
+"$libtool" --mode=compile gcc -c test.c -o test.lo >&3
+"$libtool" --mode=link gcc -shared -o libtest.la test.lo >&3
 
-"$libtool" --mode=compile gcc -c main.c -o main.lo >/dev/null
-"$libtool" --mode=link gcc -o main main.lo libtest.la >/dev/null
+"$libtool" --mode=compile gcc -c main.c -o main.lo >&3
+"$libtool" --mode=link gcc -o main main.lo libtest.la >&3
 
 expected_output="Libtool works, time to build some libraries!"
 output=$(./main)
@@ -42,7 +42,7 @@ if [ "$PACKIT_OS" = "mac" ]; then
     libtoolize="$PACKIT_PACKAGE_PATH/bin/glibtoolize"
 fi
 
-"$libtoolize" --ltdl >/dev/null
+"$libtoolize" --ltdl >&3
 
 if [ ! -d libltdl ]; then
     echo "Test failed: libtoolize did not create the libltdl directory"

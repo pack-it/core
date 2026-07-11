@@ -13,7 +13,7 @@ if not exist "%VCVARSALL%" (
     echo vcvarsall.bat cannot be loaded from %VCVARSALL%
     exit /b 1
 )
-echo Found vcvarsall.bat at %VCVARSALL%
+echo Found vcvarsall.bat at %VCVARSALL% %PACKIT_OUTPUTS% >&3
 
 REM Retrieve architecture from target
 if "%PACKIT_TARGET%"=="x86_64-pc-windows-msvc" (
@@ -26,10 +26,10 @@ if "%PACKIT_TARGET%"=="x86_64-pc-windows-msvc" (
 )
 
 REM Call vcvarsall.bat to set MSVC build environment
-call "%VCVARSALL%" %ARCH%
+call "%VCVARSALL%" %ARCH% %PACKIT_OUTPUTS% >&3
 
-cl /I "%PACKIT_PACKAGE_PATH%\include" test.c /Fe:test.exe /link /LIBPATH:"%PACKIT_PACKAGE_PATH%\lib" llhttp.lib
+cl /I "%PACKIT_PACKAGE_PATH%\include" test.c /Fe:test.exe /link /LIBPATH:"%PACKIT_PACKAGE_PATH%\lib" llhttp.lib %PACKIT_OUTPUTS% >&3 2>&3
 if ERRORLEVEL 1 exit /b %ERRORLEVEL%
 
-.\test.exe
+.\test.exe %PACKIT_OUTPUTS% >&3
 if ERRORLEVEL 1 exit /b %ERRORLEVEL%

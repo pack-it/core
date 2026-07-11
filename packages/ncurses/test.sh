@@ -3,7 +3,7 @@
 expected_output="$PACKIT_PREFIX_PATH/active/ncurses"
 output=$("$PACKIT_PACKAGE_PATH/bin/ncursesw6-config" --prefix)
 if [ "$output" != "$expected_output" ]; then
-    echo "Test failed: nursesw6-config --prefix does not return the active package path"
+    echo "Test failed: ncursesw6-config --prefix does not return the active package path"
     exit 1
 fi
 

@@ -10,10 +10,10 @@ openssl_path=$(command -v openssl)
 
 # Only read system certificates if openssl is installed
 (
-  [ -n "$openssl_path" ] && cat "/etc/ssl/certs/ca-certificates.crt" 2> /dev/null
-  [ -n "$openssl_path" ] && cat "/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem" 2> /dev/null
-  [ -n "$openssl_path" ] && cat "/etc/ssl/ca-bundle.pem" 2> /dev/null
-  [ -n "$openssl_path" ] && cat "/etc/ssl/cert.pem" 2> /dev/null
+  [ -n "$openssl_path" ] && cat "/etc/ssl/certs/ca-certificates.crt" 2>&3
+  [ -n "$openssl_path" ] && cat "/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem" 2>&3
+  [ -n "$openssl_path" ] && cat "/etc/ssl/ca-bundle.pem" 2>&3
+  [ -n "$openssl_path" ] && cat "/etc/ssl/cert.pem" 2>&3
 
   cat cacert.pem
 ) | while IFS= read -r line; do
@@ -27,7 +27,7 @@ openssl_path=$(command -v openssl)
             # Only do checks with openssl if openssl is installed
             if [ -n "$openssl_path" ]; then
                 # Check if certificate is not expired
-                if ! echo "$cert" | "$openssl_path" x509 -inform pem -checkend 0 -noout > /dev/null; then
+                if ! echo "$cert" | "$openssl_path" x509 -inform pem -checkend 0 -noout >&3; then
                     cert=""
                     inside=0
                     continue
