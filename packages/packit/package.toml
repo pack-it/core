@@ -1,10 +1,10 @@
 name = "packit"
 description = "The universal package manager."
 homepage = "https://github.com/pack-it/packit"
-versions = ["0.0.1", "0.0.2"]
+versions = ["0.0.1", "0.0.2", "0.0.3"]
 
 [supported_versions]
-x86_64-apple-darwin = "0.0.1-=0.0.2"
-aarch64-apple-darwin = "0.0.1-=0.0.2"
-x86_64-unknown-linux-gnu = "0.0.1-=0.0.2"
-x86_64-pc-windows-msvc = "0.0.1-=0.0.2"
+x86_64-apple-darwin = "0.0.1-=0.0.3"
+aarch64-apple-darwin = "0.0.1-=0.0.3"
+x86_64-unknown-linux-gnu = "0.0.1-=0.0.3"
+x86_64-pc-windows-msvc = "0.0.1-=0.0.3"
