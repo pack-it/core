@@ -1,0 +1,12 @@
+version = "1.51.0"
+license = { all = ["MIT", "BSD-2-Clause", "ISC"] }
+dependencies = []
+build_dependencies = ["cmake"]
+
+[source]
+url = "https://dist.libuv.org/dist/v1.51.0/libuv-v1.51.0.tar.gz"
+checksum = "5f0557b90b1106de71951a3c3931de5e0430d78da1d9a10287ebc7a3f78ef8eb"
+
+[targets.unix]
+
+[targets.windows]
