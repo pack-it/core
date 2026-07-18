@@ -16,3 +16,5 @@ dependencies = ["zlib-ng-compat"]
 
 [targets.windows]
 dependencies = ["zlib-ng-compat"]
+build_requirements = ["msvc"]
+test_requirements = ["msvc"]
