@@ -19,3 +19,4 @@ size = 2307891
 build_script = "macos_build"
 
 [targets.windows]
+build_requirements = ["msvc"] # The build_w32.bat script expects to find MSVC

@@ -15,3 +15,5 @@ test_script = "linux_test"
 test_script = "macos_test"
 
 [targets.windows]
+build_requirements = ["msvc"]
+test_requirements = ["msvc"]
