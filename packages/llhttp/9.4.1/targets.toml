@@ -12,3 +12,4 @@ size = 40396
 [targets.unix]
 
 [targets.windows]
+test_requirements = ["msvc"]

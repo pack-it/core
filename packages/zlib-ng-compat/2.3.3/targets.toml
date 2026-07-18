@@ -16,3 +16,4 @@ skip_symlinking = true
 
 [targets.windows]
 build_dependencies = ["cmake"]
+test_requirements = ["msvc"]

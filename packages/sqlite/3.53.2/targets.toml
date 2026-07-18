@@ -20,3 +20,4 @@ dependencies = ["readline"]
 skip_symlinking = true
 
 [targets.windows]
+build_requirements = ["msvc"]
