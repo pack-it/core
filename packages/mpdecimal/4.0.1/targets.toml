@@ -13,3 +13,5 @@ size = 316268
 
 [targets.windows]
 build_dependencies = ["cmake"]
+build_requirements = ["msvc"]
+test_requirements = ["msvc"]

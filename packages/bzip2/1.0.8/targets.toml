@@ -18,3 +18,4 @@ size = 810029
 [targets.unix]
 
 [targets.windows]
+build_requirements = ["msvc"]

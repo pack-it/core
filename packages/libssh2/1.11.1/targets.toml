@@ -19,3 +19,4 @@ dependencies = ["zlib-ng-compat"]
 
 [targets.windows]
 build_dependencies = ["cmake@>=3.18"]
+test_requirements = ["msvc"]
