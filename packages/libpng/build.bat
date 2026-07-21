@@ -35,12 +35,12 @@ if "%PACKIT_TARGET%" == "x86_64-pc-windows-msvc" (
 ) else if "%PACKIT_TARGET%" == "aarch64-pc-windows-msvc" (
     nmake -f scripts\makefile.vcwin-arm64
 ) else (
-    echo Insupported target, exiting
+    echo Target %PACKIT_TARGET% is not supported for this package
     exit /b 1
 )
 
 if ERRORLEVEL 1 (
-    echo Nmake build for libpng failed
+    echo libpng build failed
     exit /b 1
 )
 
