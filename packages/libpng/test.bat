@@ -28,7 +28,7 @@ if "%PACKIT_TARGET%"=="x86_64-pc-windows-msvc" (
 REM Call vcvarsall.bat to set MSVC build environment
 call "%VCVARSALL%" %ARCH% %PACKIT_OUTPUTS% >&3
 
-cl /I "%PACKIT_PACKAGE_PATH%\include" test.c /Fe:test.exe /link /LIBPATH:"%PACKIT_PACKAGE_PATH%\lib" libpng.lib "%PACKIT_PREFIX_PATH%\lib\zlib.lib" %PACKIT_OUTPUTS% >&3 2>&3
+cl /I "%PACKIT_PACKAGE_PATH%\include" test.c /Fe:test.exe /link /LIBPATH:"%PACKIT_PACKAGE_PATH%\lib" libpng.lib "%PACKIT_PACKAGE_DEPENDENCIES_PATH%\zlib-ng-compat\lib\zlib.lib" %PACKIT_OUTPUTS% >&3 2>&3
 if ERRORLEVEL 1 exit /b %ERRORLEVEL%
 
 .\test.exe
