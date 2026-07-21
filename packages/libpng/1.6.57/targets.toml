@@ -1,6 +1,6 @@
 version = "1.6.57"
 license = "libpng-2.0"
-dependencies = ["zlib"]
+dependencies = []
 build_dependencies = []
 external_test_files = ["test.c", "test.png"]
 
@@ -10,8 +10,10 @@ checksum = "4cbb7b0746edc1683c9581b373365e955133b7f1243f171b7d1535b4415dfedb"
 size = 1591776
 
 [targets.mac]
+dependencies = ["zlib"]
 
 [targets.linux]
 dependencies = ["zlib-ng-compat"]
 
 [targets.windows]
+dependencies = ["zlib-ng-compat"]
