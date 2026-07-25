@@ -20,6 +20,7 @@ supported_packages = [
     "perl",
     "pkgconf",
     "readline",
+    "scdoc",
     "sqlite",
     "tree",
     "xz",
