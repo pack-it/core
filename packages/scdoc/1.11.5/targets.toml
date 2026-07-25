@@ -1,0 +1,12 @@
+version = "1.11.5"
+license = "MIT"
+dependencies = []
+build_dependencies = []
+external_test_files = ["test.scd", "test.expected"]
+
+[source]
+url = "https://git.sr.ht/~sircmpwn/scdoc/archive/1.11.5.tar.gz"
+checksum = "98780bbdf16c1bce89ef3a8c0f537ac6e4ea77087b609e7698857614488a2a62"
+size = 13481
+
+[targets.unix]

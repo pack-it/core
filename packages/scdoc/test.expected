@@ -1,0 +1,62 @@
+.\" Complete documentation for this program is not available as a GNU info page
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.nh
+.ad l
+.\" Begin generated content:
+.TH "TEST" "7" "2026\-07\-25"
+.PP
+.SH NAME
+.PP
+test \- scdoc feature test
+.PP
+.SH SYNOPSIS
+.PP
+\fBtest\fR [\fIOPTIONS\fR] <file>
+.PP
+.SH DESCRIPTION
+.PP
+This is a test document for the scdoc man page generator.\&
+.PP
+It is written for the Packit core repository scdoc test script.\&
+.PP
+.SH OPTIONS
+.PP
+\fB\-h\fR, \fB\-\-help\fR
+.RS 4
+Show help information.\&
+.PP
+.RE
+\fB\-v\fR, \fB\-\-version\fR
+.RS 4
+Show version information.\&
+.PP
+.RE
+\fB\-o\fR <file>
+.RS 4
+Write output to \fIfile\fR.\&
+.PP
+.RE
+.SH INTERESTING STORY
+.PP
+This test file was created by some extraterrestrial being far away
+from Earth.\& It was transmitted from a planet in the Third Universe,
+approximately 100,000,000,000 light\-years from the Sun.\& Any
+resemblance to a scdoc test file is purely coincidental.\& It turned
+out to be an accurate test file for scdoc, which is why we used it
+in Packit.\&
+.PP
+Please don'\&t tell anyone you'\&ve found this!\&
+.PP
+.SH SEE ALSO
+.PP
+\fBman\fR(1), \fBprintf\fR(3), \fBsh\fR(1)
+.PP
+.SH AUTHORS
+.PP
+Written by someone far away from earth for testing purposes.\&
+.PP
+.SH BUGS
+.PP
+If this document fails to render correctly, scdoc is not working correctly.\&
+Please raise an issue on pack\-it/core.\&

@@ -1,0 +1,7 @@
+name = "scdoc"
+description = "Simple man page generator for POSIX systems"
+homepage = "https://sr.ht/~sircmpwn/scdoc/"
+versions = ["1.11.5"]
+
+[supported_versions]
+unix = "1.11.5"
