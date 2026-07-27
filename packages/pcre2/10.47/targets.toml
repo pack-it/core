@@ -1,0 +1,15 @@
+version = "10.47"
+license = "BSD-3-Clause"
+dependencies = []
+build_dependencies = []
+
+[source]
+url = "https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.47/pcre2-10.47.tar.gz"
+checksum = "c08ae2388ef333e8403e670ad70c0a11f1eed021fd88308d7e02f596fcd9dc16"
+size = 2792969
+
+[targets.unix]
+build_dependencies = ["autoconf", "automake", "libtool"]
+
+[targets.windows]
+build_dependencies = ["cmake"]
