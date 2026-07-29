@@ -13,6 +13,7 @@ supported_packages = [
     "lz4",
     "m4",
     "make",
+    "mpdecimal",
     "nasm",
     "ncurses",
     "openssl",

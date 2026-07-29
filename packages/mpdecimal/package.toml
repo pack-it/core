@@ -1,0 +1,8 @@
+name = "mpdecimal"
+description = "A package for correctly-rounded arbitrary precision decimal floating point arithmetic"
+homepage = "https://www.bytereef.org/mpdecimal/index.html"
+versions = ["4.0.1"]
+
+[supported_versions]
+unix = "4.0.1"
+windows = "4.0.1"
