@@ -15,8 +15,9 @@ if [ "$PACKIT_OS" = "mac" ]; then
 else
     ./configure --prefix=$PACKIT_PACKAGE_PATH \
         $flags \
-        CPPFLAGS="-I$PACKIT_PACKAGE_DEPENDENCIES_PATH/zlib-ng-compat/include -I$PACKIT_PACKAGE_DEPENDENCIES_PATH/bzip2/include" \
-        LDFLAGS="-L$PACKIT_PACKAGE_DEPENDENCIES_PATH/zlib-ng-compat/lib -lz -L$PACKIT_PACKAGE_DEPENDENCIES_PATH/bzip2/lib -lbz2"
+        --enable-pcre2test-libreadline \
+        CPPFLAGS="-I$PACKIT_PACKAGE_DEPENDENCIES_PATH/zlib-ng-compat/include -I$PACKIT_PACKAGE_DEPENDENCIES_PATH/bzip2/include -I$PACKIT_PACKAGE_DEPENDENCIES_PATH/readline/include" \
+        LDFLAGS="-L$PACKIT_PACKAGE_DEPENDENCIES_PATH/zlib-ng-compat/lib -lz -L$PACKIT_PACKAGE_DEPENDENCIES_PATH/bzip2/lib -lbz2 -L$PACKIT_PACKAGE_DEPENDENCIES_PATH/readline/lib -lreadline"
 fi
 
 
