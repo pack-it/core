@@ -1,0 +1,21 @@
+version = "10.47"
+license = "BSD-3-Clause"
+dependencies = []
+build_dependencies = []
+external_test_files = ["test.c"]
+
+[source]
+url = "https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.47/pcre2-10.47.tar.gz"
+checksum = "c08ae2388ef333e8403e670ad70c0a11f1eed021fd88308d7e02f596fcd9dc16"
+size = 2792969
+
+[targets.mac]
+build_dependencies = ["autoconf", "automake", "libtool"]
+
+[targets.linux]
+dependencies = ["bzip2", "zlib-ng-compat", "readline"]
+build_dependencies = ["autoconf", "automake", "libtool", "pkgconf"]
+
+[targets.windows]
+dependencies = ["bzip2", "zlib-ng-compat"]
+build_dependencies = ["cmake"]

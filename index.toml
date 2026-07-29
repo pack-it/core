@@ -17,6 +17,7 @@ supported_packages = [
     "ncurses",
     "openssl",
     "packit",
+    "pcre2",
     "perl",
     "pkgconf",
     "readline",

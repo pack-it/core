@@ -1,0 +1,8 @@
+name = "pcre2"
+description = "A library with a set of C functions that implement regular expression pattern matching"
+homepage = "https://www.pcre.org/"
+versions = ["10.47"]
+
+[supported_versions]
+unix = "10.47"
+windows = "10.47"
