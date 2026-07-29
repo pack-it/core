@@ -13,4 +13,5 @@ size = 2792969
 build_dependencies = ["autoconf", "automake", "libtool"]
 
 [targets.windows]
+dependencies = ["bzip2", "zlib-ng-compat"]
 build_dependencies = ["cmake"]
