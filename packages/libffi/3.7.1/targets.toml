@@ -10,5 +10,3 @@ checksum = "d5e9a6638ddbd2513ddb54518eb67e4bbe6fa707bcc01c10f6212f0a088d819d"
 size = 1515185
 
 [targets.unix]
-
-[targets.windows]
