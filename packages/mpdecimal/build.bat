@@ -46,6 +46,8 @@ robocopy . "%PACKIT_PACKAGE_PATH%\include" mpdecimal.h
 if %ERRORLEVEL% GEQ 8 exit /b %ERRORLEVEL%
 robocopy . "%PACKIT_PACKAGE_PATH%\lib" libmpdec-4.0.1.lib libmpdec-4.0.1.dll libmpdec-4.0.1.dll.lib libmpdec-4.0.1.dll.exp
 if %ERRORLEVEL% GEQ 8 exit /b %ERRORLEVEL%
+mklink "%PACKIT_PACKAGE_PATH%\lib\libmpdec.lib" "%PACKIT_PACKAGE_PATH%\lib\libmpdec-4.0.1.lib"
+if ERRORLEVEL 1 exit /b %ERRORLEVEL%
 
 REM Go into C++ code libmpdec and compile it
 cd ..\libmpdec++
@@ -57,3 +59,5 @@ robocopy . "%PACKIT_PACKAGE_PATH%\include" decimal.hh
 if %ERRORLEVEL% GEQ 8 exit /b %ERRORLEVEL%
 robocopy . "%PACKIT_PACKAGE_PATH%\lib" libmpdec++-4.0.1.lib libmpdec++-4.0.1.dll libmpdec++-4.0.1.dll.lib libmpdec++-4.0.1.dll.exp
 if %ERRORLEVEL% GEQ 8 exit /b %ERRORLEVEL%
+mklink "%PACKIT_PACKAGE_PATH%\lib\libmpdec++.lib" "%PACKIT_PACKAGE_PATH%\lib\libmpdec++-4.0.1.lib"
+if ERRORLEVEL 1 exit /b %ERRORLEVEL%
