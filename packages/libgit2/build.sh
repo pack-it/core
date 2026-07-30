@@ -7,14 +7,28 @@ if [ "$PACKIT_OS" = "mac" ]; then
     extra_flags="-DCMAKE_INSTALL_RPATH=\"$PACKIT_PACKAGE_DEPENDENCIES_PATH/llhttp/lib\""
 fi
 
-cmake -S . -B build -DCMAKE_INSTALL_PREFIX="$PACKIT_PACKAGE_PATH" \
+# Build static library
+cmake -S . -B build-static -DCMAKE_INSTALL_PREFIX="$PACKIT_PACKAGE_PATH" -DCMAKE_BUILD_TYPE=Release \
+    -DBUILD_SHARED_LIBS=OFF \
     -DUSE_HTTP_PARSER=llhttp \
     -DUSE_SSH=ON \
     -DUSE_BUNDLED_ZLIB=OFF \
     $extra_flags
 
-cmake --build build --config Release
+cmake --build build-static --config Release
 
 ctest --verbose -C Release
 
-cmake --install build
+cmake --install build-static --config Release
+
+# Build shared libraries
+cmake -S . -B build-shared -DCMAKE_INSTALL_PREFIX="$PACKIT_PACKAGE_PATH" -DCMAKE_BUILD_TYPE=Release \
+    -DBUILD_SHARED_LIBS=ON \
+    -DUSE_HTTP_PARSER=llhttp \
+    -DUSE_SSH=ON \
+    -DUSE_BUNDLED_ZLIB=OFF \
+    $extra_flags
+
+cmake --build build-shared --config Release
+
+cmake --install build-shared --config Release
