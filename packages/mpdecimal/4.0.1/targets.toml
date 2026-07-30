@@ -12,3 +12,4 @@ size = 316268
 [targets.unix]
 
 [targets.windows]
+build_dependencies = ["cmake"]
