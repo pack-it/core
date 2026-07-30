@@ -1,0 +1,7 @@
+name = "libffi"
+description = "A portable, high level programming interface to various calling conventions"
+homepage = "https://sourceware.org/libffi/"
+versions = ["3.7.1"]
+
+[supported_versions]
+unix = "3.7.1"

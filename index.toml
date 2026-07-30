@@ -6,6 +6,7 @@ supported_packages = [
     "calc",
     "cmake",
     "htop",
+    "libffi",
     "libpng",
     "libssh2",
     "libtool",
