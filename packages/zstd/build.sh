@@ -2,6 +2,7 @@
 cd zstd-$PACKIT_PACKAGE_VERSION
 
 cmake -S build/cmake -B build -DCMAKE_INSTALL_PREFIX="$PACKIT_PACKAGE_PATH" \
+    -DCMAKE_BUILD_TYPE=Release \
     -DBUILD_SHARED_LIBS=ON \
     -DZSTD_PROGRAMS_LINK_SHARED=ON \
     -DZSTD_BUILD_CONTRIB=ON \
@@ -16,4 +17,4 @@ cmake --build build --config Release
 
 ctest --verbose -C Release
 
-cmake --install build
+cmake --install build --config Release
