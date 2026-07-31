@@ -9,8 +9,30 @@ expected_output="packit> $test_input"
 output=$(echo "$test_input
 " | ./test)
 
-if [ "$output" = "$expected_output" ]; then
-    exit 0
+if [ "$output" != "$expected_output" ]; then
+    exit 1
 fi
 
-exit 1
+cat << EOF > readline_test.c
+#include <stdio.h>
+#include <stdlib.h>
+#include <readline/readline.h>
+
+int main() {
+    char *line = readline("packit> ");
+    printf("%s\n", line);
+    return 0;
+}
+EOF
+
+# Compile readline_test.c
+gcc -L "$PACKIT_PACKAGE_PATH/libexec/lib" -I "$PACKIT_PACKAGE_PATH/libexec/include" readline_test.c -o readline_test -lreadline
+
+test_input="Please don't read this line"
+expected_output="$test_input"
+
+output=$(echo "$test_input" | ./readline_test)
+
+if [ "$output" != "$expected_output" ]; then
+    exit 1
+fi
