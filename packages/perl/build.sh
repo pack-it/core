@@ -20,6 +20,6 @@ active_dir="$PACKIT_PREFIX_PATH/active/perl"
 
 make
 
-make test
+NO_NETWORK_TESTING=1 make test
 
 make install
