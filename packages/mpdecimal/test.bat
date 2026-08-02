@@ -33,5 +33,5 @@ cl /I "%PACKIT_PACKAGE_PATH%\include" test.c /Fe:test.exe /link /LIBPATH:"%PACKI
 if ERRORLEVEL 1 exit /b %ERRORLEVEL%
 
 REM Execute test
-.\test.exe
+.\test.exe %PACKIT_OUTPUTS% >&3 2>&3
 if ERRORLEVEL 1 exit /b %ERRORLEVEL%
