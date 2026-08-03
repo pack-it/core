@@ -5,7 +5,9 @@ extra_flags=""
 if [ "$PACKIT_OS" = "mac" ]; then
     # The DCMAKE_INSTALL_RPATH is needed because llhttp has an install name containing @rpath
     extra_flags="-DCMAKE_INSTALL_RPATH=\"$PACKIT_PACKAGE_DEPENDENCIES_PATH/llhttp/lib\""
-else
+fi
+
+if [ "$PACKIT_OS" = "linux" ]; then
     extra_flags="-DREGEX_BACKEND=pcre2"
     extra_flags="$extra_flags -DPCRE2_LIBRARY=$PACKIT_PACKAGE_DEPENDENCIES_PATH/pcre2/lib/libpcre2-8.so"
 fi
