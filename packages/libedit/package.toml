@@ -1,0 +1,7 @@
+name = "libedit"
+description = "An autotool- and libtoolized port of the NetBSD Editline library (libedit)"
+homepage = "https://thrysoee.dk/editline/"
+versions = ["3.1"]
+
+[supported_versions]
+unix = "3.1"
