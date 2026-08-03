@@ -1,7 +1,16 @@
 #!/bin/sh
 cd libedit-$PACKIT_ARGS_DATE_VERSION-$PACKIT_PACKAGE_VERSION
 
-./configure --prefix=$PACKIT_PACKAGE_PATH
+
+if [ "$PACKIT_OS" = "mac" ]; then
+    ./configure --prefix=$PACKIT_PACKAGE_PATH
+fi
+
+if [ "$PACKIT_OS" = "linux" ]; then
+    ./configure --prefix=$PACKIT_PACKAGE_PATH \
+        CPPFLAGS="-I$PACKIT_PACKAGE_DEPENDENCIES_PATH/ncurses/include" \
+        LDFLAGS="-L$PACKIT_PACKAGE_DEPENDENCIES_PATH/ncurses/lib -lncurses"
+fi
 
 make
 

@@ -1,10 +1,12 @@
 #!/bin/sh
 
 # Compile test.c
-gcc -L "$PACKIT_PACKAGE_PATH/lib" -I "$PACKIT_PACKAGE_PATH/include" test.c -o test -ledit -lncurses
+gcc -L "$PACKIT_PACKAGE_PATH/lib" -I "$PACKIT_PACKAGE_PATH/include" -Wl,-rpath,"$PACKIT_PACKAGE_PATH/lib" test.c -o test -ledit
 
 test_input="Edit edit edit leave a good review on Reddit!"
 expected_output="packit> $test_input"
+
+/home/m/Documents/binspect/target/debug/binspect ./test
 
 output=$(echo "$test_input
 " | ./test)
@@ -26,7 +28,7 @@ int main() {
 EOF
 
 # Compile readline_test.c
-gcc -L "$PACKIT_PACKAGE_PATH/libexec/lib" -I "$PACKIT_PACKAGE_PATH/libexec/include" readline_test.c -o readline_test -lreadline
+gcc -L "$PACKIT_PACKAGE_PATH/libexec/lib" -I "$PACKIT_PACKAGE_PATH/libexec/include" -Wl,-rpath,"$PACKIT_PACKAGE_PATH/lib" readline_test.c -o readline_test -lreadline
 
 test_input="Please don't read this line"
 expected_output="$test_input"
