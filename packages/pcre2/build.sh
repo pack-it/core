@@ -12,7 +12,9 @@ if [ "$PACKIT_OS" = "mac" ]; then
     ./configure --prefix=$PACKIT_PACKAGE_PATH \
         $flags \
         --enable-pcre2test-libedit
-else
+fi
+
+if [ "$PACKIT_OS" = "linux" ]; then
     ./configure --prefix=$PACKIT_PACKAGE_PATH \
         $flags \
         --enable-pcre2test-libreadline \
