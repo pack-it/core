@@ -6,8 +6,6 @@ gcc -L "$PACKIT_PACKAGE_PATH/lib" -I "$PACKIT_PACKAGE_PATH/include" -Wl,-rpath,"
 test_input="Edit edit edit leave a good review on Reddit!"
 expected_output="packit> $test_input"
 
-/home/m/Documents/binspect/target/debug/binspect ./test
-
 output=$(echo "$test_input
 " | ./test)
 
@@ -33,7 +31,8 @@ gcc -L "$PACKIT_PACKAGE_PATH/libexec/lib" -I "$PACKIT_PACKAGE_PATH/libexec/inclu
 test_input="Please don't read this line"
 expected_output="$test_input"
 
-output=$(echo "$test_input" | ./readline_test)
+output=$(echo "$test_input
+" | ./readline_test)
 
 if [ "$output" != "$expected_output" ]; then
     exit 1
