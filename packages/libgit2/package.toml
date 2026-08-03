@@ -1,0 +1,8 @@
+name = "libgit2"
+description = "C implementation of the Git core methods as a re-entrant linkable library"
+homepage = "https://libgit2.org/"
+versions = ["1.9.6"]
+
+[supported_versions]
+unix = "1.9.6"
+windows = "1.9.6"
