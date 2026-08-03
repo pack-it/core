@@ -12,7 +12,7 @@ size = 7769080
 [targets.mac]
 
 [targets.linux]
-dependencies = ["openssl", "zlib-ng-compat"]
+dependencies = ["openssl", "zlib-ng-compat", "pcre2"]
 
 [targets.windows]
 dependencies = ["zlib-ng-compat"]
