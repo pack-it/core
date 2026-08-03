@@ -7,7 +7,7 @@ cmake --build build --config Release
 if ERRORLEVEL 1 exit /b %ERRORLEVEL%
 
 REM Copy liblzma.dll to ensure tests work
-copy Release\liblzma.dll liblzma.dll
+copy build\Release\liblzma.dll build\tests_bin\Release\liblzma.dll
 
 ctest --verbose -C Release --test-dir build
 if ERRORLEVEL 1 exit /b %ERRORLEVEL%
