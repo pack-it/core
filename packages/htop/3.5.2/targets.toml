@@ -1,0 +1,11 @@
+version = "3.5.2"
+license = "GPL-2.0-or-later"
+dependencies = ["ncurses@>6.0"]
+build_dependencies = ["autoconf", "automake", "libtool", "pkgconf"]
+
+[source]
+url = "https://github.com/htop-dev/htop/archive/refs/tags/3.5.2.tar.gz"
+checksum = "a66a62bbd1eba59889c68f868b643e53320eea93da19f43ba13c822a826d82ba"
+size = 484033
+
+[targets.unix]
