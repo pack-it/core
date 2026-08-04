@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <expat.h>
 
-/* Start elemenent handler callback function. */
+/* Start element handler callback function. */
 void startElementHandler(
     void *userData,
     const char *name,

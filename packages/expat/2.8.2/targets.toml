@@ -1,5 +1,5 @@
 version = "2.8.2"
-license = ""
+license = "MIT"
 dependencies = []
 build_dependencies = []
 external_test_files = ["test.c"]
