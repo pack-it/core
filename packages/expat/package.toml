@@ -1,0 +1,8 @@
+name = "expat"
+description = "A stream-oriented XML 1.0 Fourth Edition parser"
+homepage = "https://libexpat.github.io/"
+versions = ["2.8.2"]
+
+[supported_versions]
+unix = "2.8.2"
+windows = "2.8.2"
