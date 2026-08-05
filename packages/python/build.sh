@@ -25,3 +25,5 @@ make
 make test
 
 make install
+
+ln -s python$PACKIT_ARGS_MAJOR_MINOR_VERSION $PACKIT_PACKAGE_PATH/bin/python
