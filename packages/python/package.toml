@@ -1,0 +1,8 @@
+name = "python"
+description = "The Python interpreter"
+homepage = "https://www.python.org/"
+versions = ["3.14.6"]
+
+[supported_versions]
+unix = "3.14.6"
+windows = "3.14.6"
