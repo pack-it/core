@@ -5,6 +5,7 @@ supported_packages = [
     "ca-certificates",
     "calc",
     "cmake",
+    "expat",
     "htop",
     "libedit",
     "libffi",
