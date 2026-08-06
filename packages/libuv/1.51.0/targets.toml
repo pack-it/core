@@ -9,8 +9,11 @@ url = "https://dist.libuv.org/dist/v1.51.0/libuv-v1.51.0.tar.gz"
 checksum = "5f0557b90b1106de71951a3c3931de5e0430d78da1d9a10287ebc7a3f78ef8eb"
 size = 1343638
 
-[targets.unix]
+[targets.mac]
 build_dependencies = ["autoconf", "automake", "libtool"]
+
+[targets.linux]
+build_dependencies = ["autoconf", "automake", "libtool", "m4"]
 
 [targets.windows]
 build_dependencies = ["cmake"]
