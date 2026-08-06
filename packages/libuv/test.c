@@ -1,6 +1,7 @@
 #include <uv.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 /* Timer callback */
 void on_timer(uv_timer_t* timer) {
