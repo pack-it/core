@@ -1,8 +1,12 @@
 #!/bin/sh 
-cd "libuv-$PACKIT_PACKAGE_VERSION"
+cd "libuv-v$PACKIT_PACKAGE_VERSION"
 
-cmake -S . -B build -DCMAKE_INSTALL_PREFIX="$PACKIT_PACKAGE_PATH"
+./autogen.sh
 
-cmake --build build
+./configure --prefix=$PACKIT_PACKAGE_PATH
 
-cmake --install build
+make
+
+make check
+
+make install
