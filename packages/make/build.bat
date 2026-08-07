@@ -1,5 +1,8 @@
 cd make-%PACKIT_PACKAGE_VERSION%
 
+REM Call vcvarsall.bat to initialize MSVC build environment (the automatic detection does not always work reliably)
+call "%PACKIT_VCVARSALL%" %PACKIT_VCVARSALL_ARCH% %PACKIT_OUTPUTS% >&3
+
 call build_w32.bat --without-guile
 if ERRORLEVEL 1 exit /b %ERRORLEVEL%
 
