@@ -6,3 +6,6 @@ cd autoconf-$PACKIT_PACKAGE_VERSION
 make
 
 make install
+
+# Remove unwanted standards.info file
+rm -f "$PACKIT_PACKAGE_PATH"/share/info/standards.info
