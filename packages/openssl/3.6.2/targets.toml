@@ -3,6 +3,7 @@ license = "Apache-2.0"
 dependencies = ["ca-certificates"]
 build_dependencies = []
 external_test_files = ["test.pem"]
+use_postinstall = true
 
 [source]
 url = "https://github.com/openssl/openssl/releases/download/openssl-3.6.2/openssl-3.6.2.tar.gz"
