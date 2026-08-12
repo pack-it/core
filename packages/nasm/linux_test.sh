@@ -21,6 +21,11 @@ EOF
 "$PACKIT_PACKAGE_PATH/bin/nasm" -felf64 test.asm
 ld test.o
 
+# Skip the execution on ARM based targets, because NASM is not build for it
+if [ "$PACKIT_OS" = "aarch64-unknown-linux-gnu" ]; then
+    exit 0
+fi
+
 OUTPUT=$(./a.out)
 
 if [ "$OUTPUT" != "Hello, World" ]; then

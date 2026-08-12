@@ -45,6 +45,11 @@ REM Hello example from https://cs.lmu.edu/~ray/notes/nasmtutorial/
 "%PACKIT_PACKAGE_PATH%\bin\nasm.exe" -f win64 test.asm
 link /subsystem:console /out:test.exe test.obj msvcrt.lib %PACKIT_OUTPUTS% >&3
 
+REM Skip the execution on ARM based targets, because NASM is not build for it
+if "%PACKIT_TARGET%"=="aarch64-pc-windows-msvc" (
+    exit /b 0
+)
+
 for /f "usebackq delims=" %%A in (`test.exe`) do set "output=%%A"
 if ERRORLEVEL 1 (
     echo Test failed: test assembly executable exited with code %ERRORLEVEL%
