@@ -2,6 +2,7 @@ version = "2026.05.14"
 license = "MPL-2.0"
 dependencies = []
 build_dependencies = []
+use_postinstall = true
 
 [script_args]
 file_version = "2026-05-14"

@@ -3,6 +3,7 @@ license = "Apache-2.0"
 dependencies = ["ca-certificates"]
 build_dependencies = []
 external_test_files = ["test.pem"]
+use_postinstall = true
 
 [source]
 url = "https://github.com/openssl/openssl/releases/download/openssl-4.0.1/openssl-4.0.1.tar.gz"
