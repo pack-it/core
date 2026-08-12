@@ -3,7 +3,7 @@
 test_text="Me: 'Did I just see a camel walk by?', Larry: 'Oh yeah, that's my pet, he is called Perl'"
 output=$("$PACKIT_PACKAGE_PATH/bin/perl" -e "print \"$test_text\n\"")
 if [ "$output" != "$test_text" ]; then
-    echo "Test failed: perl print test did not print the expected text"
+    echo "Test failed: print test output '$output' does not match the expected output"
     exit 1
 fi
 

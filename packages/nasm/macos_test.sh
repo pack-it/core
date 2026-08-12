@@ -35,8 +35,9 @@ if [ "$PACKIT_TARGET" = "aarch64-apple-darwin" ]; then
     exit 0
 fi
 
-OUTPUT=$(./test)
+output=$(./test)
 
-if [ "$OUTPUT" != "Hello, World" ]; then
+if [ "$output" != "Hello, World" ]; then
+    echo "Test failed: test output '$output' does not match the expected output"
     exit 1
 fi

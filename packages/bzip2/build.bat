@@ -31,7 +31,7 @@ if "%PACKIT_TARGET%"=="x86_64-pc-windows-msvc" (
 REM Call vcvarsall.bat to set MSVC build environment
 call "%VCVARSALL%" %ARCH%
 
-nmake -f makefile.msc 
+nmake -f makefile.msc
 if ERRORLEVEL 1 (
     echo Bzip2 build failed
     exit /b %ERRORLEVEL%

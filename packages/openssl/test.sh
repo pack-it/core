@@ -7,7 +7,7 @@ expected_output="SHA2-256(stdin)= 38517b49c926cb5178a28c388075b9caeca07cc52c398d
 output=$(echo "$test_input" | "$PACKIT_PACKAGE_PATH/bin/openssl" sha256 -hex)
 
 if [ "$output" != "$expected_output" ]; then
-    echo "Test failed: sha256 hashing test did not output the expected hash"
+    echo "Test failed: sha256 hashing test output '$output' does not match the expected hash"
     exit 1
 fi
 

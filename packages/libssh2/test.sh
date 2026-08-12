@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Compile test.c 
+# Compile test.c
 if [ $PACKIT_OS = "linux" ]; then
     # Specifically specify the rpath, otherwise libssh2.so.1 cannot be found at runtime
     gcc -L "$PACKIT_PACKAGE_PATH/lib" -I "$PACKIT_PACKAGE_PATH/include" -Wl,-rpath,"$PACKIT_PACKAGE_PATH/lib" test.c -o test -lssh2

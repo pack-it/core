@@ -7,10 +7,9 @@ echo "$test_text" > test.txt
 $PACKIT_PACKAGE_PATH/bin/bzip2 -c test.txt > compressed.bz2
 $PACKIT_PACKAGE_PATH/bin/bzip2 -d compressed.bz2 > decompressed.txt
 
-result=$(cat test.txt)
+result=$(cat decompressed.txt)
 
-if [ "$result" = "$test_text" ]; then
-    exit 0
+if [ "$result" != "$test_text" ]; then
+    echo "Test failed: test result '$result' does not match the expected result"
+    exit 1
 fi
-
-exit 1

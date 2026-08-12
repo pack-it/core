@@ -10,7 +10,7 @@ if ERRORLEVEL 1 (
 )
 
 if not "%output%" == "%test_text%" (
-    echo Test failed: perl print test did not print the expected text
+    echo Test failed: perl test output '%output%' does not match the expected output
     exit /b 1
 )
 

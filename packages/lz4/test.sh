@@ -9,8 +9,7 @@ echo "$test_text" > test.txt
 
 result=$(cat decompressed.txt)
 
-if [ "$result" = "$test_text" ]; then
-    exit 0
+if [ "$result" != "$test_text" ]; then
+    echo "Test failed: test result '$result' does not match the expected result"
+    exit 1
 fi
-
-exit 1
