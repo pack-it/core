@@ -7,9 +7,7 @@ if [ "$PACKIT_OS" = "mac" ]; then
 
     # The DCMAKE_INSTALL_RPATH is needed because llhttp has an install name containing @rpath
     flags="-DCMAKE_INSTALL_RPATH=\"$PACKIT_PACKAGE_DEPENDENCIES_PATH/llhttp/lib\""
-fi
-
-if [ "$PACKIT_OS" = "linux" ]; then
+elif [ "$PACKIT_OS" = "linux" ]; then
     lib_extension="so"
 
     flags="-DREGEX_BACKEND=pcre2"
@@ -28,9 +26,7 @@ flags="$flags -DLIBSSH2_INCLUDE_DIR=$PACKIT_PACKAGE_DEPENDENCIES_PATH/libssh2/in
 flags="$flags -DLIBSSH2_LIBRARY=$PACKIT_PACKAGE_DEPENDENCIES_PATH/libssh2/lib/libssh2.$lib_extension"
 
 # Build static library
-cmake -S . -B build-static -DCMAKE_INSTALL_PREFIX="$PACKIT_PACKAGE_PATH" -DCMAKE_BUILD_TYPE=Release \
-    -DBUILD_SHARED_LIBS=OFF \
-    $flags
+cmake -S . -B build-static -DCMAKE_INSTALL_PREFIX="$PACKIT_PACKAGE_PATH" -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF $flags
 
 cmake --build build-static --config Release
 
@@ -42,9 +38,7 @@ fi
 cmake --install build-static --config Release
 
 # Build shared libraries
-cmake -S . -B build-shared -DCMAKE_INSTALL_PREFIX="$PACKIT_PACKAGE_PATH" -DCMAKE_BUILD_TYPE=Release \
-    -DBUILD_SHARED_LIBS=ON \
-    $flags
+cmake -S . -B build-shared -DCMAKE_INSTALL_PREFIX="$PACKIT_PACKAGE_PATH" -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=ON $flags
 
 cmake --build build-shared --config Release
 

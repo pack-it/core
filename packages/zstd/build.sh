@@ -1,11 +1,15 @@
 #!/bin/sh
 cd zstd-$PACKIT_PACKAGE_VERSION
 
-lib_extension=""
+flags=""
 if [ "$PACKIT_OS" = "mac" ]; then
     lib_extension="dylib"
 elif [ "$PACKIT_OS" = "linux" ]; then
     lib_extension="so"
+
+    flags="$flags -DZLIB_LIBRARY=$PACKIT_PACKAGE_DEPENDENCIES_PATH/zlib-ng-compat/lib/libz.so"
+    flags="$flags -DZLIB_INCLUDE_DIR=$PACKIT_PACKAGE_DEPENDENCIES_PATH/zlib-ng-compat/include"
+    flags="$flags -DLIBLZMA_LIBRARY=$PACKIT_PACKAGE_DEPENDENCIES_PATH/xz/lib/liblzma.so"
 fi
 
 cmake -S build/cmake -B build -DCMAKE_INSTALL_PREFIX="$PACKIT_PACKAGE_PATH" \
@@ -21,7 +25,9 @@ cmake -S build/cmake -B build -DCMAKE_INSTALL_PREFIX="$PACKIT_PACKAGE_PATH" \
     -DZSTD_LZ4_SUPPORT=ON \
     -DLIBLZ4_INCLUDE_DIR="$PACKIT_PACKAGE_DEPENDENCIES_PATH/lz4/include" \
     -DLIBLZ4_LIBRARY="$PACKIT_PACKAGE_DEPENDENCIES_PATH/lz4/lib/liblz4.$lib_extension" \
-    -DCMAKE_CXX_STANDARD=11
+    -DCMAKE_CXX_STANDARD=11 \
+    $flags
+    
 
 cmake --build build --config Release
 
