@@ -30,6 +30,11 @@ ld test.o \
   -e _start \
   -o test
 
+# Skip the execution on ARM based targets, because NASM is not build for it
+if [ "$PACKIT_TARGET" = "aarch64-apple-darwin" ]; then
+    exit 0
+fi
+
 OUTPUT=$(./test)
 
 if [ "$OUTPUT" != "Hello, World" ]; then
