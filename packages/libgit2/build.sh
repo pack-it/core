@@ -19,6 +19,10 @@ cmake -S . -B build-static -DCMAKE_INSTALL_PREFIX="$PACKIT_PACKAGE_PATH" -DCMAKE
     -DUSE_HTTP_PARSER=llhttp \
     -DUSE_SSH=ON \
     -DUSE_BUNDLED_ZLIB=OFF \
+    -DLLHTTP_INCLUDE_DIR="$PACKIT_PACKAGE_DEPENDENCIES_PATH/llhttp/include" \
+    -DLLHTTP_LIBRARY="$PACKIT_PACKAGE_DEPENDENCIES_PATH/llhttp/lib/libllhttp.dylib" \
+    -DLIBSSH2_INCLUDE_DIR="$PACKIT_PACKAGE_DEPENDENCIES_PATH/libssh2/include" \
+    -DLIBSSH2_LIBRARY="$PACKIT_PACKAGE_DEPENDENCIES_PATH/libssh2/lib/libssh2.dylib" \
     $extra_flags
 
 cmake --build build-static --config Release
@@ -37,6 +41,10 @@ cmake -S . -B build-shared -DCMAKE_INSTALL_PREFIX="$PACKIT_PACKAGE_PATH" -DCMAKE
     -DUSE_HTTP_PARSER=llhttp \
     -DUSE_SSH=ON \
     -DUSE_BUNDLED_ZLIB=OFF \
+    -DLLHTTP_INCLUDE_DIR="$PACKIT_PACKAGE_DEPENDENCIES_PATH/llhttp/include" \
+    -DLLHTTP_LIBRARY="$PACKIT_PACKAGE_DEPENDENCIES_PATH/llhttp/lib/libllhttp.dylib" \
+    -DLIBSSH2_INCLUDE_DIR="$PACKIT_PACKAGE_DEPENDENCIES_PATH/libssh2/include" \
+    -DLIBSSH2_LIBRARY="$PACKIT_PACKAGE_DEPENDENCIES_PATH/libssh2/lib/libssh2.dylib" \
     $extra_flags
 
 cmake --build build-shared --config Release
