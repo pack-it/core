@@ -26,8 +26,9 @@ if [ "$PACKIT_OS" = "aarch64-unknown-linux-gnu" ]; then
     exit 0
 fi
 
-OUTPUT=$(./a.out)
+output=$(./a.out)
 
-if [ "$OUTPUT" != "Hello, World" ]; then
+if [ "$output" != "Hello, World" ]; then
+    echo "Test failed: test output '$output' does not match the expected output"
     exit 1
 fi

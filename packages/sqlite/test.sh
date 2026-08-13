@@ -13,8 +13,8 @@ if [ ! -e "$db_path" ]; then
     exit 1
 fi
 
-if [ "$output" = "$expected_output" ]; then
-    exit 0
+if [ "$output" != "$expected_output" ]; then
+    echo "Test failed: test output does not match the expected output:"
+    echo "$output"
+    exit 1
 fi
-
-exit 1

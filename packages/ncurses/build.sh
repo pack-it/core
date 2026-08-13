@@ -78,7 +78,7 @@ if [ "$PACKIT_OS" = "linux" ]; then
     ln -s libpanelw.so.6.6 lib/libpanel.so.6.6
 
     ln -s libncursesw.so.6.6 lib/libcurses.so
-    
+
     ln -s libncurses.so lib/libtinfo.so
 
     ln -s libncurses++w.so.6.6 lib/libncurses++.so

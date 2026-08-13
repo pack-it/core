@@ -45,8 +45,7 @@ if ERRORLEVEL 1 exit /b %ERRORLEVEL%
 
 set /p RESULT = < decompressed.txt
 
-if "%RESULT%" == "%TEST_TEXT%" (
-    exit /b 0
+if not "%RESULT%" == "%TEST_TEXT%" (
+    echo Test failed: test result '%RESULT%' does not match the expected result
+    exit /b 1
 )
-
-exit /b 1

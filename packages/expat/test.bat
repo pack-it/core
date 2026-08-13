@@ -38,6 +38,6 @@ set /p "output="<".\output_file%"
 set "expected_output=The count of Numeria says one, two, three, four, five, the thing that comes after five. AAaahhh this happens everytimeee!!"
 
 if not "%output%"=="%expected_output%" (
-    echo The test output '%output%' doesn't match the expected output
+    echo Test failed: test output '%output%' does not match the expected output
     exit /b 1
 )

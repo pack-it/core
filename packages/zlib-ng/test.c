@@ -1,5 +1,5 @@
-/* 
-    Test code from: https://zlib.net/zpipe.c 
+/*
+    Test code from: https://zlib.net/zpipe.c
     Modified slightly to use zlib-ng without zlib compatibility.
 */
 /* zpipe.c: example of proper use of zlib's inflate() and deflate()

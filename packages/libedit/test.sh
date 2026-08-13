@@ -10,6 +10,7 @@ output=$(echo "$test_input
 " | ./test)
 
 if [ "$output" != "$expected_output" ]; then
+    echo "Test failed: test output '$output' does not match the expected output"
     exit 1
 fi
 
@@ -35,5 +36,6 @@ output=$(echo "$test_input
 " | ./readline_test)
 
 if [ "$output" != "$expected_output" ]; then
+    echo "Test failed: test output '$output' does not match the expected output"
     exit 1
 fi

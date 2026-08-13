@@ -10,7 +10,7 @@ if ERRORLEVEL 1 (
 )
 
 if not "%output%" == "%expected_output%" (
-    echo Test failed: sha256 hashing test did not output the expected hash
+    echo Test failed: sha256 hashing test output '%output%' does not match the expected hash
     exit /b 1
 )
 

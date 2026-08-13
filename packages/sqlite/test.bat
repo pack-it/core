@@ -18,6 +18,8 @@ if not exist "%db_path%" (
 )
 
 fc output.txt expected_output.txt > nul
-if ERRORLEVEL 1 exit /b 1
-
-exit /b 0
+if ERRORLEVEL 1 (
+    echo Test failed: test output does not match the expected output:
+    type output.txt
+    exit /b 1
+)

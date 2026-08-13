@@ -5,7 +5,7 @@ cd make-$PACKIT_PACKAGE_VERSION
 
 sh build.sh
 
-./make 
+./make
 
 ./make install
 

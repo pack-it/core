@@ -28,15 +28,16 @@ ld test.o \
   -lSystem \
   -syslibroot "$SDK_PATH" \
   -e _start \
-  -o test
+  -o test 2>&3
 
 # Skip the execution on ARM based targets, because NASM is not build for it
 if [ "$PACKIT_TARGET" = "aarch64-apple-darwin" ]; then
     exit 0
 fi
 
-OUTPUT=$(./test)
+output=$(./test)
 
-if [ "$OUTPUT" != "Hello, World" ]; then
+if [ "$output" != "Hello, World" ]; then
+    echo "Test failed: test output '$output' does not match the expected output"
     exit 1
 fi

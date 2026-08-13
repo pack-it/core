@@ -9,8 +9,7 @@ $PACKIT_PACKAGE_PATH/bin/zstd -cd compressed.zst > decompressed.txt
 
 result=$(cat decompressed.txt)
 
-if [ "$result" = "$test_text" ]; then
-    exit 0
+if [ "$result" != "$test_text" ]; then
+    echo "Test failed: test result '$result' does not match the expected result"
+    exit 1
 fi
-
-exit 1

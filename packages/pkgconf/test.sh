@@ -22,20 +22,20 @@ export PKG_CONFIG_PATH="$(pwd)"
 expected_output="-L/opt/packit/packages/test/1.0.0/lib"
 output=$("$PACKIT_PACKAGE_PATH/bin/pkgconf" --libs-only-L test)
 if [ "$output" != "$expected_output" ]; then
-    echo "Test failed: libs test did not give the correct output"
+    echo "Test failed: libs test output '$output' does not match the expected output"
     exit 1
 fi
 
 expected_output="-I/opt/packit/packages/test/1.0.0/include"
 output=$("$PACKIT_PACKAGE_PATH/bin/pkgconf" --cflags-only-I test)
 if [ "$output" != "$expected_output" ]; then
-    echo "Test failed: cflags test did not give the correct output"
+    echo "Test failed: cflags test output '$output' does not match the expected output"
     exit 1
 fi
 
 expected_output="/opt/packit/packages/test/1.0.0/lib"
 output=$("$PACKIT_PACKAGE_PATH/bin/pkgconf" --variable=libdir test)
 if [ "$output" != "$expected_output" ]; then
-    echo "Test failed: variable test did not give the correct output"
+    echo "Test failed: variable test output '$output' does not match the expected output"
     exit 1
 fi

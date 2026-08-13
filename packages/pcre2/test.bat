@@ -35,4 +35,3 @@ if ERRORLEVEL 1 exit /b %ERRORLEVEL%
 REM Execute test
 .\test.exe
 if ERRORLEVEL 1 exit /b %ERRORLEVEL%
-

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "Creating certificate bundle using system certificates"
+echo "Creating certificate bundle using system certificates" >&3
 
 seen=""
 cert=""

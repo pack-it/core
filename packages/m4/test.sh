@@ -9,8 +9,7 @@ greet(PERSON) square(12, 6)
 EOF
 )
 
-if [ "$output" = "$expected_output" ]; then
-    exit 0
+if [ "$output" != "$expected_output" ]; then
+    echo "Test failed: test output '$output' does not match the expected output"
+    exit 1
 fi
-
-exit 1
