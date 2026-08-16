@@ -16,3 +16,4 @@ dependencies = ["openssl", "zlib-ng-compat", "pcre2"]
 
 [targets.windows]
 dependencies = ["zlib-ng-compat"]
+test_requirements = ["msvc"]
