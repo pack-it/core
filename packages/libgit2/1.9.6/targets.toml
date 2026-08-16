@@ -1,5 +1,5 @@
 version = "1.9.6"
-license = "GPL-2.0-only with GCC-exception-2.0"
+license = { name = "GPL-2.0-only", with = ["GCC-exception-2.0"] }
 dependencies = ["libssh2", "llhttp"]
 build_dependencies = ["cmake"]
 external_test_files = ["test.c"]
