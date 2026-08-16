@@ -1,0 +1,36 @@
+version = "0.0.4"
+license = "GPL-3.0-only"
+dependencies = []
+build_dependencies = []
+
+[source.x86_64-apple-darwin]
+url = "https://github.com/pack-it/packit/releases/download/0.0.4/packit@0.0.4-0-x86_64-apple-darwin.tar.gz"
+checksum = "d1c7a198f0571783b8186702f348ee7ac49f3639ae3d193d8c79bfe99e97d17c"
+size = 6451403
+
+[source.aarch64-apple-darwin]
+url = "https://github.com/pack-it/packit/releases/download/0.0.4/packit@0.0.4-0-aarch64-apple-darwin.tar.gz"
+checksum = "c7c4d2b144242967b230323720c6011567dea193b4a71249658b56aad12ac7eb"
+size = 5883633
+
+[source.x86_64-unknown-linux-gnu]
+url = "https://github.com/pack-it/packit/releases/download/0.0.4/packit@0.0.4-0-x86_64-unknown-linux-gnu.tar.gz"
+checksum = "202d4699f5c5d57dd418507a31ea3aba7895bd9bb7d6d11ced4d27aebff10ba0"
+size = 6787921
+
+[source.x86_64-pc-windows-msvc]
+url = "https://github.com/pack-it/packit/releases/download/0.0.4/packit@0.0.4-0-x86_64-pc-windows-msvc.tar.gz"
+checksum = "c8ffab681cd1064b837d9097c9cae8564730a78de7ec1b08f99865c3afc0cb3d"
+size = 5493197
+
+[targets.x86_64-apple-darwin]
+source = "x86_64-apple-darwin"
+
+[targets.aarch64-apple-darwin]
+source = "aarch64-apple-darwin"
+
+[targets.x86_64-unknown-linux-gnu]
+source = "x86_64-unknown-linux-gnu"
+
+[targets.x86_64-pc-windows-msvc]
+source = "x86_64-pc-windows-msvc"
