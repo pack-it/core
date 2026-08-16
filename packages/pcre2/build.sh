@@ -1,5 +1,4 @@
 #!/bin/sh
-cd pcre2-$PACKIT_PACKAGE_VERSION
 
 flags="--enable-pcre2-16 \
         --enable-pcre2-32 \

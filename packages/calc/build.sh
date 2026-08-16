@@ -1,5 +1,4 @@
 #!/bin/sh
-cd calc-$PACKIT_PACKAGE_VERSION
 
 make PREFIX="$PACKIT_PACKAGE_PATH" \
     BINDIR="$PACKIT_PACKAGE_PATH/bin" \

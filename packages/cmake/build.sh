@@ -1,5 +1,4 @@
 #!/bin/sh
-cd "cmake-$PACKIT_PACKAGE_VERSION"
 
 extra_flags=""
 if [ "$PACKIT_OS" = "mac" ]; then

@@ -1,5 +1,4 @@
 #!/bin/sh
-cd scdoc-$PACKIT_PACKAGE_VERSION
 
 make PREFIX="$PACKIT_PACKAGE_PATH"
 

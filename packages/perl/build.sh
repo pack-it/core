@@ -1,5 +1,4 @@
 #!/bin/sh
-cd perl-$PACKIT_PACKAGE_VERSION
 
 active_dir="$PACKIT_PREFIX_PATH/active/perl"
 

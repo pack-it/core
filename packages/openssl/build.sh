@@ -1,5 +1,4 @@
 #!/bin/sh
-cd openssl-$PACKIT_PACKAGE_VERSION
 
 unset OPENSSL_LOCAL_CONFIG_DIR
 

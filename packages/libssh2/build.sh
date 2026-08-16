@@ -1,5 +1,4 @@
 #!/bin/sh
-cd libssh2-$PACKIT_PACKAGE_VERSION
 
 ./configure --prefix=$PACKIT_PACKAGE_PATH \
     --disable-silent-rules \

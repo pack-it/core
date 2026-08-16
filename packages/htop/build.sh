@@ -1,5 +1,4 @@
 #!/bin/sh
-cd htop-$PACKIT_PACKAGE_VERSION
 
 ./autogen.sh
 
