@@ -8,7 +8,7 @@ if ERRORLEVEL 1 (
     exit /b 1
 )
 
-"%PACKIT_PACKAGE_PATH%\bin\bzip2" -d compressed.bz2 > decompressed.txt
+"%PACKIT_PACKAGE_PATH%\bin\bzip2" -cd compressed.bz2 > decompressed.txt
 if ERRORLEVEL 1 (
     echo Test failed: decompression failed
     exit /b 1
