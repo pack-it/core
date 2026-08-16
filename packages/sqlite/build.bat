@@ -1,5 +1,3 @@
-cd sqlite-autoconf-%PACKIT_ARGS_ARCHIVE_VERSION%
-
 REM Call vcvarsall.bat to initialize MSVC build environment
 call "%PACKIT_VCVARSALL%" %PACKIT_VCVARSALL_ARCH%
 

@@ -3,9 +3,6 @@ license = "GPL-3.0-or-later"
 dependencies = []
 build_dependencies = []
 
-[script_args]
-major_minor_version = "8.3"
-
 [source]
 url = "https://ftpmirror.gnu.org/gnu/readline/readline-8.3.tar.gz"
 mirrors = [
@@ -15,7 +12,6 @@ mirrors = [
 ]
 checksum = "fe5383204467828cd495ee8d1d3c037a7eba1389c22bc6a041f627976f9061cc"
 size = 3419642
-apply_patches_in = "readline-8.3"
 patches.0 = {
     url = "https://ftpmirror.gnu.org/gnu/readline/readline-8.3-patches/readline83-001",
     mirrors = ["https://ftp.gnu.org/gnu/readline/readline-8.3-patches/readline83-001"],

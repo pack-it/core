@@ -1,5 +1,3 @@
-cd perl-%PACKIT_PACKAGE_VERSION%
-
 cd win32
 
 REM Convert MSVC version for make variable

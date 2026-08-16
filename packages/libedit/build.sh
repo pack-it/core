@@ -1,5 +1,4 @@
 #!/bin/sh
-cd libedit-$PACKIT_ARGS_DATE_VERSION-$PACKIT_PACKAGE_VERSION
 
 if [ "$PACKIT_OS" = "mac" ]; then
     ./configure --prefix=$PACKIT_PACKAGE_PATH

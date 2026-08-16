@@ -1,5 +1,4 @@
 #!/bin/sh
-cd libgit2-$PACKIT_PACKAGE_VERSION
 
 flags=""
 if [ "$PACKIT_OS" = "mac" ]; then

@@ -1,5 +1,4 @@
 #!/bin/sh
-cd tree-$PACKIT_PACKAGE_VERSION
 
 make PREFIX="$PACKIT_PACKAGE_PATH" MANDIR="$PACKIT_PACKAGE_PATH/share/man"
 

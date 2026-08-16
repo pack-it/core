@@ -1,5 +1,4 @@
 #!/bin/sh
-cd sqlite-autoconf-$PACKIT_ARGS_ARCHIVE_VERSION
 
 export CPPFLAGS="${CPPFLAGS:-} \
 -DSQLITE_ENABLE_API_ARMOR=1 \

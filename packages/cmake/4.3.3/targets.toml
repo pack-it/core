@@ -18,7 +18,6 @@ mirrors = [
 ]
 checksum = "cba4bb7a44edf2877bb6f059932896383babe435b3a8c3b5df48b4aa41c9bb85"
 size = 12971567
-apply_patches_in = "cmake-4.3.3"
 patches.0 = {
     url = "https://github.com/pack-it/cmake-bootstrap/releases/download/0.0.1/cmake.patch",
     checksum = "78297d75748708730441c9196fea6b32722924870c05178bd2182b9b4c40f1cd"
