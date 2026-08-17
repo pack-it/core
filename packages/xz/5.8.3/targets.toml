@@ -8,7 +8,7 @@ license = { all = [
 dependencies = []
 build_dependencies = []
 
-[source]
+[source.unix]
 url = "https://github.com/tukaani-project/xz/releases/download/v5.8.3/xz-5.8.3.tar.gz"
 mirrors = [
     "https://codeberg.org/tukaani/xz/releases/download/v5.8.3/xz-5.8.3.tar.gz",
@@ -17,7 +17,23 @@ mirrors = [
 checksum = "3d3a1b973af218114f4f889bbaa2f4c037deaae0c8e815eec381c3d546b974a0"
 size = 2771455
 
+[source.windows]
+url = "https://github.com/tukaani-project/xz/releases/download/v5.8.3/xz-5.8.3.tar.gz"
+mirrors = [
+    "https://codeberg.org/tukaani/xz/releases/download/v5.8.3/xz-5.8.3.tar.gz",
+    "https://downloads.sourceforge.net/project/lzmautils/xz-5.8.3.tar.gz"
+]
+checksum = "3d3a1b973af218114f4f889bbaa2f4c037deaae0c8e815eec381c3d546b974a0"
+size = 2771455
+patches.0 = {
+    # Apply patch to fix build tests on Windows
+    url = "https://github.com/tukaani-project/xz/commit/18769dd6927f16562008aee01ab1466c3035110e.patch",
+    checksum = "ef1e9ad9d2f7b414b328d56d6ecbfa920a7e16ee85ac40e8eafc9e653dfae776"
+}
+
 [targets.unix]
+source = "unix"
 
 [targets.windows]
+source = "windows"
 build_dependencies = ["cmake"]
