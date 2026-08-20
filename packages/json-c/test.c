@@ -29,13 +29,13 @@ int main() {
     // Read an integer field from the parsed object
     struct json_object *age;
     if (!json_object_object_get_ex(parsed, "age", &age)) {
-        printf("The parsed JSON object does not contain the 'packages' field\n");
+        printf("The parsed JSON object does not contain the 'age' field\n");
         json_object_put(parsed);
         return 1;
     }
 
     if (json_object_get_int(age) != 32) {
-        printf("The 'packages' field contains '%d' instead of '32'\n", json_object_get_int(packages));
+        printf("The 'age' field contains '%d' instead of '32'\n", json_object_get_int(age));
         json_object_put(parsed);
         return 1;
     }
