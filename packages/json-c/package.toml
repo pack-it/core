@@ -1,0 +1,8 @@
+name = "json-c"
+description = "A JSON implementation in C"
+homepage = "https://github.com/json-c/json-c"
+versions = ["0.19"]
+
+[supported_versions]
+unix = "0.19"
+windows = "0.19"
