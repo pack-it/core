@@ -1,5 +1,4 @@
 #!/bin/sh
-cd python-$PACKIT_PACKAGE_VERSION
 
 # NOTE lto NOT on Linux
 # The `--enable-optimizations` flag does some platform specific optimizations, so prebuilds might differ depending on architecture.
