@@ -1,5 +1,4 @@
 #!/bin/sh 
-cd "libuv-v$PACKIT_PACKAGE_VERSION"
 
 ./autogen.sh
 
@@ -7,6 +6,7 @@ cd "libuv-v$PACKIT_PACKAGE_VERSION"
 
 make
 
+# TODO: Make check doesn't work reliably
 make check
 
 make install
