@@ -4,7 +4,7 @@
 
 sh build.sh
 
-./make
+./make -j $PACKIT_BUILD_JOBS_COUNT
 
 # Requires Perl for the build tests
 

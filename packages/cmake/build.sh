@@ -9,9 +9,10 @@ fi
     --prefix="$PACKIT_PACKAGE_PATH" \
     --no-system-libs \
     --no-debugger \
+    --parallel=$PACKIT_BUILD_JOBS_COUNT \
     $extra_flags
 
-make
+make -j $PACKIT_BUILD_JOBS_COUNT
 
 # Skip `RunCMake.Framework`, `RunCMake.XcFramework` and `Framework`, because they require the iOS SDK, which are not always present.
 # Skip `RunCMake.CMakePackage`, because it tries to build for an i386 architecture which is deprecated on macOS.

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-make
+make -j $PACKIT_BUILD_JOBS_COUNT
 
 # Needs cmake or python to run build tests
 

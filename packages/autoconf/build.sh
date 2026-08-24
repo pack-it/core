@@ -2,7 +2,7 @@
 
 ./configure --prefix=$PACKIT_PACKAGE_PATH
 
-make
+make -j $PACKIT_BUILD_JOBS_COUNT
 
 if [ "$PACKIT_OS" = "mac" ]; then
     # Ignore test 248, because it sometimes fails (probably because macOS doesn't have nanosecond precision in this test)

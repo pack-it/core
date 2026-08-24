@@ -30,7 +30,7 @@ fi
     --session \
     $extra_flags
 
-make
+make -j $PACKIT_BUILD_JOBS_COUNT
 
 # Skipping build test, because sqlite requires tcl-dev
 
