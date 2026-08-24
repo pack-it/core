@@ -14,6 +14,8 @@
 
 make
 
+make check
+
 make install
 
 # Change working directory to package path to create symlinks and patch ncursesw6-config

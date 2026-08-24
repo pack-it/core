@@ -4,4 +4,7 @@
 
 make
 
+# -B is necessary to force testing, otherwise it doesn't test if the source hasn't changed
+make -B test
+
 make install

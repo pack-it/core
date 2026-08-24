@@ -32,4 +32,7 @@ fi
 
 make
 
+# Sqlite3 needs tcl-dev for tests
+#make test
+
 make install

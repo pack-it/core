@@ -4,6 +4,8 @@
 
 make
 
+make check
+
 make install
 
 # Create gnubin to allow adding libtool without g prefix to path

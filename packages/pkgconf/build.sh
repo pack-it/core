@@ -4,6 +4,9 @@
 
 make
 
+# TODO: Needs kyua testframework
+#make check
+
 make install
 
 # Create pkg-config symlinks to use pkgconf as pkg-config alternative

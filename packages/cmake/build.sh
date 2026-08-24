@@ -13,4 +13,6 @@ fi
 
 make
 
+./bin/ctest
+
 make install

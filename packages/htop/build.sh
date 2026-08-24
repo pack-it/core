@@ -6,4 +6,6 @@
 
 make
 
+# Htop doesn't have a testsuite
+
 make install

@@ -4,6 +4,8 @@
 
 make
 
+cd build && make test
+
 make install
 
 # Remove unwanted standards.info file
