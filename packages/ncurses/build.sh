@@ -12,7 +12,7 @@
     --disable-root-access \
     --disable-root-environ
 
-make
+make -j $PACKIT_BUILD_JOBS_COUNT
 
 make install
 

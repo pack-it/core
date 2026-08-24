@@ -10,6 +10,6 @@ if [ "$PACKIT_OS" = "linux" ]; then
     path="$PACKIT_PACKAGE_DEPENDENCIES_PATH/ncurses/lib/libcurses.so"
 fi
 
-make SHLIB_LIBS=$path
+make SHLIB_LIBS=$path -j $PACKIT_BUILD_JOBS_COUNT
 
 make install

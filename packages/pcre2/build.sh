@@ -21,6 +21,6 @@ if [ "$PACKIT_OS" = "linux" ]; then
         LDFLAGS="-L$PACKIT_PACKAGE_DEPENDENCIES_PATH/zlib-ng-compat/lib -lz -L$PACKIT_PACKAGE_DEPENDENCIES_PATH/bzip2/lib -lbz2 -L$PACKIT_PACKAGE_DEPENDENCIES_PATH/readline/lib -lreadline"
 fi
 
-make
+make -j $PACKIT_BUILD_JOBS_COUNT
 
 make install

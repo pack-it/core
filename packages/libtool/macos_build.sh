@@ -2,7 +2,7 @@
 
 ./configure --prefix=$PACKIT_PACKAGE_PATH --disable-silent-rules --enable-ltdl-install --program-prefix=g
 
-make
+make -j $PACKIT_BUILD_JOBS_COUNT
 
 make install
 

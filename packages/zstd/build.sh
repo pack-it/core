@@ -28,8 +28,8 @@ cmake -S build/cmake -B build -DCMAKE_INSTALL_PREFIX="$PACKIT_PACKAGE_PATH" \
     $extra_flags
     
 
-cmake --build build --config Release
+cmake --build build --config Release --parallel $PACKIT_BUILD_JOBS_COUNT
 
-ctest --verbose -C Release
+ctest --verbose -C Release --parallel $PACKIT_BUILD_JOBS_COUNT
 
 cmake --install build --config Release

@@ -1,10 +1,10 @@
 cmake -S . -B build -DCMAKE_INSTALL_PREFIX="%PACKIT_PACKAGE_PATH%" -DCMAKE_BUILD_TYPE=Release -DPCRE2_BUILD_PCRE2_16=ON -DPCRE2_BUILD_PCRE2_32=ON -DPCRE2_SUPPORT_LIBZ=ON -DPCRE2_SUPPORT_LIBBZ2=ON -DPCRE2_SUPPORT_JIT=ON -DBUILD_SHARED_LIBS=ON -DBZIP2_LIBRARIES="%PACKIT_PACKAGE_DEPENDENCIES_PATH%\zlib-ng-compat\lib\zlib.lib" -DBZIP2_INCLUDE_DIR="%PACKIT_PACKAGE_DEPENDENCIES_PATH%\zlib-ng-compat\include" -DZLIB_LIBRARY="%PACKIT_PACKAGE_DEPENDENCIES_PATH%\bzip2\lib\libbz2.lib" -DZLIB_INCLUDE_DIR="%PACKIT_PACKAGE_DEPENDENCIES_PATH%\bzip2\include"
 if ERRORLEVEL 1 exit /b %ERRORLEVEL%
 
-cmake --build build --config Release
+cmake --build build --config Release --parallel %PACKIT_BUILD_JOBS_COUNT%
 if ERRORLEVEL 1 exit /b %ERRORLEVEL%
 
-ctest --verbose -C Release
+ctest --verbose -C Release --parallel %PACKIT_BUILD_JOBS_COUNT%
 if ERRORLEVEL 1 exit /b %ERRORLEVEL%
 
 cmake --install build --config Release

@@ -4,6 +4,6 @@
 
 sh build.sh
 
-./make
+./make -j $PACKIT_BUILD_JOBS_COUNT
 
 ./make install

@@ -8,6 +8,6 @@
     --with-libz-prefix="$PACKIT_PACKAGE_DEPENDENCIES_PATH/zlib-ng-compat" \
     --with-libssl-prefix="$PACKIT_PACKAGE_DEPENDENCIES_PATH/openssl"
 
-make
+make -j $PACKIT_BUILD_JOBS_COUNT
 
 make install

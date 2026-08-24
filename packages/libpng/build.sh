@@ -10,8 +10,8 @@ if [ "$PACKIT_OS" = "linux" ]; then
         LDFLAGS="-L$PACKIT_PACKAGE_DEPENDENCIES_PATH/zlib-ng-compat/lib -lz"
 fi
 
-make
+make -j $PACKIT_BUILD_JOBS_COUNT
 
-make test
+make test -j $PACKIT_BUILD_JOBS_COUNT
 
 make install
