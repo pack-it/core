@@ -1,4 +1,5 @@
 version = "6.6"
+license = "MIT-open-group"
 dependencies = []
 build_dependencies = []
 external_test_files = ["test.c"]

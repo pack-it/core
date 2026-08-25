@@ -1,5 +1,5 @@
 version = "2.72"
-license = "GPL-3.0-or-later"
+license = { name = "GPL-3.0-or-later", with = ["Autoconf-exception-3.0"] }
 dependencies = ["m4"]
 build_dependencies = []
 
