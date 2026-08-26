@@ -10,13 +10,15 @@
     --with-cxx-shared \
     --without-ada \
     --disable-root-access \
-    --disable-root-environ
+    --disable-root-environ \
+    --with-trace # `TRACE` needs to be defined for tests (otherwise `USE_TRACEF` is undefined)
 
 make
 
-make check
-
 make install
+
+# Ncurses tests can only be executed after installation
+make check
 
 # Change working directory to package path to create symlinks and patch ncursesw6-config
 cd $PACKIT_PACKAGE_PATH
