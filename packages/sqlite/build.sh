@@ -30,6 +30,6 @@ fi
     --session \
     $extra_flags
 
-make
+make -j $PACKIT_BUILD_JOBS_COUNT
 
 make install

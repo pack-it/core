@@ -9,8 +9,9 @@ fi
     --prefix="$PACKIT_PACKAGE_PATH" \
     --no-system-libs \
     --no-debugger \
+    --parallel=$PACKIT_BUILD_JOBS_COUNT \
     $extra_flags
 
-make
+make -j $PACKIT_BUILD_JOBS_COUNT
 
 make install

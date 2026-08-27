@@ -10,9 +10,9 @@ if [ "$PACKIT_OS" = "linux" ]; then
         LDFLAGS="-L$PACKIT_PACKAGE_DEPENDENCIES_PATH/ncurses/lib -lncurses"
 fi
 
-make
+make -j $PACKIT_BUILD_JOBS_COUNT
 
-make check
+make check -j $PACKIT_BUILD_JOBS_COUNT
 
 make install
 
