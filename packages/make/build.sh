@@ -6,7 +6,6 @@ sh build.sh
 
 ./make
 
-# TODO: Requires PERL
-./run_make_tests
+# Requires PERL for the build tests
 
 ./make install
