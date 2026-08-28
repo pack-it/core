@@ -1,5 +1,5 @@
 version = "3.7.1"
-license = { any = ["MIT", "GPL-2.0-only"] }
+license = "MIT"
 dependencies = []
 build_dependencies = []
 external_test_files = ["test.c"]
@@ -8,5 +8,6 @@ external_test_files = ["test.c"]
 url = "https://github.com/libffi/libffi/releases/download/v3.7.1/libffi-3.7.1.tar.gz"
 checksum = "d5e9a6638ddbd2513ddb54518eb67e4bbe6fa707bcc01c10f6212f0a088d819d"
 size = 1515185
+license_exclude = ["LICENSE-BUILDTOOLS"]
 
 [targets.unix]
