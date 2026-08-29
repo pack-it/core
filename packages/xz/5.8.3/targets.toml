@@ -16,6 +16,7 @@ mirrors = [
 ]
 checksum = "3d3a1b973af218114f4f889bbaa2f4c037deaae0c8e815eec381c3d546b974a0"
 size = 2771455
+license_include = ["COPYING.0BSD", "COPYING.LGPLv2.1", "COPYING.GPLv2", "COPYING.GPLv3"]
 
 [source.windows]
 url = "https://github.com/tukaani-project/xz/releases/download/v5.8.3/xz-5.8.3.tar.gz"
@@ -25,6 +26,7 @@ mirrors = [
 ]
 checksum = "3d3a1b973af218114f4f889bbaa2f4c037deaae0c8e815eec381c3d546b974a0"
 size = 2771455
+license_include = ["COPYING.0BSD", "COPYING.LGPLv2.1", "COPYING.GPLv2", "COPYING.GPLv3"]
 patches.0 = {
     # Apply patch to fix build tests on Windows
     url = "https://github.com/tukaani-project/xz/commit/18769dd6927f16562008aee01ab1466c3035110e.patch",

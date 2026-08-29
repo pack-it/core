@@ -1,5 +1,5 @@
 version = "10.47"
-license = "BSD-3-Clause"
+license = { name = "BSD-3-Clause", with = ["PCRE2-exception"]}
 dependencies = []
 build_dependencies = []
 external_test_files = ["test.c"]

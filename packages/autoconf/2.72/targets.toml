@@ -1,5 +1,5 @@
 version = "2.72"
-license = "GPL-3.0-or-later"
+license = { name = "GPL-3.0-or-later", with = ["Autoconf-exception-3.0"] }
 dependencies = ["m4"]
 build_dependencies = []
 
@@ -12,6 +12,7 @@ mirrors = [
 ]
 checksum = "afb181a76e1ee72832f6581c0eddf8df032b83e2e0239ef79ebedc4467d92d6e"
 size = 2143794
+license_include = ["COPYING.EXCEPTION"]
 
 [targets.linux]
 dependencies = ["perl"]

@@ -1,5 +1,5 @@
 version = "2.5.4"
-license = "LGPL-2.0-or-later"
+license = { all = ["GPL-2.0-or-later", { name = "LGPL-2.1-or-later", with = ["Libtool-exception"] }] }
 dependencies = ["m4"]
 build_dependencies = []
 
