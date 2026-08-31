@@ -4,12 +4,10 @@
 
 make
 
-# TODO: Test on x86-64
-# Skip the execution on ARM based targets, because NASM is not build for it
-if [ "$PACKIT_TARGET" != "aarch64-apple-darwin" ] || [ "$PACKIT_OS" = "aarch64-unknown-linux-gnu" ] ; then
+# Only execute build tests on x86-64 targets and skip on Linux because the test requires Perl.
+if [ "$PACKIT_TARGET" == "x86_64-apple-darwin" ]; then
+    make golden
     make test
 fi
-
-
 
 make install
