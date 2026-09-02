@@ -3,8 +3,9 @@
 # Set YACC to false, because it requires xcode tools, and the test is not properly skipped by automake
 ./configure --prefix=$PACKIT_PACKAGE_PATH YACC=false
 
-# Modify the sed command in ./t/tap-stderr-prefix.tap to work with BSD sed
+# PATCH: Build tests
 if [ "$PACKIT_OS" = "mac" ]; then
+    # Modify the sed command in ./t/tap-stderr-prefix.tap to work with BSD sed
     sed -i '' '152s|${|${\
 |' ./t/tap-stderr-prefix.tap
 
@@ -17,6 +18,6 @@ elif [ "$PACKIT_OS" = "linux" ]; then
     sed -i '/t\/yacc-bison-skeleton\.sh \\/d' Makefile 
 fi
 
-make check VERBOSE=1
+make check
 
 make install

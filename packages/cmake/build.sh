@@ -13,8 +13,8 @@ fi
 
 make
 
-# Skip `RunCMake.Framework`, `RunCMake.XcFramework` and `Framework`,  because they require iOS SDK. Which aren't always present.
+# Skip `RunCMake.Framework`, `RunCMake.XcFramework` and `Framework`, because they require the iOS SDK, which are not always present.
 # Skip `RunCMake.CMakePackage`, because it tries to build for an i386 architecture which is deprecated on macOS.
-./bin/ctest --verbose -C Release -E "RunCMake.Framework|RunCMake.XcFramework|Framework|RunCMake.CMakePackage"
+./bin/ctest -C Release -E "RunCMake.Framework|RunCMake.XcFramework|Framework|RunCMake.CMakePackage"
 
 make install

@@ -10,6 +10,6 @@ cmake -S . -B build -DCMAKE_INSTALL_PREFIX="$PACKIT_PACKAGE_PATH" -DCMAKE_BUILD_
 cmake --build build --config Release
 
 # The `test_json_parse_cli` can't work when `BUILD_APPS` is OFF
-ctest --verbose -C Release --test-dir build -E "test_json_parse_cli"
+ctest -C Release --test-dir build -E "test_json_parse_cli"
 
 cmake --install build --config Release

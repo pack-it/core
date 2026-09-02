@@ -30,6 +30,6 @@ cmake -S build/cmake -B build -DCMAKE_INSTALL_PREFIX="$PACKIT_PACKAGE_PATH" \
 
 cmake --build build --config Release
 
-ctest --verbose -C Release
+ctest -C Release
 
 cmake --install build --config Release

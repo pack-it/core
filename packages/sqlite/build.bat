@@ -27,7 +27,7 @@ if ERRORLEVEL 1 (
     exit /b 1
 )
 
-REM Skipping build test, becaues sqlite requires tcl-dev
+REM Skipping build test, because sqlite requires tcl-dev
 
 mkdir "%PACKIT_PACKAGE_PATH%\bin\"
 mkdir "%PACKIT_PACKAGE_PATH%\lib\"

@@ -12,6 +12,7 @@ fi
 
 make
 
+# PATCH: Build tests
 # Skip the `pngtest-all` test.
 # Linux uses `zlib-ng-compat` which sometimes fails because of different compression then normal `zlib`
 if [ "$PACKIT_OS" = "linux" ]; then

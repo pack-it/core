@@ -31,7 +31,7 @@ cmake --build build-static --config Release
 
 # Build tests depend on python, so only execute on macos where python is installed by default
 if [ "$PACKIT_OS" = "mac" ]; then
-    ctest --verbose -C Release --test-dir build-static -E "online|proxy|auth_clone"
+    ctest -C Release --test-dir build-static -E "online|proxy|auth_clone"
 fi
 
 cmake --install build-static --config Release
@@ -43,7 +43,7 @@ cmake --build build-shared --config Release
 
 # Build tests depend on python, so only execute on macos where python is installed by default
 if [ "$PACKIT_OS" = "mac" ]; then
-    ctest --verbose -C Release --test-dir build-shared -E "online|proxy|auth_clone"
+    ctest -C Release --test-dir build-shared -E "online|proxy|auth_clone"
 fi
 
 cmake --install build-shared --config Release

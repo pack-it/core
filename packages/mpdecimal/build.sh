@@ -4,6 +4,6 @@
 
 make
 
-# Skipping test because tests are not include (located at: http://speleotrove.com/decimal/dectest.zip)
+# Skipping tests because tests are not included (located at: http://speleotrove.com/decimal/dectest.zip)
 
 make install
