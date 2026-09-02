@@ -4,6 +4,6 @@
 
 make
 
-cd build && make test
+make check
 
 make install

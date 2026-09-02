@@ -4,4 +4,10 @@
 
 make
 
+# Only execute build tests on x86-64 targets and skip on Linux because the test requires Perl.
+if [ "$PACKIT_TARGET" == "x86_64-apple-darwin" ]; then
+    make golden
+    make test
+fi
+
 make install

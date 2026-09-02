@@ -4,6 +4,6 @@ cmake -S . -B build -DCMAKE_INSTALL_PREFIX="$PACKIT_PACKAGE_PATH" -DCMAKE_BUILD_
 
 cmake --build build --config Release
 
-ctest --verbose -C Release
+# Only supports testing with node based tools
 
 cmake --install build --config Release

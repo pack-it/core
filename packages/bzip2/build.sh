@@ -2,6 +2,8 @@
 
 make
 
+make test
+
 make install PREFIX="$PACKIT_PACKAGE_PATH"
 
 mkdir $PACKIT_PACKAGE_PATH/share

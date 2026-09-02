@@ -6,4 +6,6 @@ sh build.sh
 
 ./make
 
+# Requires Perl for the build tests
+
 ./make install

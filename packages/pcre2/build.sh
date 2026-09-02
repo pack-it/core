@@ -23,4 +23,6 @@ fi
 
 make
 
+make check
+
 make install

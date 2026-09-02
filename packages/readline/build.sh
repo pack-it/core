@@ -12,4 +12,6 @@ fi
 
 make SHLIB_LIBS=$path
 
+# Readline doesn't have a testsuite
+
 make install

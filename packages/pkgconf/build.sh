@@ -4,6 +4,8 @@
 
 make
 
+# Skipping build tests, because the kyua test framework is required
+
 make install
 
 # Create pkg-config symlinks to use pkgconf as pkg-config alternative

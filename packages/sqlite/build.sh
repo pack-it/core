@@ -32,4 +32,6 @@ fi
 
 make
 
+# Skipping build test, because sqlite requires tcl-dev
+
 make install

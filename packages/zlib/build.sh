@@ -4,4 +4,6 @@
 
 make
 
+make test
+
 make install
