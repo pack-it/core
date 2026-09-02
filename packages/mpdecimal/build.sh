@@ -4,7 +4,6 @@
 
 make
 
-# TODO: Needs a separate test test from http://speleotrove.com/decimal/dectest.zip
-# make test
+# Skipping test because tests are not include (located at: http://speleotrove.com/decimal/dectest.zip)
 
 make install

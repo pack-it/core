@@ -32,7 +32,6 @@ fi
 
 make
 
-# Sqlite3 needs tcl-dev for tests
-#make test
+# Skipping build test, becaues sqlite requires tcl-dev
 
 make install

@@ -4,8 +4,7 @@
 
 make
 
-# TODO: Needs kyua testframework
-#make check
+# Skipping build tests, because the kyua test framework is required
 
 make install
 
