@@ -15,6 +15,8 @@ if ERRORLEVEL 1 (
     exit /b 1
 )
 
+REM Skip the build tests, because the path to the `zlib` dependency is hardcoded as `..\zlib\zlib.lib`
+
 REM Installation to include directory
 mkdir "%PACKIT_PACKAGE_PATH%\include\libpng16\"
 move "png.h" "%PACKIT_PACKAGE_PATH%\include\libpng16\"

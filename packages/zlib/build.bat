@@ -32,6 +32,8 @@ if not exist zdll.lib (
     exit /b 1
 )
 
+nmake -f win32/Makefile.msc test
+
 mkdir "%PACKIT_PACKAGE_PATH%\include\"
 mkdir "%PACKIT_PACKAGE_PATH%\lib\"
 mkdir "%PACKIT_PACKAGE_PATH%\bin\"

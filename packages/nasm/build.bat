@@ -7,6 +7,8 @@ if ERRORLEVEL 1 (
     exit /b %ERRORLEVEL%
 )
 
+REM Skip build test, because it requires Perl
+
 mkdir "%PACKIT_PACKAGE_PATH%\bin\"
 
 move ".\nasm.exe" "%PACKIT_PACKAGE_PATH%\bin\"

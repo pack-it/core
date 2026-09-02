@@ -15,6 +15,8 @@ if ERRORLEVEL 1 (
     exit /b %ERRORLEVEL%
 )
 
+REM Tests cannot be found, probably an issue of the boostrap script
+
 nmake install
 if ERRORLEVEL 1 (
     echo CMake install failed
