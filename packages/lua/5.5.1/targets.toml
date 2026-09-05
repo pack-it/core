@@ -1,13 +1,7 @@
 version = "5.5.1"
 license = "MIT license"
-
-dependencies = [
-  
-]
-
-build_dependencies = [
-    make,
-]
+dependencies = []
+build_dependencies = []
 
 [source.unix]
 url = "https://github.com/lua/lua/releases/tag/v5.5.1.tar.gz"
