@@ -43,5 +43,3 @@ fi
 
 rm -f test.lua test.luac
 
-exit 0
-```
