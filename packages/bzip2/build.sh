@@ -2,7 +2,7 @@
 
 make
 
-make test
+# Needs cmake or python to run build tests
 
 make install PREFIX="$PACKIT_PACKAGE_PATH"
 

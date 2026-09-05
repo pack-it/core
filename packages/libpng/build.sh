@@ -22,6 +22,6 @@ exit 0
 EOF
 fi
 
-make test
+[ "${PACKIT_EXECUTE_BUILD_TEST:-}" = "1" ] && make test
 
 make install

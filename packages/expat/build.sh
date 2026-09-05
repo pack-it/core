@@ -4,6 +4,6 @@
 
 make
 
-make check
+[ "${PACKIT_INCLUDE_BUILD_TEST:-}" = "1" ] && make check
 
 make install

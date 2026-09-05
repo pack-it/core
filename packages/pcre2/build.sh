@@ -23,6 +23,6 @@ fi
 
 make
 
-make check
+[ "${PACKIT_EXECUTE_BUILD_TEST:-}" = "1" ] && make check
 
 make install

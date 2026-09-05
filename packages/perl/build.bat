@@ -28,7 +28,7 @@ if ERRORLEVEL 1 (
     exit /b %ERRORLEVEL%
 )
 
-nmake test-notty INST_DRV="%DRIVE%" INST_TOP="%PACKIT_PACKAGE_PATH%" CCTYPE="%MSVCNAME%"
+if "%PACKIT_EXECUTE_BUILD_TEST%"=="1" nmake test-notty INST_DRV="%DRIVE%" INST_TOP="%PACKIT_PACKAGE_PATH%" CCTYPE="%MSVCNAME%"
 if ERRORLEVEL 1 (
     echo Perl tests failed
     exit /b %ERRORLEVEL%

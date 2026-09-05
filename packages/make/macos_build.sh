@@ -8,7 +8,7 @@ sh build.sh
 
 ./make install
 
-./make check
+[ "${PACKIT_EXECUTE_BUILD_TEST:-}" = "1" ] && ./make check
 
 # Create gnubin to allow adding make without g prefix to path
 mkdir $PACKIT_PACKAGE_PATH/gnubin

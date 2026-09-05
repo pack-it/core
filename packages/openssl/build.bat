@@ -17,7 +17,7 @@ if ERRORLEVEL 1 (
 )
 
 REM Test group 70 does not reliably work on Windows
-nmake test TESTS="-70"
+if "%PACKIT_EXECUTE_BUILD_TEST%"=="1" nmake test TESTS="-70"
 if ERRORLEVEL 1 (
     echo OpenSSL tests failed
     exit /b %ERRORLEVEL%
