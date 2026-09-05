@@ -23,7 +23,7 @@ for /f "delims=" %%i in ('"%PACKIT_PACKAGE_PATH%\bin\lua.exe" test.lua') do (
 )
 
 if not "%RESULT%"=="%TEST_TEXT%" (
-    echo Lua script execution test failed
+    echo Test failed: Lua script execution test failed
     del /q test.lua
     exit /b 1
 )
