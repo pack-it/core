@@ -1,0 +1,32 @@
+version = "0.12.4"
+license = "Apache 2.0"
+
+dependencies = [
+    gettext,
+]
+
+build_dependencies = [
+    cmake,
+]
+
+[source.unix]
+url = "https://github.com/neovim/neovim/archive/refs/tags/v0.12.4.tar.gz"
+mirrors = [
+]
+checksum = "2727da95d2b8b809bc7c71e085452e47dfe1d8aa7cfaa15c68004e23f6f0a6dd"
+
+[source.windows]
+url = "https://github.com/neovim/neovim/archive/refs/tags/v0.12.4.tar.gz"
+mirrors = [
+]
+checksum = "2727da95d2b8b809bc7c71e085452e47dfe1d8aa7cfaa15c68004e23f6f0a6dd"
+
+[targets.linux]
+source = "unix"
+
+[targets.mac]
+source = "unix"
+skip_symlinking = true
+
+[targets.windows]
+source = "windows"
