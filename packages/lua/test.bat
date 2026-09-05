@@ -44,7 +44,7 @@ for /f "delims=" %%i in ('"%PACKIT_PACKAGE_PATH%\bin\lua.exe" test.luac') do (
 )
 
 if not "%RESULT%"=="%TEST_TEXT%" (
-    echo Lua bytecode execution test failed
+    echo Test failed: Lua bytecode execution test failed
     del /q test.lua
     del /q test.luac
     exit /b 1
