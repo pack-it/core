@@ -32,7 +32,7 @@ if not exist zdll.lib (
     exit /b 1
 )
 
-nmake -f win32/Makefile.msc test
+if "%PACKIT_EXECUTE_BUILD_TEST%"=="1" nmake -f win32/Makefile.msc test
 
 mkdir "%PACKIT_PACKAGE_PATH%\include\"
 mkdir "%PACKIT_PACKAGE_PATH%\lib\"

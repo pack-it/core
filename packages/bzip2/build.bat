@@ -7,7 +7,7 @@ if ERRORLEVEL 1 (
     exit /b %ERRORLEVEL%
 )
 
-nmake -f makefile.msc test
+REM Needs cmake or python to run build tests
 
 robocopy . "%PACKIT_PACKAGE_PATH%\bin" bzip2.exe
 if %ERRORLEVEL% GEQ 8 exit /b %ERRORLEVEL%

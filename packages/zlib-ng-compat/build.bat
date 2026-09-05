@@ -4,7 +4,7 @@ if ERRORLEVEL 1 exit /b %ERRORLEVEL%
 cmake --build build --config Release
 if ERRORLEVEL 1 exit /b %ERRORLEVEL%
 
-ctest -C Release
+if "%PACKIT_EXECUTE_BUILD_TEST%"=="1" ctest -C Release
 if ERRORLEVEL 1 exit /b %ERRORLEVEL%
 
 cmake --install build --config Release
