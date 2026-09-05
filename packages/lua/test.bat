@@ -9,7 +9,7 @@ for /f "delims=" %%i in ('"%PACKIT_PACKAGE_PATH%\bin\lua.exe" -e "print(""shoot 
 )
 
 if not "%RESULT%"=="%TEST_TEXT%" (
-    echo Lua interpreter test failed
+    echo Test failed: Lua interpreter test failed
     exit /b 1
 )
 
