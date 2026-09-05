@@ -3,16 +3,8 @@ license = "MIT license"
 dependencies = []
 build_dependencies = []
 
-[source.unix]
+[source]
 url = "https://github.com/lua/lua/releases/tag/v5.5.1.tar.gz"
-mirrors = [
-]
-checksum = "1c4b4068d67061f2a2231ad2b5422e77acea1487ea9890f6320af614f4373dce"
-
-[source.windows]
-url = "https://github.com/lua/lua/releases/tag/v5.5.1.tar.gz"
-mirrors = [
-]
 checksum = "1c4b4068d67061f2a2231ad2b5422e77acea1487ea9890f6320af614f4373dce"
 
 [targets.linux]
