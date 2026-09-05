@@ -18,6 +18,6 @@ elif [ "$PACKIT_OS" = "linux" ]; then
     sed -i '/t\/yacc-bison-skeleton\.sh \\/d' Makefile 
 fi
 
-make check
+[ "${PACKIT_EXECUTE_BUILD_TEST:-}" = "1" ] && make check
 
 make install

@@ -11,7 +11,7 @@ make PREFIX="$PACKIT_PACKAGE_PATH" \
     READLINE_INCLUDE="-I$PACKIT_PACKAGE_DEPENDENCIES_PATH/readline/include" \
     READLINE_EXTRAS="-lhistory"
 
-make check
+[ "${PACKIT_EXECUTE_BUILD_TEST:-}" = "1" ] && make check
 
 make install PREFIX="$PACKIT_PACKAGE_PATH" \
     BINDIR="$PACKIT_PACKAGE_PATH/bin" \

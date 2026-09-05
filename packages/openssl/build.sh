@@ -9,6 +9,6 @@ perl ./Configure \
 
 make
 
-make HARNESS_JOBS=4 test
+[ "${PACKIT_EXECUTE_BUILD_TEST:-}" = "1" ] && make HARNESS_JOBS=4 test
 
 make install
