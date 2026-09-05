@@ -32,7 +32,7 @@ REM Test Lua compiler
 "%PACKIT_PACKAGE_PATH%\bin\luac.exe" -o test.luac test.lua
 
 if ERRORLEVEL 1 (
-    echo Lua compiler test failed
+    echo Test failed: Lua compiler test failed
     del /q test.lua
     exit /b 1
 )
