@@ -1,4 +1,3 @@
-```bat
 @echo off
 
 set "TEST_TEXT=shoot for the stars, aim for the moon"
