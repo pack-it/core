@@ -56,5 +56,3 @@ if %ERRORLEVEL% GEQ 8 exit /b %ERRORLEVEL%
 REM Install library
 robocopy src "%PACKIT_PACKAGE_PATH%\lib" lua.lib
 if %ERRORLEVEL% GEQ 8 exit /b %ERRORLEVEL%
-
-exit /b 0
