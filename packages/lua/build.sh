@@ -1,4 +1,3 @@
-```sh
 #!/bin/sh
 
 cd lua-$PACKIT_PACKAGE_VERSION
