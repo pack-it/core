@@ -9,7 +9,7 @@ if [ "$PACKIT_OS" = "mac" ]; then
     export TESTSUITEFLAGS="-247 249-"
 fi
 
-[ "${PACKIT_EXECUTE_BUILD_TEST:-}" = "1" ] && make check
+[ "${PACKIT_EXECUTE_BUILD_TEST:-}" = "1" ] && make check -j $PACKIT_BUILD_JOBS_COUNT
 
 make install
 

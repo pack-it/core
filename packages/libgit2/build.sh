@@ -30,13 +30,8 @@ cmake -S . -B build-static -DCMAKE_INSTALL_PREFIX="$PACKIT_PACKAGE_PATH" -DCMAKE
 cmake --build build-static --config Release --parallel $PACKIT_BUILD_JOBS_COUNT
 
 # Build tests depend on python, so only execute on macos where python is installed by default
-<<<<<<< HEAD
 if [ "$PACKIT_OS" = "mac" ] && [ "${PACKIT_EXECUTE_BUILD_TEST:-}" = "1" ]; then
-    ctest -C Release --test-dir build-static -E "online|proxy|auth_clone"
-=======
-if [ "$PACKIT_OS" = "mac" ]; then
-    ctest --verbose -C Release --test-dir build-static -E "online|proxy|auth_clone" --parallel $PACKIT_BUILD_JOBS_COUNT
->>>>>>> 3fcb010 (Implement parallel builds and tests)
+    ctest -C Release --test-dir build-static -E "online|proxy|auth_clone" --parallel $PACKIT_BUILD_JOBS_COUNT
 fi
 
 cmake --install build-static --config Release
@@ -47,13 +42,8 @@ cmake -S . -B build-shared -DCMAKE_INSTALL_PREFIX="$PACKIT_PACKAGE_PATH" -DCMAKE
 cmake --build build-shared --config Release --parallel $PACKIT_BUILD_JOBS_COUNT
 
 # Build tests depend on python, so only execute on macos where python is installed by default
-<<<<<<< HEAD
 if [ "$PACKIT_OS" = "mac" ] && [ "${PACKIT_EXECUTE_BUILD_TEST:-}" = "1" ]; then
-    ctest -C Release --test-dir build-shared -E "online|proxy|auth_clone"
-=======
-if [ "$PACKIT_OS" = "mac" ]; then
-    ctest --verbose -C Release --test-dir build-shared -E "online|proxy|auth_clone" --parallel $PACKIT_BUILD_JOBS_COUNT
->>>>>>> 3fcb010 (Implement parallel builds and tests)
+    ctest -C Release --test-dir build-shared -E "online|proxy|auth_clone" --parallel $PACKIT_BUILD_JOBS_COUNT
 fi
 
 cmake --install build-shared --config Release
