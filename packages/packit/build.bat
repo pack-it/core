@@ -1,5 +1,5 @@
 REM Go up one level if we are in the `bin` directory and see the `pit` file
-if exist "pit" (
+if exist "pit.exe" (
     cd ..
 )
 
