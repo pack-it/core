@@ -7,7 +7,7 @@ if ERRORLEVEL 1 exit /b %ERRORLEVEL%
 .\test.exe > .\output_file
 if ERRORLEVEL 1 exit /b %ERRORLEVEL%
 
-set /p "output="<".\output_file%"
+set /p "output="<".\output_file"
 set "expected_output=The count of Numeria says one, two, three, four, five, the thing that comes after five. AAaahhh this happens everytimeee!!"
 
 if not "%output%"=="%expected_output%" (
