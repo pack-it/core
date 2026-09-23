@@ -11,7 +11,7 @@ if ERRORLEVEL 1 (
     exit /b 1
 )
 
-if "%output%" == "%test_output%" (
+if not "%output%" == "%test_output%" (
     echo Test failed: test output '%output%' does not match the expected output
     exit /b 1
 )
