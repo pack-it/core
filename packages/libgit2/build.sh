@@ -1,18 +1,18 @@
 #!/bin/sh
 
-flags=""
-if [ "$PACKIT_OS" = "mac" ]; then
-    # The DCMAKE_INSTALL_RPATH is needed because llhttp has an install name containing @rpath
-    flags="-DCMAKE_INSTALL_RPATH=\"$PACKIT_PACKAGE_DEPENDENCIES_PATH/llhttp/lib\""
-elif [ "$PACKIT_OS" = "linux" ]; then
-    flags="-DREGEX_BACKEND=pcre2"
-fi
-
-# Put shared flags in the flags
-flags="$flags -DBUILD_TESTS=ON"
+# Put shared flags in the flags variable
+flags="-DBUILD_TESTS=ON"
 flags="$flags -DUSE_HTTP_PARSER=llhttp"
 flags="$flags -DUSE_SSH=ON"
 flags="$flags -DUSE_BUNDLED_ZLIB=OFF"
+
+# The DCMAKE_INSTALL_RPATH is needed because llhttp has an install name containing @rpath
+flags="$flags -DCMAKE_INSTALL_RPATH=\"$PACKIT_PACKAGE_DEPENDENCIES_PATH/llhttp/lib\""
+
+# Only use pcre2 on linux
+if [ "$PACKIT_OS" = "linux" ]; then
+    flags="$flags -DREGEX_BACKEND=pcre2"
+fi
 
 # Build static library
 cmake -S . -B build-static -DCMAKE_INSTALL_PREFIX="$PACKIT_PACKAGE_PATH" -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF $flags
