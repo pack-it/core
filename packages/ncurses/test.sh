@@ -11,4 +11,7 @@ fi
 gcc -L "$PACKIT_PACKAGE_PATH/lib" -I "$PACKIT_PACKAGE_PATH/include" test.c -o test -lncurses
 
 # Run test code to see if ncurses works (no text check can be done because ncurses does not write to stdout)
-printf 'q' | ./test
+# Only run test if tty is available
+if [ -t 0 ]; then
+    printf 'q' | ./test
+fi
