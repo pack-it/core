@@ -60,29 +60,29 @@ if [ "$PACKIT_OS" = "mac" ]; then
 fi
 
 if [ "$PACKIT_OS" = "linux" ]; then
-    ln -s libformw.so.6.6 lib/libform.so
-    ln -s libformw.so.6.6 lib/libform.so.6
-    ln -s libformw.so.6.6 lib/libform.so.6.6
+    ln -s libformw.so.$PACKIT_PACKAGE_VERSION lib/libform.so
+    ln -s libformw.so.$PACKIT_PACKAGE_VERSION lib/libform.so.6
+    ln -s libformw.so.$PACKIT_PACKAGE_VERSION lib/libform.so.$PACKIT_PACKAGE_VERSION
 
-    ln -s libmenuw.so.6.6 lib/libmenu.so
-    ln -s libmenuw.so.6.6 lib/libmenu.so.6
-    ln -s libmenuw.so.6.6 lib/libmenu.so.6.6
+    ln -s libmenuw.so.$PACKIT_PACKAGE_VERSION lib/libmenu.so
+    ln -s libmenuw.so.$PACKIT_PACKAGE_VERSION lib/libmenu.so.6
+    ln -s libmenuw.so.$PACKIT_PACKAGE_VERSION lib/libmenu.so.$PACKIT_PACKAGE_VERSION
 
-    ln -s libncursesw.so.6.6 lib/libncurses.so
-    ln -s libncursesw.so.6.6 lib/libncurses.so.6
-    ln -s libncursesw.so.6.6 lib/libncurses.so.6.6
+    ln -s libncursesw.so.$PACKIT_PACKAGE_VERSION lib/libncurses.so
+    ln -s libncursesw.so.$PACKIT_PACKAGE_VERSION lib/libncurses.so.6
+    ln -s libncursesw.so.$PACKIT_PACKAGE_VERSION lib/libncurses.so.$PACKIT_PACKAGE_VERSION
 
-    ln -s libpanelw.so.6.6 lib/libpanel.so
-    ln -s libpanelw.so.6.6 lib/libpanel.so.6
-    ln -s libpanelw.so.6.6 lib/libpanel.so.6.6
+    ln -s libpanelw.so.$PACKIT_PACKAGE_VERSION lib/libpanel.so
+    ln -s libpanelw.so.$PACKIT_PACKAGE_VERSION lib/libpanel.so.6
+    ln -s libpanelw.so.$PACKIT_PACKAGE_VERSION lib/libpanel.so.$PACKIT_PACKAGE_VERSION
 
-    ln -s libncursesw.so.6.6 lib/libcurses.so
+    ln -s libncursesw.so.$PACKIT_PACKAGE_VERSION lib/libcurses.so
 
     ln -s libncurses.so lib/libtinfo.so
 
-    ln -s libncurses++w.so.6.6 lib/libncurses++.so
-    ln -s libncurses++w.so.6.6 lib/libncurses++.so.6
-    ln -s libncurses++w.so.6.6 lib/libncurses++.so.6.6
+    ln -s libncurses++w.so.$PACKIT_PACKAGE_VERSION lib/libncurses++.so
+    ln -s libncurses++w.so.$PACKIT_PACKAGE_VERSION lib/libncurses++.so.6
+    ln -s libncurses++w.so.$PACKIT_PACKAGE_VERSION lib/libncurses++.so.$PACKIT_PACKAGE_VERSION
 fi
 
 ln -s ncursesw.pc lib/pkgconfig/ncurses.pc
