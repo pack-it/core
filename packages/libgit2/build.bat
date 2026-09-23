@@ -2,7 +2,7 @@ REM Build static library
 cmake -S . -B build-static -DCMAKE_INSTALL_PREFIX="%PACKIT_PACKAGE_PATH%" -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF -DBUILD_TESTS=OFF -DUSE_HTTP_PARSER=llhttp -DUSE_SSH=ON -DUSE_BUNDLED_ZLIB=OFF -DLLHTTP_INCLUDE_DIR="%PACKIT_PACKAGE_DEPENDENCIES_PATH%\llhttp\include" -DLLHTTP_LIBRARY="%PACKIT_PACKAGE_DEPENDENCIES_PATH%\llhttp\lib\llhttp.lib" -DLIBSSH2_INCLUDE_DIR="%PACKIT_PACKAGE_DEPENDENCIES_PATH%\libssh2\include" -DLIBSSH2_LIBRARY="%PACKIT_PACKAGE_DEPENDENCIES_PATH%\libssh2\lib\libssh2.lib"
 if ERRORLEVEL 1 exit /b %ERRORLEVEL%
 
-cmake --build build-static --config Release
+cmake --build build-static --config Release --parallel %PACKIT_BUILD_JOBS_COUNT%
 if ERRORLEVEL 1 exit /b %ERRORLEVEL%
 
 cmake --install build-static --config Release
@@ -12,7 +12,7 @@ REM Build shared libraries
 cmake -S . -B build-shared -DCMAKE_INSTALL_PREFIX="%PACKIT_PACKAGE_PATH%" -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=ON -DBUILD_TESTS=OFF -DUSE_HTTP_PARSER=llhttp -DUSE_SSH=ON -DUSE_BUNDLED_ZLIB=OFF -DLLHTTP_INCLUDE_DIR="%PACKIT_PACKAGE_DEPENDENCIES_PATH%\llhttp\include" -DLLHTTP_LIBRARY="%PACKIT_PACKAGE_DEPENDENCIES_PATH%\llhttp\lib\llhttp.lib" -DLIBSSH2_INCLUDE_DIR="%PACKIT_PACKAGE_DEPENDENCIES_PATH%\libssh2\include" -DLIBSSH2_LIBRARY="%PACKIT_PACKAGE_DEPENDENCIES_PATH%\libssh2\lib\libssh2.lib"
 if ERRORLEVEL 1 exit /b %ERRORLEVEL%
 
-cmake --build build-shared --config Release
+cmake --build build-shared --config Release --parallel %PACKIT_BUILD_JOBS_COUNT%
 if ERRORLEVEL 1 exit /b %ERRORLEVEL%
 
 cmake --install build-shared --config Release

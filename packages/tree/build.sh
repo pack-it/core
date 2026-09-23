@@ -1,6 +1,6 @@
 #!/bin/sh
 
-make PREFIX="$PACKIT_PACKAGE_PATH" MANDIR="$PACKIT_PACKAGE_PATH/share/man"
+make PREFIX="$PACKIT_PACKAGE_PATH" MANDIR="$PACKIT_PACKAGE_PATH/share/man" -j $PACKIT_BUILD_JOBS_COUNT
 
 # Tree doesn't have a testsuite
 

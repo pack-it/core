@@ -2,8 +2,8 @@
 
 ./configure --prefix=$PACKIT_PACKAGE_PATH
 
-make
+make -j $PACKIT_BUILD_JOBS_COUNT
 
-[ "${PACKIT_EXECUTE_BUILD_TEST:-}" = "1" ] && make test
+[ "${PACKIT_EXECUTE_BUILD_TEST:-}" = "1" ] && make test -j $PACKIT_BUILD_JOBS_COUNT
 
 make install

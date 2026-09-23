@@ -2,7 +2,7 @@
 
 ./configure --prefix=$PACKIT_PACKAGE_PATH
 
-make
+make -j $PACKIT_BUILD_JOBS_COUNT
 
 # Skipping build tests, because the kyua test framework is required
 

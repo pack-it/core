@@ -4,11 +4,11 @@
 
 sh build.sh
 
-./make
+./make -j $PACKIT_BUILD_JOBS_COUNT
 
 ./make install
 
-[ "${PACKIT_EXECUTE_BUILD_TEST:-}" = "1" ] && ./make check
+[ "${PACKIT_EXECUTE_BUILD_TEST:-}" = "1" ] && ./make check -j $PACKIT_BUILD_JOBS_COUNT
 
 # Create gnubin to allow adding make without g prefix to path
 mkdir $PACKIT_PACKAGE_PATH/gnubin

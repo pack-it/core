@@ -7,8 +7,8 @@ perl ./Configure \
     --openssldir=$PACKIT_PREFIX_PATH/etc/openssl@$PACKIT_PACKAGE_VERSION \
     --libdir=lib \
 
-make
+make -j $PACKIT_BUILD_JOBS_COUNT
 
-[ "${PACKIT_EXECUTE_BUILD_TEST:-}" = "1" ] && make HARNESS_JOBS=4 test
+[ "${PACKIT_EXECUTE_BUILD_TEST:-}" = "1" ] && make HARNESS_JOBS=$PACKIT_BUILD_JOBS_COUNT test -j $PACKIT_BUILD_JOBS_COUNT
 
 make install

@@ -2,11 +2,11 @@
 
 ./configure --prefix=$PACKIT_PACKAGE_PATH --disable-silent-rules --enable-ltdl-install --program-prefix=g
 
-make
+make -j $PACKIT_BUILD_JOBS_COUNT
 
 # Skip test 146, because of wrongly set paths in the test which causes linking problems
 # `INNER_TESTSUITEFLAGS="-145 147-171 173-"` stops test 146 being run again and prevents infinite recursion
-[ "${PACKIT_EXECUTE_BUILD_TEST:-}" = "1" ] && make check TESTSUITEFLAGS="-145 147-" INNER_TESTSUITEFLAGS="-145 147-171 173-"
+[ "${PACKIT_EXECUTE_BUILD_TEST:-}" = "1" ] && make check TESTSUITEFLAGS="-145 147-" INNER_TESTSUITEFLAGS="-145 147-171 173-" -j $PACKIT_BUILD_JOBS_COUNT
 
 make install
 

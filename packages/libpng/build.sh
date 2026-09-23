@@ -10,7 +10,7 @@ if [ "$PACKIT_OS" = "linux" ]; then
         LDFLAGS="-L$PACKIT_PACKAGE_DEPENDENCIES_PATH/zlib-ng-compat/lib -lz"
 fi
 
-make
+make -j $PACKIT_BUILD_JOBS_COUNT
 
 # PATCH: Build tests
 # Skip the `pngtest-all` test.
@@ -22,6 +22,6 @@ exit 0
 EOF
 fi
 
-[ "${PACKIT_EXECUTE_BUILD_TEST:-}" = "1" ] && make test
+[ "${PACKIT_EXECUTE_BUILD_TEST:-}" = "1" ] && make test -j $PACKIT_BUILD_JOBS_COUNT
 
 make install
