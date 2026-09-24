@@ -4,10 +4,30 @@ call "%PACKIT_VCVARSALL%" %PACKIT_VCVARSALL_ARCH% %PACKIT_OUTPUTS% >&3
 cl /I "%PACKIT_PACKAGE_PATH%\include" test.c /Fe:test.exe /link /LIBPATH:"%PACKIT_PACKAGE_PATH%\lib" libexpat.lib %PACKIT_OUTPUTS% >&3 2>&3
 if ERRORLEVEL 1 exit /b %ERRORLEVEL%
 
-.\test.exe > .\output_file
+if exist "test.exe" (
+    echo TEST EXECUTABLE EXISTS
+    dir test.exe
+)
+
+echo ---------------------------------------------------
+dumpbin /dependents test.exe
+echo ---------------------------------------------------
+dumpbin test.exe
+echo ---------------------------------------------------
+
+test.exe
+set "rc=%ERRORLEVEL%"
+echo TEST.EXE EXIT CODE=%rc%
+
+test.exe > output_file
+type output_file
 if ERRORLEVEL 1 exit /b %ERRORLEVEL%
 
-set /p "output="<".\output_file%"
+if exist "output_file" (
+    echo SOMETHING WITH THAT NAME EXISTS
+)
+
+set /p "output="<"output_file"
 set "expected_output=The count of Numeria says one, two, three, four, five, the thing that comes after five. AAaahhh this happens everytimeee!!"
 
 if not "%output%"=="%expected_output%" (
