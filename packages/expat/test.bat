@@ -9,6 +9,12 @@ if exist "test.exe" (
     dir test.exe
 )
 
+echo ---------------------------------------------------
+dumpbin /dependents test.exe
+echo ---------------------------------------------------
+dumpbin test.exe
+echo ---------------------------------------------------
+
 test.exe
 set "rc=%ERRORLEVEL%"
 echo TEST.EXE EXIT CODE=%rc%
