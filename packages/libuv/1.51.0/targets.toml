@@ -17,3 +17,4 @@ build_dependencies = ["autoconf", "automake", "libtool", "m4"]
 
 [targets.windows]
 build_dependencies = ["cmake"]
+test_requirements = ["msvc"]
