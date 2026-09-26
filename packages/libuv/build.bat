@@ -1,0 +1,10 @@
+cmake -S . -B build -DCMAKE_INSTALL_PREFIX="%PACKIT_PACKAGE_PATH%" -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=ON -DLIBUV_BUILD_TESTS=OFF
+if ERRORLEVEL 1 exit /b %ERRORLEVEL%
+
+cmake --build build --config Release --parallel %PACKIT_BUILD_JOBS_COUNT%
+if ERRORLEVEL 1 exit /b %ERRORLEVEL%
+
+REM Skip libuv tests, because some are unreliable.
+
+cmake --install build --config Release
+if ERRORLEVEL 1 exit /b %ERRORLEVEL%
