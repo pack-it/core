@@ -1,5 +1,5 @@
 version = "3.14.6"
-license = "Python Software Foundation License Version 2" # Exception for documentation with dual license PSF License Version 2 and the Zero-Clause BSD license
+license = "PSF-2.0" # Exception for documentation with dual license PSF License Version 2 and the Zero-Clause BSD license
 dependencies = ["mpdecimal", "openssl@3.0.0-4.0.0", "sqlite", "xz", "zstd@>1.4.5"]
 build_dependencies = []
 external_test_files = ["test.py"]

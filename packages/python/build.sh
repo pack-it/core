@@ -19,9 +19,9 @@
     LIBZSTD_CFLAGS="-I$PACKIT_PACKAGE_DEPENDENCIES_PATH/zstd/include" \
     LIBZSTD_LIBS="-L$PACKIT_PACKAGE_DEPENDENCIES_PATH/zstd/lib -Wl,-rpath,$PACKIT_PACKAGE_DEPENDENCIES_PATH/zstd/lib -lzstd"
 
-make
+make -j $PACKIT_BUILD_JOBS_COUNT
 
-make test
+[ "${PACKIT_EXECUTE_BUILD_TEST:-}" = "1" ] && make test -j $PACKIT_BUILD_JOBS_COUNT
 
 make install
 
