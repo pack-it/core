@@ -1,0 +1,8 @@
+name = "neovim"
+description = "hyperextensible Vim-based text editor"
+homepage = "https://github.com/neovim/neovim"
+versions = [ "0.12.4"]
+
+[supported_versions]
+unix = "0.12.4"
+windows = "0.12.4"
