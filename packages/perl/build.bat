@@ -9,15 +9,6 @@ echo Found MSCV name %MSVCNAME%
 REM Call vcvarsall.bat to initialize MSVC build environment
 call "%PACKIT_VCVARSALL%" %PACKIT_VCVARSALL_ARCH%
 
-REM Patch Makefile to include quotes in install path
-powershell -NoProfile -Command ^
-"$file='Makefile'; ^
-$text = Get-Content -Raw $file; ^
-$text = $text -replace [regex]::Escape('$(INST_BIN)\*.*'), '\"$(INST_BIN)\*.*\"'; ^
-$text = $text -replace [regex]::Escape('$(INST_SCRIPT)\*.*'), '\"$(INST_SCRIPT)\*.*\"'; ^
-$text = $text -replace [regex]::Escape('$(INST_HTML)\*.*'), '\"$(INST_HTML)\*.*\"'; ^
-Set-Content -NoNewline -Encoding UTF8 $file $text"
-
 set "DRIVE=%PACKIT_PACKAGE_PATH:~0,2%"
 echo Setting drive to %DRIVE%
 

@@ -6,7 +6,7 @@ build_dependencies = []
 [script_args]
 lib_version = "5.42"
 
-[source]
+[source.unix]
 url = "https://www.cpan.org/src/5.0/perl-5.42.2.tar.gz"
 mirrors = [
     "https://cpan.metacpan.org/src/5.0/perl-5.42.2.tar.gz",
@@ -15,7 +15,23 @@ mirrors = [
 checksum = "9384e8deb75b7b1695e5637971b752281aaecd025a3d5d4734d33c1d0adfee47"
 size = 20609653
 
+[source.windows]
+url = "https://www.cpan.org/src/5.0/perl-5.42.2.tar.gz"
+mirrors = [
+    "https://cpan.metacpan.org/src/5.0/perl-5.42.2.tar.gz",
+    "https://mirror.netcologne.de/cpan/src/5.0/perl-5.42.2.tar.gz"
+]
+checksum = "9384e8deb75b7b1695e5637971b752281aaecd025a3d5d4734d33c1d0adfee47"
+size = 20609653
+patches.0 = {
+    # Backport fix for quoted paths in Windows Makefile
+    url = "https://github.com/Perl/perl5/commit/208ea17edae4a3aa0dd227aaebadb22285465c11.patch",
+    checksum = "2ce4920322913de75b0c463369a567e3e00b68d54d80bbab3e4f83dcee3f4d06"
+}
+
 [targets.unix]
+source = "unix"
 
 [targets.windows]
+source = "windows"
 build_requirements = ["msvc"]
