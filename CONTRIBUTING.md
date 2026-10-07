@@ -108,7 +108,7 @@ Also make sure the scripts are compatible between the different targets, if this
 After you added the target, push it to your fork and create a pull request, see [Getting started](#getting-started).
 
 ## Mirrors
-> This is a list of archives and mirrors used in the core repository. If a package is in the GNU packages, then the main url used should be https://ftpmirror.gnu.org/, as it dispatches to other GNU mirrors (which is the requested behaviour by GNU). A couple other mirrors should be used, for the case the GNU mirror is not working (this can be mirrors from the [GNU mirror list](https://www.gnu.org/prep/ftp.html)).
+> This is a list of archives and mirrors used in the core repository. If a package is in the GNU packages, then the main url used should be https://mirrors.edge.kernel.org/gnu/, as it is a reliable mirror that is distributed across the world for fast access from everywhere. The first mirror should by https://ftpmirror.gnu.org/, as it dispatches to other GNU mirrors (which is the requested behaviour by GNU). A couple other mirrors should be used, for the case the kernel.org and GNU mirrors are not working (this can be mirrors from the [GNU mirror list](https://www.gnu.org/prep/ftp.html)).
 
 A list of other archive and mirrors services (excluding the GNU mirror list):
 - https://invisible-island.net/archives/
@@ -116,6 +116,7 @@ A list of other archive and mirrors services (excluding the GNU mirror list):
 - https://sourceware.org/pub/
 - https://mirror.hs-esslingen.de/Mirrors/
 - SourceForge (https://sourceforge.net/)
+- https://mirrors.edge.kernel.org/
 
 A list of Perl CPAN mirrors:
 - https://cpan.metacpan.org/src/
