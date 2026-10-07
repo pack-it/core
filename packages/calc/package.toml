@@ -1,6 +1,6 @@
 name = "calc"
 description = "An interactive calculator which provides for easy large numeric calculations"
-homepage = "http://www.isthe.com/chongo/tech/comp/calc/"
+homepage = "https://www.isthe.com/chongo/tech/comp/calc/"
 versions = ["2.16.1.2", "2.16.1.3", "2.17.0.0"]
 
 [supported_versions]

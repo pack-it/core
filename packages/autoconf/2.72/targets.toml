@@ -6,7 +6,7 @@ build_dependencies = []
 [source]
 url = "https://mirrors.edge.kernel.org/gnu/autoconf/autoconf-2.72.tar.gz"
 mirrors = [
-  "http://ftpmirror.gnu.org/gnu/autoconf/autoconf-2.72.tar.gz",
+  "https://ftpmirror.gnu.org/gnu/autoconf/autoconf-2.72.tar.gz",
   "https://ftp.gnu.org/gnu/autoconf/autoconf-2.72.tar.gz",
   "https://mirror.csclub.uwaterloo.ca/gnu/autoconf/autoconf-2.72.tar.gz"
 ]
