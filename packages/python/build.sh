@@ -1,5 +1,24 @@
 #!/bin/sh
 
+set --
+if [ "$PACKIT_OS" = "linux" ]; then
+    set -- "$@" \
+        "BZIP2_CFLAGS=-I$PACKIT_PACKAGE_DEPENDENCIES_PATH/bzip2/include" \
+        "BZIP2_LIBS=-L$PACKIT_PACKAGE_DEPENDENCIES_PATH/bzip2/lib -Wl,-rpath,$PACKIT_PACKAGE_DEPENDENCIES_PATH/bzip2/lib -lbz2" \
+        "ZLIB_CFLAGS=-I$PACKIT_PACKAGE_DEPENDENCIES_PATH/zlib-ng-compat/include" \
+        "ZLIB_LIBS=-L$PACKIT_PACKAGE_DEPENDENCIES_PATH/zlib-ng-compat/lib -lz" \
+        "LIBCURSES_CFLAGS=-I$PACKIT_PACKAGE_DEPENDENCIES_PATH/ncurses/include" \
+        "LIBCURSES_LIBS=-L$PACKIT_PACKAGE_DEPENDENCIES_PATH/ncurses/lib -lncurses" \
+        "LIBFFI_CFLAGS=-I$PACKIT_PACKAGE_DEPENDENCIES_PATH/libffi/include" \
+        "LIBFFI_LIBS=-L$PACKIT_PACKAGE_DEPENDENCIES_PATH/libffi/lib -lffi" \
+        "LIBEDIT_CFLAGS=-I$PACKIT_PACKAGE_DEPENDENCIES_PATH/libedit/include" \
+        "LIBEDIT_LIBS=-L$PACKIT_PACKAGE_DEPENDENCIES_PATH/libedit/lib -Wl,-rpath,$PACKIT_PACKAGE_DEPENDENCIES_PATH/libedit/lib -ledit" \
+        "LIBMPDEC_CFLAGS=-I$PACKIT_PACKAGE_DEPENDENCIES_PATH/mpdecimal/include" \
+        "LIBMPDEC_LIBS=-L$PACKIT_PACKAGE_DEPENDENCIES_PATH/mpdecimal/lib -Wl,-rpath,$PACKIT_PACKAGE_DEPENDENCIES_PATH/mpdecimal/lib -lmpdec" \
+        "CPPFLAGS=-I$PACKIT_PACKAGE_DEPENDENCIES_PATH/expat/include -I$PACKIT_PACKAGE_DEPENDENCIES_PATH/openssl/include" \
+        "LDFLAGS=-L$PACKIT_PACKAGE_DEPENDENCIES_PATH/expat/lib -Wl,-rpath,$PACKIT_PACKAGE_DEPENDENCIES_PATH/expat/lib -lexpat -L$PACKIT_PACKAGE_DEPENDENCIES_PATH/openssl/lib -Wl,-rpath,$PACKIT_PACKAGE_DEPENDENCIES_PATH/openssl/lib -lssl"
+fi
+
 # NOTE lto NOT on Linux
 # The `--enable-optimizations` flag does some platform specific optimizations, so prebuilds might differ depending on architecture.
 ./configure --prefix=$PACKIT_PACKAGE_PATH \
@@ -17,7 +36,8 @@
     LIBLZMA_CFLAGS="-I$PACKIT_PACKAGE_DEPENDENCIES_PATH/xz/include" \
     LIBLZMA_LIBS="-L$PACKIT_PACKAGE_DEPENDENCIES_PATH/xz/lib -llzma" \
     LIBZSTD_CFLAGS="-I$PACKIT_PACKAGE_DEPENDENCIES_PATH/zstd/include" \
-    LIBZSTD_LIBS="-L$PACKIT_PACKAGE_DEPENDENCIES_PATH/zstd/lib -Wl,-rpath,$PACKIT_PACKAGE_DEPENDENCIES_PATH/zstd/lib -lzstd"
+    LIBZSTD_LIBS="-L$PACKIT_PACKAGE_DEPENDENCIES_PATH/zstd/lib -Wl,-rpath,$PACKIT_PACKAGE_DEPENDENCIES_PATH/zstd/lib -lzstd" \
+    "$@"
 
 make -j $PACKIT_BUILD_JOBS_COUNT
 

@@ -11,15 +11,10 @@ import readline
 import zlib
 import _ssl
 import _zstd
-import _dbm
-import dbm
 import lzma
 import sys
 import sysconfig
 import bz2
 import curses
 
-# MISSING, but should include by default?
-# import _gdbm 
-# import _tkinter
-# import tkinter
+# TODO: Test that tkinter and dbm are NOT installed
