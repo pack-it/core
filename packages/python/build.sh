@@ -51,9 +51,9 @@ make install
 ln -s python$PACKIT_ARGS_MAJOR_MINOR_VERSION $PACKIT_PACKAGE_PATH/bin/python
 
 # Define the site-packages location
-PYTHON_ETC="$PACKIT_PREFIX_PATH/etc/python"
-PYTHON_SITE_PACKAGES="$PYTHON_ETC/lib/python$PACKIT_ARGS_MAJOR_MINOR_VERSION/site-packages"
-mkdir -p $PYTHON_ETC
+PYTHON_OPT="$PACKIT_PREFIX_PATH/opt/python/$PACKIT_ARGS_MAJOR_MINOR_VERSION"
+PYTHON_SITE_PACKAGES="$PYTHON_OPT/lib/python$PACKIT_ARGS_MAJOR_MINOR_VERSION/site-packages"
+mkdir -p $PYTHON_OPT
 
 # Create sitecustomize.py to customize the `site-packages` directory
 cat << EOF > "$PACKIT_PACKAGE_PATH/lib/python$PACKIT_ARGS_MAJOR_MINOR_VERSION/site-packages/sitecustomize.py"
@@ -65,13 +65,13 @@ site.addsitedir(
 )
 
 # Set PIP_CONFIG_FILE so the pip.conf file can be found
-os.environ["PIP_CONFIG_FILE"] = "${PYTHON_ETC}/pip.conf"
+os.environ["PIP_CONFIG_FILE"] = "${PYTHON_OPT}/pip.conf"
 EOF
 
 # Create pip configuration file
-cat << EOF > "$PYTHON_ETC/pip.conf"
+cat << EOF > "$PYTHON_OPT/pip.conf"
 [global]
-prefix = ${PYTHON_ETC}
+prefix = ${PYTHON_OPT}
 EOF
 
 $PACKIT_PACKAGE_PATH/bin/python -m ensurepip
