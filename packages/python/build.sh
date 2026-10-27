@@ -57,8 +57,10 @@ mkdir -p $PYTHON_OPT
 
 # Create sitecustomize.py to customize the `site-packages` directory
 cat << EOF > "$PACKIT_PACKAGE_PATH/lib/python$PACKIT_ARGS_MAJOR_MINOR_VERSION/site-packages/sitecustomize.py"
+# This file is created by Packit and is executed before every Python execution.
 import os
 import site
+import sys
 
 site.addsitedir(
     "${PYTHON_SITE_PACKAGES}"
@@ -66,6 +68,10 @@ site.addsitedir(
 
 # Set PIP_CONFIG_FILE so the pip.conf file can be found
 os.environ["PIP_CONFIG_FILE"] = "${PYTHON_OPT}/pip.conf"
+
+current_version = ".".join(map(str, sys.version_info[:2]))
+if current_version != "${PACKIT_ARGS_MAJOR_MINOR_VERSION}":
+    exit(f"PYTHON_PATH points to python site-package directory of python version ${PACKIT_ARGS_MAJOR_MINOR_VERSION} while running version {current_version}")
 EOF
 
 # Create pip configuration file
@@ -73,5 +79,3 @@ cat << EOF > "$PYTHON_OPT/pip.conf"
 [global]
 prefix = ${PYTHON_OPT}
 EOF
-
-$PACKIT_PACKAGE_PATH/bin/python -m ensurepip
