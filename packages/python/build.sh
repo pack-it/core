@@ -1,7 +1,12 @@
 #!/bin/sh
 
 set --
-if [ "$PACKIT_OS" = "linux" ]; then
+if [ "$PACKIT_OS" = "mac" ]; then
+    # Note that LTO does NOT work on Linux, libpython3.*.a breaks when the GCC version differs 
+    # from the GCC version used for the python build.
+    set -- "$@" \
+        "--with-lto"
+elif [ "$PACKIT_OS" = "linux" ]; then
     set -- "$@" \
         "BZIP2_CFLAGS=-I$PACKIT_PACKAGE_DEPENDENCIES_PATH/bzip2/include" \
         "BZIP2_LIBS=-L$PACKIT_PACKAGE_DEPENDENCIES_PATH/bzip2/lib -Wl,-rpath,$PACKIT_PACKAGE_DEPENDENCIES_PATH/bzip2/lib -lbz2" \
@@ -19,8 +24,7 @@ if [ "$PACKIT_OS" = "linux" ]; then
         "LDFLAGS=-L$PACKIT_PACKAGE_DEPENDENCIES_PATH/expat/lib -Wl,-rpath,$PACKIT_PACKAGE_DEPENDENCIES_PATH/expat/lib -lexpat -L$PACKIT_PACKAGE_DEPENDENCIES_PATH/openssl/lib -Wl,-rpath,$PACKIT_PACKAGE_DEPENDENCIES_PATH/openssl/lib -lssl"
 fi
 
-# NOTE lto NOT on Linux
-# The `--enable-optimizations` flag does some platform specific optimizations, so prebuilds might differ depending on architecture.
+# The `--enable-optimizations` flag does some architecture specific optimizations, so prebuilds might differ depending on architecture.
 ./configure --prefix=$PACKIT_PACKAGE_PATH \
     --enable-ipv6 \
     --datarootdir="$PACKIT_PACKAGE_PATH/share" \
@@ -32,7 +36,6 @@ fi
     --with-system-expat \
     --with-system-libmpdec \
     --with-readline=editline \
-    --with-lto \
     LIBLZMA_CFLAGS="-I$PACKIT_PACKAGE_DEPENDENCIES_PATH/xz/include" \
     LIBLZMA_LIBS="-L$PACKIT_PACKAGE_DEPENDENCIES_PATH/xz/lib -llzma" \
     LIBZSTD_CFLAGS="-I$PACKIT_PACKAGE_DEPENDENCIES_PATH/zstd/include" \
