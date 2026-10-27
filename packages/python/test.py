@@ -16,5 +16,3 @@ import sys
 import sysconfig
 import bz2
 import curses
-
-# TODO: Test that tkinter and dbm are NOT installed

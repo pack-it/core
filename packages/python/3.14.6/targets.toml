@@ -1,8 +1,9 @@
 version = "3.14.6"
-license = "PSF-2.0" # Exception for documentation with dual license PSF License Version 2 and the Zero-Clause BSD license
-dependencies = ["mpdecimal", "openssl@3.0.0-4.0.0", "sqlite", "xz", "zstd@>1.4.5"]
+license = "PSF-2.0"
+dependencies = ["mpdecimal@>=2.5.0", "openssl@3.0.0-4.0.0", "sqlite@>=3.15.2", "xz", "zstd@>1.4.5"]
 build_dependencies = []
 external_test_files = ["test.py"]
+postinstall_notice = "The Python bin directory for third-party tools is not automatically symlinked by Packit. These tools are available through: `python -m <tool-name>`. Alternatively add `<prefix>/opt/python/3.14/bin` to your PATH."
 
 [script_args]
 major_minor_version = "3.14"
@@ -15,6 +16,4 @@ size = 31234628
 [targets.mac]
 
 [targets.linux]
-dependencies = ["expat", "bzip2", "zlib-ng-compat", "libffi", "libedit", "ncurses"]
-
-[targets.windows]
+dependencies = ["expat", "bzip2", "zlib-ng-compat", "libffi@>=3.3.0", "libedit", "ncurses"]

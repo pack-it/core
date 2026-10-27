@@ -36,6 +36,8 @@ fi
     --with-system-expat \
     --with-system-libmpdec \
     --with-readline=editline \
+    --with-dtrace \
+    --with-tail-call-interp \
     LIBLZMA_CFLAGS="-I$PACKIT_PACKAGE_DEPENDENCIES_PATH/xz/include" \
     LIBLZMA_LIBS="-L$PACKIT_PACKAGE_DEPENDENCIES_PATH/xz/lib -llzma" \
     LIBZSTD_CFLAGS="-I$PACKIT_PACKAGE_DEPENDENCIES_PATH/zstd/include" \
