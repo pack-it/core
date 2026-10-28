@@ -4,10 +4,9 @@ dependencies = ["mpdecimal@>=2.5.0", "openssl@3.0.0-4.0.0", "sqlite@>=3.15.2", "
 build_dependencies = []
 external_test_files = ["test.py"]
 postinstall_notice = """
-    The Python bin directory for third-party tools is not automatically symlinked by Packit.
-    These tools are available through: `python -m <tool-name>`.
-    Alternatively add `<prefix>/opt/python/3.14/bin` to your PATH.
-"""
+The Python bin directory for third-party tools is not automatically symlinked by Packit.
+These tools are available through: `python -m <tool-name>`.
+Alternatively add `<prefix>/opt/python/3.14/bin` to your PATH."""
 
 [script_args]
 major_minor_version = "3.14"
