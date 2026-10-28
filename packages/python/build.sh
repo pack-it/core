@@ -5,7 +5,9 @@ if [ "$PACKIT_OS" = "mac" ]; then
     # Note that LTO does NOT work on Linux, libpython3.*.a breaks when the GCC version differs 
     # from the GCC version used for the python build.
     set -- "$@" \
-        "--with-lto"
+        "--with-lto" \
+        "--with-dtrace" \
+        "--with-tail-call-interp"
 elif [ "$PACKIT_OS" = "linux" ]; then
     set -- "$@" \
         "BZIP2_CFLAGS=-I$PACKIT_PACKAGE_DEPENDENCIES_PATH/bzip2/include" \
@@ -36,8 +38,6 @@ fi
     --with-system-expat \
     --with-system-libmpdec \
     --with-readline=editline \
-    --with-dtrace \
-    --with-tail-call-interp \
     LIBLZMA_CFLAGS="-I$PACKIT_PACKAGE_DEPENDENCIES_PATH/xz/include" \
     LIBLZMA_LIBS="-L$PACKIT_PACKAGE_DEPENDENCIES_PATH/xz/lib -llzma" \
     LIBZSTD_CFLAGS="-I$PACKIT_PACKAGE_DEPENDENCIES_PATH/zstd/include" \
