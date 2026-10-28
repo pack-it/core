@@ -1,0 +1,7 @@
+name = "attr"
+description = "Commands for Manipulating Filesystem Extended Attributes"
+homepage = "https://savannah.nongnu.org/projects/attr/"
+versions = ["2.6.0"]
+
+[supported_versions]
+linux = "2.6.0"
