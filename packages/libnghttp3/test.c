@@ -16,8 +16,7 @@ static int on_data_receive(nghttp3_conn *connection,
     return 0;
 }
 
-int main(void)
-{
+int main() {
     nghttp3_callbacks callbacks = {0};
     nghttp3_settings settings;
     nghttp3_conn *connection = NULL;
