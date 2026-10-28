@@ -3,6 +3,7 @@ supported_packages = [
     "attr",
     "autoconf",
     "automake",
+    "brotli",
     "bzip2",
     "ca-certificates",
     "calc",
