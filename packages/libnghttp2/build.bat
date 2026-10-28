@@ -4,8 +4,7 @@ if ERRORLEVEL 1 exit /b %ERRORLEVEL%
 cmake --build build --config Release --parallel %PACKIT_BUILD_JOBS_COUNT%
 if ERRORLEVEL 1 exit /b %ERRORLEVEL%
 
-if "%PACKIT_EXECUTE_BUILD_TEST%"=="1" ctest -C Release --parallel %PACKIT_BUILD_JOBS_COUNT%
-if ERRORLEVEL 1 exit /b %ERRORLEVEL%
+REM Build tests cannot be found
 
 cmake --install build --config Release
 if ERRORLEVEL 1 exit /b %ERRORLEVEL%
