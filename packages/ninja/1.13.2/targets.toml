@@ -1,0 +1,14 @@
+version = "1.13.2"
+license = "Apache-2.0"
+dependencies = []
+build_dependencies = ["cmake"]
+
+[source]
+url = "https://github.com/ninja-build/ninja/archive/refs/tags/v1.13.2.tar.gz"
+checksum = "974d6b2f4eeefa25625d34da3cb36bdcebe7fbce40f4c16ac0835fd1c0cbae17"
+size = 292385
+
+[targets.unix]
+
+[targets.windows]
+test_requirements = ["msvc"]

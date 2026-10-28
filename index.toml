@@ -22,6 +22,7 @@ supported_packages = [
     "mpdecimal",
     "nasm",
     "ncurses",
+    "ninja",
     "openssl",
     "packit",
     "pcre2",
