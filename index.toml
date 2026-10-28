@@ -14,6 +14,7 @@ supported_packages = [
     "libedit",
     "libffi",
     "libgit2",
+    "libnghttp2",
     "libpng",
     "libssh2",
     "libtool",
