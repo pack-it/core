@@ -4,7 +4,7 @@ dependencies = []
 build_dependencies = []
 
 [source]
-url = "http://download-mirror.savannah.nongnu.org/releases/attr/attr-2.6.0.tar.gz"
+url = "https://download-mirror.savannah.nongnu.org/releases/attr/attr-2.6.0.tar.gz"
 mirrors = [
   "https://download.savannah.nongnu.org/releases/attr/attr-2.6.0.tar.gz",
   "https://mirror.csclub.uwaterloo.ca/nongnu/attr/attr-2.6.0.tar.gz"

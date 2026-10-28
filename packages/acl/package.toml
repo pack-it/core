@@ -1,0 +1,7 @@
+name = "acl"
+description = "Commands for Manipulating POSIX Access Control Lists"
+homepage = "https://savannah.nongnu.org/projects/acl/"
+versions = ["2.4.0"]
+
+[supported_versions]
+linux = "2.4.0"

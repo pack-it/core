@@ -1,0 +1,16 @@
+version = "2.4.0"
+license = { all = ["GPL-2.0-or-later", "LGPL-2.1-or-later"] }
+dependencies = ["attr"]
+build_dependencies = []
+external_test_files = ["test.c"]
+
+[source]
+url = "https://download-mirror.savannah.nongnu.org/releases/acl/acl-2.4.0.tar.gz"
+mirrors = [
+  "https://download.savannah.nongnu.org/releases/acl/acl-2.4.0.tar.gz",
+  "https://mirror.csclub.uwaterloo.ca/nongnu/acl/acl-2.4.0.tar.gz"
+]
+checksum = "73c853c3d44e1f693e5a96a986f1bd19d3d0dac2c7d453e796177774bc4e5f6a"
+size = 565843
+
+[targets.linux]

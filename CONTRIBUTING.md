@@ -123,5 +123,5 @@ A list of Perl CPAN mirrors:
 - https://mirror.netcologne.de/cpan/src/
 
 Non GNU (nongnu.org) mirrors:
-- http://download-mirror.savannah.nongnu.org/releases
+- https://download-mirror.savannah.nongnu.org/releases
 - https://mirror.csclub.uwaterloo.ca/nongnu
