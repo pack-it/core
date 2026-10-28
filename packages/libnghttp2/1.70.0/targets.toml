@@ -10,7 +10,7 @@ checksum = "aa317e2cf9dca6afa0aed68f8fad6ff303ec6982e25a78c75c0b65e2b9b3ded5"
 size = 3104002
 
 [targets.unix]
-build_dependencies = ["autoconf", "automake", "libtool", "pkgconf"]
+build_dependencies = ["pkgconf"]
 
 [targets.windows]
 build_dependencies = ["cmake"]
