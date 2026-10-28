@@ -1,3 +1,7 @@
+#ifdef _WIN32
+    #define NGHTTP2_NO_SSIZE_T
+#endif
+
 #include <nghttp2/nghttp2.h>
 #include <stdio.h>
 
