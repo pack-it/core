@@ -5,7 +5,7 @@ build_dependencies = []
 external_test_files = ["test.c"]
 
 [source]
-url = "http://download-mirror.savannah.nongnu.org/releases/acl/acl-2.4.0.tar.gz"
+url = "https://download-mirror.savannah.nongnu.org/releases/acl/acl-2.4.0.tar.gz"
 mirrors = [
   "https://download.savannah.nongnu.org/releases/acl/acl-2.4.0.tar.gz",
   "https://mirror.csclub.uwaterloo.ca/nongnu/acl/acl-2.4.0.tar.gz"
