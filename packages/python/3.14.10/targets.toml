@@ -20,3 +20,5 @@ size = 31671453
 
 [targets.linux]
 dependencies = ["expat", "bzip2", "zlib-ng-compat", "libffi@>=3.3.0", "libedit", "ncurses"]
+
+[targets.windows]
