@@ -19,6 +19,6 @@ active_dir="$PACKIT_PREFIX_PATH/active/perl"
 
 make -j $PACKIT_BUILD_JOBS_COUNT
 
-[ "${PACKIT_EXECUTE_BUILD_TEST:-}" = "1" ] && NO_NETWORK_TESTING=1 make test -j $PACKIT_BUILD_JOBS_COUNT
+[ "$PACKIT_EXECUTE_BUILD_TEST" = "1" ] && NO_NETWORK_TESTING=1 make test -j $PACKIT_BUILD_JOBS_COUNT
 
 make install
