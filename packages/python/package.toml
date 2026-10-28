@@ -1,7 +1,7 @@
 name = "python"
 description = "The Python interpreter"
 homepage = "https://www.python.org/"
-versions = ["3.14.6"]
+versions = ["3.14.10"]
 
 [supported_versions]
-unix = "3.14.6"
+unix = "3.14.10"
