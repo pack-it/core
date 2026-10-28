@@ -121,3 +121,7 @@ A list of other archive and mirrors services (excluding the GNU mirror list):
 A list of Perl CPAN mirrors:
 - https://cpan.metacpan.org/src/
 - https://mirror.netcologne.de/cpan/src/
+
+Non GNU (nongnu.org) mirrors:
+- http://download-mirror.savannah.nongnu.org/releases
+- https://mirror.csclub.uwaterloo.ca/nongnu
