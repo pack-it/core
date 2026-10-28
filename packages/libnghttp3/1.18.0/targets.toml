@@ -1,0 +1,17 @@
+version = "1.18.0"
+license = "MIT"
+dependencies = []
+build_dependencies = []
+external_test_files = ["test.c"]
+
+[source]
+url = "https://github.com/ngtcp2/nghttp3/releases/download/v1.18.0/nghttp3-1.18.0.tar.gz"
+checksum = "2812e9c06583fa24c8dc46bdb5291310a69196352ceaca8fbe98106ff36ae7d8"
+size = 657252
+
+[targets.unix]
+build_dependencies = ["pkgconf"]
+
+[targets.windows]
+build_dependencies = ["cmake"]
+test_requirements = ["msvc"]

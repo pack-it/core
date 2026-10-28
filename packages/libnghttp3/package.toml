@@ -1,0 +1,8 @@
+name = "libnghttp3"
+description = "An implementation of RFC 9114 HTTP/3 mapping over QUIC and RFC 9204 QPACK in C"
+homepage = "https://nghttp2.org/nghttp3/"
+versions = ["1.18.0"]
+
+[supported_versions]
+unix = "1.18.0"
+windows = "1.18.0"
