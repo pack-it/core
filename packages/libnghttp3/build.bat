@@ -1,10 +1,16 @@
-cmake -S . -B build -DCMAKE_INSTALL_PREFIX="%PACKIT_PACKAGE_PATH%" -DCMAKE_BUILD_TYPE=Release
+cmake -S . -B build -DCMAKE_INSTALL_PREFIX="%PACKIT_PACKAGE_PATH%" -DCMAKE_BUILD_TYPE=Release -DENABLE_LIB_ONLY=ON -DBUILD_TESTING=ON
 if ERRORLEVEL 1 exit /b %ERRORLEVEL%
 
 cmake --build build --config Release --parallel %PACKIT_BUILD_JOBS_COUNT%
 if ERRORLEVEL 1 exit /b %ERRORLEVEL%
 
-REM Build tests cannot be found
+if "%PACKIT_EXECUTE_BUILD_TEST%"=="1" (
+    cmake --build build --config Release --target main --parallel %PACKIT_BUILD_JOBS_COUNT%
+    if ERRORLEVEL 1 exit /b %ERRORLEVEL%
+
+    ctest -C Release --test-dir build --parallel %PACKIT_BUILD_JOBS_COUNT%
+    if ERRORLEVEL 1 exit /b %ERRORLEVEL%
+)
 
 cmake --install build --config Release
 if ERRORLEVEL 1 exit /b %ERRORLEVEL%
