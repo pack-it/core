@@ -1,0 +1,8 @@
+name = "brotli"
+description = "A generic-purpose lossless compression algorithm that compresses data"
+homepage = "https://brotli.org/"
+versions = ["1.2.1"]
+
+[supported_versions]
+unix = "1.2.1"
+windows = "1.2.1"

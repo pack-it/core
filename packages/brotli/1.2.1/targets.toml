@@ -1,0 +1,13 @@
+version = "1.2.1"
+license = "MIT"
+dependencies = []
+build_dependencies = ["cmake"]
+
+[source]
+url = "https://github.com/google/brotli/archive/refs/tags/v1.2.1.tar.gz"
+checksum = "98d35d11a78dc453aebb7d10c3748f3f73ff78c8267c0dc697b8631f67bf7e8f"
+size = 646598
+
+[targets.unix]
+
+[targets.windows]
