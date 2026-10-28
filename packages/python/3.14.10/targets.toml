@@ -1,0 +1,22 @@
+version = "3.14.10"
+license = "PSF-2.0"
+dependencies = ["mpdecimal@>=2.5.0", "openssl@3.0.0-4.0.0", "sqlite@>=3.15.2", "xz", "zstd@>1.4.5"]
+build_dependencies = []
+external_test_files = ["test.py"]
+postinstall_notice = """
+The Python bin directory for third-party tools is not automatically symlinked by Packit.
+These tools are available through: `python -m <tool-name>`.
+Alternatively add `<prefix>/opt/python/3.14/bin` to your PATH."""
+
+[script_args]
+major_minor_version = "3.14"
+
+[source]
+url = "https://www.python.org/ftp/python/3.14.10/Python-3.14.10.tgz"
+checksum = "9e4996c19ae5a3df31f10c37723661f71d3455d73bd005f79df7098e5cc13192"
+size = 31671453
+
+[targets.mac]
+
+[targets.linux]
+dependencies = ["expat", "bzip2", "zlib-ng-compat", "libffi@>=3.3.0", "libedit", "ncurses"]
