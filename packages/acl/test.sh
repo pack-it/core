@@ -19,7 +19,7 @@ fi
 expected_output="user::rw-
 user:$USER:--x
 group::rw-
-mask::r-x
+mask::rwx
 other::r--"
 output=$("$PACKIT_PACKAGE_PATH/bin/getfacl" -c perms.txt)
 
@@ -29,7 +29,7 @@ if [ "$output" != "$expected_output" ]; then
     exit 1
 fi
 
-gcc -L "$PACKIT_PACKAGE_PATH/lib" -I "$PACKIT_PACKAGE_PATH/include" test.c -o test -ljacl
+gcc -L "$PACKIT_PACKAGE_PATH/lib" -I "$PACKIT_PACKAGE_PATH/include" test.c -o test -lacl
 
 # Expected output is the same as previous test case
 output=$("./test")

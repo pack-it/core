@@ -1,6 +1,7 @@
 #!/bin/sh
 
-./configure --prefix=$PACKIT_PACKAGE_PATH --disable-silent-rules
+./configure --prefix=$PACKIT_PACKAGE_PATH --disable-silent-rules \
+    CPPFLAGS="-I$PACKIT_PACKAGE_DEPENDENCIES_PATH/attr/include"
 
 make -j $PACKIT_BUILD_JOBS_COUNT
 
