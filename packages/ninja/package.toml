@@ -1,0 +1,8 @@
+name = "ninja"
+description = "A small build system with a focus on speed"
+homepage = "https://ninja-build.org/"
+versions = ["1.13.2"]
+
+[supported_versions]
+unix = "1.13.2"
+windows = "1.13.2"
