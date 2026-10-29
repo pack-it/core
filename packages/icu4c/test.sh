@@ -1,0 +1,5 @@
+#!/bin/sh
+
+gcc -L "$PACKIT_PACKAGE_PATH/lib" -I "$PACKIT_PACKAGE_PATH/include" -Wl,-rpath,"$PACKIT_PACKAGE_PATH/lib" test.c -o test -licui18n -licuuc -licudata
+
+./test >&3

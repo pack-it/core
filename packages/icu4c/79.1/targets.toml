@@ -1,0 +1,14 @@
+version = "79.1"
+license = "Unicode-3.0"
+dependencies = []
+build_dependencies = []
+external_test_files = ["test.c"]
+
+[source]
+url = "https://github.com/unicode-org/icu/releases/download/release-79.1/icu4c-79.1-sources.tgz"
+checksum = "06fa63ecb521048f8082f12ad988f6b678d90cbd88aafce24cbc94902b191d99"
+size = 28162455
+
+[targets.unix]
+
+[targets.windows]
