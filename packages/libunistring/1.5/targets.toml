@@ -15,3 +15,6 @@ checksum = "5b0ecd46cbf225375f20ab4056197e66a7ac590e2684c069af407ae3383c9d81"
 size = 5144661
 
 [targets.unix]
+
+[targets."mac@>=14"]
+dependencies = ["libiconv"]
