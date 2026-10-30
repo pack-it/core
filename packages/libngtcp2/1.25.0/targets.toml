@@ -2,6 +2,7 @@ version = "1.25.0"
 license = "MIT"
 dependencies = ["openssl@>3.5.0"]
 build_dependencies = ["pkgconf@>=0.20"]
+external_test_files = ["test.c"]
 
 [source]
 url = "https://github.com/ngtcp2/ngtcp2/releases/download/v1.25.0/ngtcp2-1.25.0.tar.gz"
