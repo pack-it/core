@@ -1,11 +1,8 @@
-cmake -S . -B build -DCMAKE_INSTALL_PREFIX="%PACKIT_PACKAGE_PATH%" -DCMAKE_BUILD_TYPE=Release
+REM Call vcvarsall.bat to initialize MSVC build environment
+call "%PACKIT_VCVARSALL%" %PACKIT_VCVARSALL_ARCH%
+
+msbuild source\allinone\allinone.sln /m /p:Configuration=Release /p:Platform=x64 /p:SkipUWP=true
 if ERRORLEVEL 1 exit /b %ERRORLEVEL%
 
-cmake --build build --config Release --parallel %PACKIT_BUILD_JOBS_COUNT%
-if ERRORLEVEL 1 exit /b %ERRORLEVEL%
-
-if "%PACKIT_EXECUTE_BUILD_TEST%"=="1" ctest -C Release --parallel %PACKIT_BUILD_JOBS_COUNT%
-if ERRORLEVEL 1 exit /b %ERRORLEVEL%
-
-cmake --install build --config Release
+REM source\allinone\icucheck.bat x64 Release
 if ERRORLEVEL 1 exit /b %ERRORLEVEL%
