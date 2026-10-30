@@ -5,6 +5,7 @@ supported_packages = [
     "automake",
     "brotli",
     "bzip2",
+    "c-ares",
     "ca-certificates",
     "calc",
     "cmake",

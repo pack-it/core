@@ -1,0 +1,8 @@
+name = "c-ares"
+description = "A modern DNS (stub) resolver library, written in C"
+homepage = "https://c-ares.org/"
+versions = ["1.34.9"]
+
+[supported_versions]
+unix = "1.34.9"
+windows = "1.34.9"
