@@ -39,6 +39,7 @@ supported_packages = [
     "python",
     "readline",
     "scdoc",
+    "simdjson",
     "sqlite",
     "tree",
     "xz",

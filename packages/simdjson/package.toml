@@ -1,0 +1,8 @@
+name = "simdjson"
+description = ""
+homepage = ""
+versions = ["5.1.0"]
+
+[supported_versions]
+unix = "5.1.0"
+windows = "5.1.0"
