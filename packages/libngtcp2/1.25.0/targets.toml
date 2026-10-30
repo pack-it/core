@@ -1,6 +1,6 @@
 version = "1.25.0"
 license = "MIT"
-dependencies = ["openssl@>3.5.0"]
+dependencies = ["openssl@>=4.0.0"] # Works from 3.5.0, but using latest ABI version for prebuilds
 build_dependencies = []
 external_test_files = ["test.c"]
 

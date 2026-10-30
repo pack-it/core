@@ -1,4 +1,5 @@
 // See: https://nghttp2.org/ngtcp2/programmers-guide.html#creating-ngtcp2-conn-object
+// See: https://github.com/ngtcp2/ngtcp2/blob/main/examples/client.cc
 #include <stdio.h>
 #include <ngtcp2/ngtcp2.h>
 #include <ngtcp2/ngtcp2_crypto.h>
