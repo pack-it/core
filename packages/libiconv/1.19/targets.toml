@@ -1,0 +1,21 @@
+version = "1.19"
+license = { all = ["GPL-3.0-only", "LGPL-2.1-or-later"] }
+dependencies = []
+build_dependencies = []
+external_test_files = ["test.c", "test.txt"]
+
+[source]
+url = "https://mirrors.edge.kernel.org/gnu/libiconv/libiconv-1.19.tar.gz"
+mirrors = [
+    "https://ftpmirror.gnu.org/gnu/libiconv/libiconv-1.19.tar.gz",
+    "https://ftp.gnu.org/gnu/libiconv/libiconv-1.19.tar.gz",
+    "https://mirror.csclub.uwaterloo.ca/gnu/libiconv/libiconv-1.19.tar.gz",
+]
+checksum = "88dd96a8c0464eca144fc791ae60cd31cd8ee78321e67397e25fc095c4a19aa6"
+size = 5921103
+license_include = ["COPYING.LIB"]
+
+[targets.mac]
+skip_symlinking = true
+
+[targets.linux]
