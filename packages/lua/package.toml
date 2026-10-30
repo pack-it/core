@@ -1,0 +1,8 @@
+name = "lua"
+description = "The lua language"
+homepage = "https://lua.org/home.html"
+versions = [ "5.5.1"]
+
+[supported_versions]
+unix = "5.5.1"
+windows = "5.5.1"
