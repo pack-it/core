@@ -21,10 +21,12 @@ int main(int argc, char **argv) {
     if (input == NULL) {
         printf("Test failed: failed to allocate input buffer\n");
         free(input);
+        fclose(file);
         return 1;
     }
     if (fread(input, 1, input_size, file) != input_size) {
         printf("Test failed: failed to read test.txt\n");
+        fclose(file);
         return 1;
     }
     fclose(file);
@@ -42,6 +44,8 @@ int main(int argc, char **argv) {
     iconv_t converter = iconv_open("UTF-8", "UTF-16LE");
     if (converter == (iconv_t)-1) {
         printf("Test failed: failed to create iconv converter\n");
+        free(input);
+        free(output);
         return 1;
     }
 

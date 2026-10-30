@@ -8,7 +8,7 @@ if [ "$output" != "$expected_output" ]; then
     exit 1
 fi
 
-gcc -L "$PACKIT_PACKAGE_PATH/lib" -I "$PACKIT_PACKAGE_PATH/include" test.c -o test -liconv
+gcc -L "$PACKIT_PACKAGE_PATH/lib" -I "$PACKIT_PACKAGE_PATH/include" -Wl,-rpath,"$PACKIT_PACKAGE_PATH/lib" test.c -o test -liconv
 
 output=$("./test")
 
