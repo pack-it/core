@@ -17,6 +17,7 @@ supported_packages = [
     "libiconv",
     "libnghttp2",
     "libnghttp3",
+    "libngtcp2",
     "libpng",
     "libssh2",
     "libtool",
