@@ -1,0 +1,7 @@
+name = "libiconv"
+description = "GNU character set conversion library"
+homepage = "https://www.gnu.org/software/libiconv/"
+versions = ["1.19"]
+
+[supported_versions]
+unix = "1.19"
