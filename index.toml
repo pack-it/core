@@ -16,6 +16,7 @@ supported_packages = [
     "libgit2",
     "libnghttp2",
     "libnghttp3",
+    "libngtcp2",
     "libpng",
     "libssh2",
     "libtool",
