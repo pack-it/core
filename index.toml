@@ -20,6 +20,7 @@ supported_packages = [
     "libpng",
     "libssh2",
     "libtool",
+    "libunistring",
     "libuv",
     "llhttp",
     "lz4",

@@ -1,0 +1,7 @@
+name = "libunistring"
+description = "Library for manipulating Unicode strings in C"
+homepage = "https://www.gnu.org/software/libunistring/"
+versions = ["1.5"]
+
+[supported_versions]
+unix = "1.5"
