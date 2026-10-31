@@ -1,0 +1,24 @@
+version = "2.15.4"
+license = "MIT"
+dependencies = []
+build_dependencies = []
+external_test_files = ["test.c", "test.xml"]
+
+[source]
+url = "https://download.gnome.org/sources/libxml2/2.15/libxml2-2.15.4.tar.xz"
+checksum = "98087fd181d9070724f3fbc65c7377db03038eb92bd882374daff44940138821"
+size = 3177444
+
+[targets.linux]
+dependencies = ["readline", "zlib-ng-compat"]
+build_dependencies = ["pkgconf"]
+
+[targets.mac]
+dependencies = ["readline"]
+build_dependencies = ["pkgconf"]
+skip_symlinking = true
+
+[targets.windows]
+dependencies = ["zlib-ng-compat"]
+build_dependencies = ["cmake"]
+test_requirements = ["msvc"]
