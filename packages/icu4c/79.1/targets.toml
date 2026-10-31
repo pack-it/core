@@ -10,6 +10,3 @@ checksum = "06fa63ecb521048f8082f12ad988f6b678d90cbd88aafce24cbc94902b191d99"
 size = 28162455
 
 [targets.unix]
-
-[targets.windows]
-build_requirements = ["msvc"]
