@@ -1,5 +1,5 @@
 #!/bin/sh
 
-gcc -L "$PACKIT_PACKAGE_PATH/lib" -I "$PACKIT_PACKAGE_PATH/include" test.c -o test -lxml2
+gcc test.c -o test $($PACKIT_PACKAGE_PATH/bin/xml2-config --cflags --libs) -Wl,-rpath,"$PACKIT_PACKAGE_PATH/lib"
 
 ./test

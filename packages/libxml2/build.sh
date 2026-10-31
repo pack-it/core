@@ -1,10 +1,20 @@
 #!/bin/sh
 
+set --
+if [ "$PACKIT_OS" = "mac" ]; then
+    set -- "$@"
+elif [ "$PACKIT_OS" = "linux" ]; then
+    set -- "$@" \
+        CPPFLAGS="-I$PACKIT_PACKAGE_DEPENDENCIES_PATH/readline/include -I$PACKIT_PACKAGE_DEPENDENCIES_PATH/zlib-ng-compat/include" \
+        LIBS="-L$PACKIT_PACKAGE_DEPENDENCIES_PATH/readline/lib -lreadline -L$PACKIT_PACKAGE_DEPENDENCIES_PATH/zlib-ng-compat/lib -lz"
+fi
+
 ./configure --prefix=$PACKIT_PACKAGE_PATH --disable-silent-rules \
     --with-legacy \
     --with-history \
     --with-readline \
-    --with-zlib
+    --with-zlib \
+    "$@"
 
 make -j $PACKIT_BUILD_JOBS_COUNT
 
@@ -12,8 +22,9 @@ make -j $PACKIT_BUILD_JOBS_COUNT
 
 make install
 
-# Change working directory to patch xml2-config
-cd $PACKIT_PACKAGE_PATH
-
 # Replace prefix inside xml2-config script
-sed -i '' "s|$PACKIT_PACKAGE_PATH|$PACKIT_PREFIX_PATH/active/libxml2|g" bin/xml2-config
+if [ "$PACKIT_OS" = "mac" ]; then
+    sed -i '' "s|$PACKIT_PACKAGE_PATH|$PACKIT_PREFIX_PATH/active/libxml2|g" "$PACKIT_PACKAGE_PATH/bin/xml2-config"
+elif [ "$PACKIT_OS" = "linux" ]; then
+    sed -i "s|$PACKIT_PACKAGE_PATH|$PACKIT_PREFIX_PATH/active/libxml2|g" "$PACKIT_PACKAGE_PATH/bin/xml2-config"
+fi
