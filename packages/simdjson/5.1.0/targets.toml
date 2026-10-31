@@ -1,0 +1,15 @@
+version = "5.1.0"
+license = { any = ["MIT", "Apache-2.0"] }
+dependencies = []
+build_dependencies = ["cmake"]
+external_test_files = ["test.cpp", "test.json"]
+
+[source]
+url = "https://github.com/simdjson/simdjson/archive/refs/tags/v5.0.7.tar.gz"
+checksum = "a5282c9b00f6c8b5217f434636c78ee7c9019f2fd2aa478ba850d2e2584c0994"
+size = 8880100
+
+[targets.unix]
+
+[targets.windows]
+test_requirements = ["msvc"]
