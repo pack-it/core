@@ -1,0 +1,4 @@
+<root>
+    <test important="yes">This is a very important test variable</test>
+    <important>I am more important :D</important>
+</root>

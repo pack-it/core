@@ -1,0 +1,8 @@
+name = "libxml2"
+description = "XML toolkit implemented in C"
+homepage = "https://gitlab.gnome.org/GNOME/libxml2/-/wikis/home/"
+versions = ["2.15.4"]
+
+[supported_versions]
+unix = "2.15.4"
+windows = "2.15.4"

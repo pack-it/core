@@ -24,6 +24,7 @@ supported_packages = [
     "libtool",
     "libunistring",
     "libuv",
+    "libxml2",
     "llhttp",
     "lz4",
     "m4",
