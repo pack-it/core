@@ -1,0 +1,7 @@
+name = "gettext"
+description = "GNU internationalization (i18n) and localization (l10n) library"
+homepage = "https://www.gnu.org/software/gettext/"
+versions = ["1.0"]
+
+[supported_versions]
+unix = "1.0"

@@ -1,0 +1,25 @@
+version = "1.0"
+license = { any = ["GPL-2.0-or-later", "LGPL-2.1-or-later"] }
+dependencies = ["libunistring"]
+build_dependencies = []
+external_test_files = ["test.c"]
+
+[source]
+url = "https://mirrors.edge.kernel.org/gnu/gettext/gettext-1.0.tar.gz"
+mirrors = [
+    "https://ftpmirror.gnu.org/gnu/gettext/gettext-1.0.tar.gz",
+    "https://ftp.gnu.org/gnu/gettext/gettext-1.0.tar.gz",
+    "https://mirror.csclub.uwaterloo.ca/gnu/gettext/gettext-1.0.tar.gz",
+]
+checksum = "85d99b79c981a404874c02e0342176cf75c7698e2b51fe41031cf6526d974f1a"
+size = 32694085
+license_include = ["gettext-runtime/intl/COPYING.LIB"]
+
+[targets.linux]
+dependencies = ["ncurses", "libxml2", "acl", "attr"]
+
+[targets.mac]
+# Uses system ncurses and libxml2
+
+[targets."mac@>=14"]
+dependencies = ["libiconv"] # System libiconv is broken since macOS 14

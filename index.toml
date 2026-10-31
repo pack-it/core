@@ -10,6 +10,7 @@ supported_packages = [
     "calc",
     "cmake",
     "expat",
+    "gettext",
     "htop",
     "json-c",
     "libedit",
