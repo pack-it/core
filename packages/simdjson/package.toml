@@ -1,6 +1,6 @@
 name = "simdjson"
-description = ""
-homepage = ""
+description = "A C++ JSON parser accelerated with SIMD"
+homepage = "https://simdjson.org/"
 versions = ["5.1.0"]
 
 [supported_versions]
