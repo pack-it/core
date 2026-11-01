@@ -2,6 +2,7 @@ version = "6.9.10"
 license = "BSD-2-Clause"
 dependencies = []
 build_dependencies = []
+external_test_files = ["test.c"]
 
 [source]
 url = "https://github.com/kkos/oniguruma/releases/download/v6.9.10/onig-6.9.10.tar.gz"
