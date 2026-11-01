@@ -41,6 +41,7 @@ supported_packages = [
     "pcre2",
     "perl",
     "pkgconf",
+    "pv",
     "python",
     "readline",
     "scdoc",
