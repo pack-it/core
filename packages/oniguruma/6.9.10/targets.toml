@@ -12,3 +12,5 @@ size = 979159
 [targets.unix]
 
 [targets.windows]
+build_dependencies = ["cmake"]
+test_requirements = ["msvc"]
