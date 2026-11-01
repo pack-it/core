@@ -3,6 +3,7 @@ license = "BSD-2-Clause"
 dependencies = []
 build_dependencies = []
 external_test_files = ["test.c"]
+deprecation = { deprecated_from = "2025-04-24", reason = "Oniguruma is not actively maintained anymore, but packages still depend on it." }
 
 [source]
 url = "https://github.com/kkos/oniguruma/releases/download/v6.9.10/onig-6.9.10.tar.gz"
