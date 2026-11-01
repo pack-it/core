@@ -1,6 +1,8 @@
 #!/bin/sh
 
-./configure --prefix=$PACKIT_PACKAGE_PATH --disable-silent-rules
+./configure --prefix=$PACKIT_PACKAGE_PATH \
+    --disable-silent-rules \
+    --with-oniguruma="$PACKIT_PACKAGE_DEPENDENCIES_PATH/oniguruma"
 
 make -j $PACKIT_BUILD_JOBS_COUNT
 
