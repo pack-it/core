@@ -5,4 +5,3 @@ versions = ["1.8.2"]
 
 [supported_versions]
 unix = "1.8.2"
-windows = "1.8.2"
