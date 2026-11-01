@@ -11,4 +11,9 @@ make -j $PACKIT_BUILD_JOBS_COUNT
 
 [ "$PACKIT_EXECUTE_BUILD_TEST" = "1" ] && make HARNESS_JOBS=$PACKIT_BUILD_JOBS_COUNT test -j $PACKIT_BUILD_JOBS_COUNT
 
-make install
+# Install openssl
+make install_sw
+make install_man_docs
+
+# Install ssldir to a path inside the package
+make install_ssldirs OPENSSLDIR=$PACKIT_PACKAGE_PATH/.external/etc/openssl@$PACKIT_PACKAGE_VERSION
