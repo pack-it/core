@@ -1,5 +1,5 @@
 version = "1.0"
-license = { any = ["GPL-2.0-or-later", "LGPL-2.1-or-later"] }
+license = { any = ["GPL-3.0-or-later", "LGPL-2.1-or-later"] }
 dependencies = ["libunistring"]
 build_dependencies = []
 external_test_files = ["test.cpp"]

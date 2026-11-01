@@ -2,6 +2,7 @@
 #include <locale.h>
 #include <autosprintf.h>
 #include <textstyle.h>
+#include <cstring>
 
 #ifndef __GLIBC__
     #include <libintl.h>
@@ -37,6 +38,7 @@ int main() {
 
     if (strcmp(message, "Hello Packit!") != 0) {
         printf("Test failed: test output '%s' does not match the expected output\n", message);
+        free(message);
         return 1;
     }
 
