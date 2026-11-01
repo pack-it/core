@@ -1,0 +1,12 @@
+name = "oniguruma"
+description = "A modern and flexible regular expressions library"
+homepage = "https://github.com/kkos/oniguruma"
+versions = ["6.9.10"]
+
+[supported_versions]
+unix = "6.9.10"
+windows = "6.9.10"
+
+[deprecation]
+deprecated_from = "2025-04-24"
+reason = "Oniguruma is not actively maintained anymore, packages still depend on it."

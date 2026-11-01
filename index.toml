@@ -35,6 +35,7 @@ supported_packages = [
     "nasm",
     "ncurses",
     "ninja",
+    "oniguruma",
     "openssl",
     "packit",
     "pcre2",
