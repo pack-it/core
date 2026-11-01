@@ -1,0 +1,13 @@
+version = "1.8.2"
+license = { all = ["MIT", "ICU"] }
+dependencies = ["oniguruma"]
+build_dependencies = []
+
+[source]
+url = "https://github.com/jqlang/jq/releases/download/jq-1.8.2/jq-1.8.2.tar.gz"
+checksum = "71b8d6e8f5fe81f6c6d0d110e3892251f6ce76ed095abd315e26e6e1193af3af"
+size = 1959950
+
+[targets.unix]
+
+[targets.windows]

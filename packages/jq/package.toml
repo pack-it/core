@@ -1,0 +1,8 @@
+name = "jq"
+description = "A lightweight and flexible command-line JSON processor"
+homepage = "https://jqlang.org/"
+versions = ["1.8.2"]
+
+[supported_versions]
+unix = "1.8.2"
+windows = "1.8.2"
