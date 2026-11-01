@@ -3,7 +3,7 @@
 # Copy the openssldir to the destination
 if [ ! -e "$PACKIT_PREFIX_PATH/etc/openssl@$PACKIT_PACKAGE_VERSION" ]; then
     mkdir -p "$PACKIT_PREFIX_PATH/etc/openssl@$PACKIT_PACKAGE_VERSION"
-    cp -r "$PACKIT_PACKAGE_PATH/.external/etc/openssl@$PACKIT_PACKAGE_VERSION/" "$PACKIT_PREFIX_PATH/etc/openssl@$PACKIT_PACKAGE_VERSION/"
+    cp -r "$PACKIT_PACKAGE_PATH/.external/etc/openssl@$PACKIT_PACKAGE_VERSION/." "$PACKIT_PREFIX_PATH/etc/openssl@$PACKIT_PACKAGE_VERSION/"
 fi
 
 # Remove any existing ca-certificates symlink
