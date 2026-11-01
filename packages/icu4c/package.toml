@@ -1,0 +1,8 @@
+name = "icu4c"
+description = "A set of C/C++ libraries providing Unicode and Globalization support for software applications"
+homepage = "https://icu.unicode.org/"
+versions = ["79.1"]
+
+[supported_versions]
+unix = "79.1"
+windows = "79.1"

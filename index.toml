@@ -11,6 +11,7 @@ supported_packages = [
     "cmake",
     "expat",
     "htop",
+    "icu4c",
     "json-c",
     "libedit",
     "libffi",
