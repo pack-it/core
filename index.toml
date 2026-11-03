@@ -4,6 +4,7 @@ supported_packages = [
     "autoconf",
     "automake",
     "brotli",
+    "btop",
     "bzip2",
     "c-ares",
     "ca-certificates",
