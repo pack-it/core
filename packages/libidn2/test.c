@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <idn2.h>
 
-int main(int argc, char **argv) {
+int main() {
     char *output = NULL;
 
     // Convert UTF-8 example to ASCII

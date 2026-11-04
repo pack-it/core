@@ -16,5 +16,5 @@ make -j $PACKIT_BUILD_JOBS_COUNT
 
 make install
 
-# Remove unwanted html docs
+# Remove broken and unwanted html docs
 rm -r "$PACKIT_PACKAGE_PATH/share/gtk-doc"
