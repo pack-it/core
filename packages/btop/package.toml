@@ -1,0 +1,7 @@
+name = "btop"
+description = "A monitor of resources"
+homepage = "https://github.com/aristocratos/btop"
+versions = ["1.4.8"]
+
+[supported_versions]
+mac = "1.4.8"
