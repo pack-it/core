@@ -1,0 +1,7 @@
+name = "mpg123"
+description = "An MP3 player for Unix"
+homepage = "https://www.mpg123.de/"
+versions = ["1.33.7"]
+
+[supported_versions]
+unix = "1.33.7"
