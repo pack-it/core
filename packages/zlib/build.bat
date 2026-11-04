@@ -1,11 +1,6 @@
 REM Call vcvarsall.bat to initialize MSVC build environment
 call "%PACKIT_VCVARSALL%" %PACKIT_VCVARSALL_ARCH%
 
-REM Patch Makefile on ARM64 systems to remove the base option
-if "%PACKIT_TARGET%"=="aarch64-pc-windows-msvc" (
-    powershell -NoProfile -Command "$file='win32/Makefile.msc'; $text=Get-Content -Raw $file; $text=$text -replace [regex]::Escape('-base:0x5A4C0000 '),''; Set-Content -NoNewline -Encoding UTF8 $file $text"
-)
-
 nmake -f win32/Makefile.msc
 if ERRORLEVEL 1 (
     echo Building zlib failed
