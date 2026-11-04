@@ -19,6 +19,7 @@ supported_packages = [
     "libffi",
     "libgit2",
     "libiconv",
+    "libidn2",
     "libnghttp2",
     "libnghttp3",
     "libngtcp2",

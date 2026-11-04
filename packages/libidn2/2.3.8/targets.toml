@@ -1,0 +1,26 @@
+version = "2.3.8"
+license = { all = [
+    { any = ["GPL-2.0-or-later", "LGPL-3.0-or-later"] },
+    "GPL-3.0-or-later",
+    { all = ["Unicode-TOU", "Unicode-DFS-2016"] }
+] }
+dependencies = ["libunistring"]
+build_dependencies = []
+external_test_files = ["test.c"]
+
+[source]
+url = "https://mirrors.edge.kernel.org/gnu/libidn/libidn2-2.3.8.tar.gz"
+mirrors = [
+    "https://ftpmirror.gnu.org/gnu/libidn/libidn2-2.3.8.tar.gz",
+    "https://ftp.gnu.org/gnu/libidn/libidn2-2.3.8.tar.gz",
+    "https://mirror.csclub.uwaterloo.ca/gnu/libidn/libidn2-2.3.8.tar.gz",
+]
+checksum = "f557911bf6171621e1f72ff35f5b1825bb35b52ed45325dcdee931e5d3c0787a"
+size = 2234804
+license_include = ["COPYING.LESSERv3", "COPYING.unicode"]
+
+[targets.mac]
+dependencies = ["gettext", "libiconv"]
+
+[targets.linux]
+# Use gettext and libiconv implementations from glibc
