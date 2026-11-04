@@ -4,7 +4,7 @@ dependencies = []
 build_dependencies = []
 external_test_files = ["test.c"]
 
-[source]
+[source.unix]
 url = "https://zlib.net/zlib-1.3.2.tar.gz"
 mirrors = [
     "https://github.com/madler/zlib/releases/download/v1.3.2/zlib-1.3.2.tar.gz"
@@ -12,8 +12,22 @@ mirrors = [
 checksum = "bb329a0a2cd0274d05519d61c667c062e06990d72e125ee2dfa8de64f0119d16"
 size = 1502830
 
+[source.windows]
+url = "https://zlib.net/zlib-1.3.2.tar.gz"
+mirrors = [
+    "https://github.com/madler/zlib/releases/download/v1.3.2/zlib-1.3.2.tar.gz"
+]
+checksum = "bb329a0a2cd0274d05519d61c667c062e06990d72e125ee2dfa8de64f0119d16"
+size = 1502830
+patches.0 = {
+    url = "https://github.com/madler/zlib/commit/5540b9bde7ffbaae55f1a6a608bee4d486503655.patch",
+    checksum = "4cf2b7998ca412bffeac3303f29a1b51edd2da2b68b73e315b8a8fc64e1ee9de"
+}
+
 [targets.windows]
+source = "windows"
 build_requirements = ["msvc"]
 test_requirements = ["msvc"]
 
 [targets.unix]
+source = "unix"
