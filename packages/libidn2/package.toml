@@ -1,0 +1,7 @@
+name = "libidn2"
+description = "GNU internationalized domain names library for IDNA2008, Punycode and TR46"
+homepage = "https://www.gnu.org/software/libidn/#libidn2"
+versions = ["2.3.8"]
+
+[supported_versions]
+unix = "2.3.8"
