@@ -1,2 +1,2 @@
-REM Call vcvarsall.bat to initialize MSVC build environment
-call "%PACKIT_VCVARSALL%" %PACKIT_VCVARSALL_ARCH%
+"%PACKIT_PACKAGE_PATH%\bin\mpg123" -t .\test.mp3
+if ERRORLEVEL 1 exit /b %ERRORLEVEL%

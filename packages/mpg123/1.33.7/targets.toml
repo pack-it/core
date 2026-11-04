@@ -2,6 +2,7 @@ version = "1.33.7"
 license = "LGPL-2.1-only"
 dependencies = []
 build_dependencies = []
+external_test_files = ["test.mp3"]
 
 [source]
 url = "https://www.mpg123.de/download/mpg123-1.33.7.tar.bz2"
