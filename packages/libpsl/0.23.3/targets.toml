@@ -1,0 +1,15 @@
+version = "0.23.3"
+license = "MIT"
+dependencies = ["libidn2", "libunistring"]
+build_dependencies = ["pkgconf"]
+external_test_files = ["test.c"]
+
+[source]
+url = "https://github.com/rockdaboot/libpsl/releases/download/0.23.3/libpsl-0.23.3.tar.gz"
+checksum = "93941f85a1e7bd593fa94f299233cb5dfc91cd144fd9a78a6ceb75001c5b03be"
+size = 7830615
+
+[targets.mac]
+dependencies = ["gettext", "libiconv"]
+
+[targets.linux]

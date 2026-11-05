@@ -1,0 +1,7 @@
+name = "libpsl"
+description = "C library to handle the Public Suffix List"
+homepage = "https://github.com/rockdaboot/libpsl"
+versions = ["0.23.3"]
+
+[supported_versions]
+unix = "0.23.3"

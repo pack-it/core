@@ -24,6 +24,7 @@ supported_packages = [
     "libnghttp3",
     "libngtcp2",
     "libpng",
+    "libpsl",
     "libssh2",
     "libtool",
     "libunistring",
