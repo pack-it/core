@@ -1,0 +1,8 @@
+name = "llvm"
+description = "A modern source- and target-independent optimizer, along with code generation support for many popular CPUs"
+homepage = "https://llvm.org/"
+versions = ["23.1.5"]
+
+[supported_versions]
+unix = "23.1.5"
+windows = "23.1.5"

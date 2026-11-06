@@ -1,0 +1,13 @@
+version = "23.1.5"
+license = "Apache-2.0"
+dependencies = []
+build_dependencies = ["cmake@>3.20.0"]
+
+[source]
+url = "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.5/llvm-project-23.1.5.src.tar.xz"
+checksum = "fb50b1eac93ddeb3aa8dab4cfe324dff74f4a9c2bdee6160c9e36188f8d06a6e"
+size = 179220264
+
+[targets.unix]
+
+[targets.windows]
