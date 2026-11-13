@@ -4,7 +4,7 @@ call "%PACKIT_VCVARSALL%" %PACKIT_VCVARSALL_ARCH%
 if "%PACKIT_TARGET%" == "x86_64-pc-windows-msvc" (
     nmake -f scripts\makefile.vcwin32 CFLAGS="/I\"%PACKIT_PACKAGE_DEPENDENCIES_PATH%\zlib-ng-compat\include\""
 ) else if "%PACKIT_TARGET%" == "aarch64-pc-windows-msvc" (
-    nmake -f scripts\makefile.vcwin-arm64
+    nmake -f scripts\makefile.vcwin-arm64 CFLAGS="/I\"%PACKIT_PACKAGE_DEPENDENCIES_PATH%\zlib-ng-compat\include\""
 ) else (
     echo Target %PACKIT_TARGET% is not supported for this package
     exit /b 1
