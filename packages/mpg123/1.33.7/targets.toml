@@ -1,0 +1,15 @@
+version = "1.33.7"
+license = "LGPL-2.1-only"
+dependencies = []
+build_dependencies = []
+external_test_files = ["test.mp3"]
+
+[source]
+url = "https://www.mpg123.de/download/mpg123-1.33.7.tar.bz2"
+mirror = [
+    "https://downloads.sourceforge.net/project/mpg123/mpg123/1.33.7/mpg123-1.33.7.tar.bz2"
+]
+checksum = "31d0e35a4ca567ec9b5ebda6c3062bb4435d6d3eacd6ef0d95cadd7854dc03ee"
+size = 1126376
+
+[targets.unix]
